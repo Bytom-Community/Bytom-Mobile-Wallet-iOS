@@ -1,0 +1,10 @@
+Podfile.lock
+Pods
+
+xcuserdata
+UserInterfaceState.xcuserstate
+
+.DS_Store
+build/
+DerivedData/
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hzO-Dv-zUr">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--交易-->
+        <scene sceneID="mUN-Vy-nL7">
+            <objects>
+                <viewController id="LDx-A5-V0n" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E5J-wc-MG7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="NUn-pz-iAs"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="交易" id="rRs-vT-Rfd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="toX-4s-1md" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1272.8" y="155.17241379310346"/>
+        </scene>
+        <!--交易-->
+        <scene sceneID="ToB-fM-buz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hzO-Dv-zUr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="交易" id="soP-my-SIC"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GiT-Lp-gYI">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LDx-A5-V0n" kind="relationship" relationship="rootViewController" id="nIT-7c-qVC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tel-2O-pwc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="333.60000000000002" y="155.17241379310346"/>
+        </scene>
+    </scenes>
+</document>
