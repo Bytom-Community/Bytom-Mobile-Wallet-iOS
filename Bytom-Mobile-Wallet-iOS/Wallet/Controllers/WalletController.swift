@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 class WalletController {
     private weak var interface: WalletInteface!
@@ -19,10 +20,13 @@ class WalletController {
     func bindInterface(interface: WalletInteface) {
         self.interface = interface
         self.interface.showActivityIndicator()
-        self.walletRepo.bytom().then{ html -> Void in
-            self.interface.reloadWebView(html: html)
-            }.always {
+        self.walletRepo.bytom()
+            .done { html -> Void in
+                self.interface.reloadWebView(html: html)
+            }.ensure {
                 self.interface.hideActivityIndicator()
+            }.catch { error in
+                    print(error)
         }
     }
 }

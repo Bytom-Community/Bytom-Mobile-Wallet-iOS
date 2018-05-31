@@ -6,12 +6,11 @@ target 'Bytom-Mobile-Wallet-iOS' do
   use_frameworks!
 
   pod 'R.swift'
-  pod 'JSONHelper'
-  pod 'PromiseKit', '~> 4.0'
-  pod 'PromiseKit/OMGHTTPURLRQ', '~> 4.0'
-  pod 'Toast-Swift', '~> 3.0.1'
-  pod 'Kingfisher', '~> 4.0'
+  pod 'PromiseKit', '~> 6.0'
+  pod 'PromiseKit/OMGHTTPURLRQ', '~> 6.0'
+  pod 'Toast-Swift'
+  pod 'Kingfisher'
   pod 'Swinject'
-  pod 'DynamicColor', '~> 3.3'
+  pod 'DynamicColor'
   pod 'IQKeyboardManagerSwift'
 end

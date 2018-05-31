@@ -20,13 +20,12 @@
 		FC1EE87320BC656900A9CD84 /* BrowserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EE87220BC656900A9CD84 /* BrowserVC.swift */; };
 		FC3E229620BAF878004DA087 /* Bytom_Mobile_Wallet_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E229520BAF878004DA087 /* Bytom_Mobile_Wallet_iOSTests.swift */; };
 		FC3E22A120BAF878004DA087 /* Bytom_Mobile_Wallet_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E22A020BAF878004DA087 /* Bytom_Mobile_Wallet_iOSUITests.swift */; };
-		FC4C76C420BD927F00E930B5 /* UIViewController + IView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76C220BD90A600E930B5 /* UIViewController + IView.swift */; };
-		FC4C76C820BD93F700E930B5 /* UIView + Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76C720BD93F700E930B5 /* UIView + Border.swift */; };
-		FC4C76CA20BD941A00E930B5 /* JSONHelper + Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76C920BD941A00E930B5 /* JSONHelper + Serializable.swift */; };
-		FC4C76CC20BD953600E930B5 /* URLDataPromise + asObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76CB20BD953600E930B5 /* URLDataPromise + asObject.swift */; };
-		FC4C76CE20BDB8B700E930B5 /* UIImageView + URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76CD20BDB8B700E930B5 /* UIImageView + URL.swift */; };
+		FC4C76C420BD927F00E930B5 /* UIViewController+IView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76C220BD90A600E930B5 /* UIViewController+IView.swift */; };
+		FC4C76C820BD93F700E930B5 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76C720BD93F700E930B5 /* UIView+Border.swift */; };
+		FC4C76CC20BD953600E930B5 /* Promise+asAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76CB20BD953600E930B5 /* Promise+asAny.swift */; };
+		FC4C76CE20BDB8B700E930B5 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76CD20BDB8B700E930B5 /* UIImageView+URL.swift */; };
 		FC4C76D120BDBAD600E930B5 /* NetWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76D020BDBAD600E930B5 /* NetWorks.swift */; };
-		FC4C76D320BDBB3800E930B5 /* Date + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76D220BDBB3800E930B5 /* Date + String.swift */; };
+		FC4C76D320BDBB3800E930B5 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76D220BDBB3800E930B5 /* Date+String.swift */; };
 		FCE47D6320BEDB4400D380FB /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE47D6220BEDB4400D380FB /* Me.storyboard */; };
 		FCE47D6520BEDB5800D380FB /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE47D6420BEDB5800D380FB /* Wallet.storyboard */; };
 		FCE47D6720BEDB6A00D380FB /* Trade.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE47D6620BEDB6A00D380FB /* Trade.storyboard */; };
@@ -81,13 +80,12 @@
 		FC3E22A020BAF878004DA087 /* Bytom_Mobile_Wallet_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bytom_Mobile_Wallet_iOSUITests.swift; sourceTree = "<group>"; };
 		FC3E22A220BAF878004DA087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC4C76C120BD904300E930B5 /* Bytom-Wallet-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bytom-Wallet-Bridging-Header.h"; sourceTree = "<group>"; };
-		FC4C76C220BD90A600E930B5 /* UIViewController + IView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + IView.swift"; sourceTree = "<group>"; };
-		FC4C76C720BD93F700E930B5 /* UIView + Border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Border.swift"; sourceTree = "<group>"; };
-		FC4C76C920BD941A00E930B5 /* JSONHelper + Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONHelper + Serializable.swift"; sourceTree = "<group>"; };
-		FC4C76CB20BD953600E930B5 /* URLDataPromise + asObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLDataPromise + asObject.swift"; sourceTree = "<group>"; };
-		FC4C76CD20BDB8B700E930B5 /* UIImageView + URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + URL.swift"; sourceTree = "<group>"; };
+		FC4C76C220BD90A600E930B5 /* UIViewController+IView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+IView.swift"; sourceTree = "<group>"; };
+		FC4C76C720BD93F700E930B5 /* UIView+Border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
+		FC4C76CB20BD953600E930B5 /* Promise+asAny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Promise+asAny.swift"; sourceTree = "<group>"; };
+		FC4C76CD20BDB8B700E930B5 /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		FC4C76D020BDBAD600E930B5 /* NetWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorks.swift; sourceTree = "<group>"; };
-		FC4C76D220BDBB3800E930B5 /* Date + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + String.swift"; sourceTree = "<group>"; };
+		FC4C76D220BDBB3800E930B5 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		FCE47D6220BEDB4400D380FB /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		FCE47D6420BEDB5800D380FB /* Wallet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
 		FCE47D6620BEDB6A00D380FB /* Trade.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Trade.storyboard; sourceTree = "<group>"; };
@@ -159,12 +157,11 @@
 		FC1EE83A20BC51B300A9CD84 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FC4C76C720BD93F700E930B5 /* UIView + Border.swift */,
-				FC4C76C220BD90A600E930B5 /* UIViewController + IView.swift */,
-				FC4C76C920BD941A00E930B5 /* JSONHelper + Serializable.swift */,
-				FC4C76CB20BD953600E930B5 /* URLDataPromise + asObject.swift */,
-				FC4C76CD20BDB8B700E930B5 /* UIImageView + URL.swift */,
-				FC4C76D220BDBB3800E930B5 /* Date + String.swift */,
+				FC4C76C720BD93F700E930B5 /* UIView+Border.swift */,
+				FC4C76C220BD90A600E930B5 /* UIViewController+IView.swift */,
+				FC4C76CB20BD953600E930B5 /* Promise+asAny.swift */,
+				FC4C76CD20BDB8B700E930B5 /* UIImageView+URL.swift */,
+				FC4C76D220BDBB3800E930B5 /* Date+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -664,7 +661,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Bytom-Mobile-Wallet-iOS/Pods-Bytom-Mobile-Wallet-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/JSONHelper/JSONHelper.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/OMGHTTPURLRQ/OMGHTTPURLRQ.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
@@ -676,7 +672,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONHelper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OMGHTTPURLRQ.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
@@ -728,26 +723,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC4C76CC20BD953600E930B5 /* URLDataPromise + asObject.swift in Sources */,
+				FC4C76CC20BD953600E930B5 /* Promise+asAny.swift in Sources */,
 				FCE47D7F20BEF2A400D380FB /* WalletRepository.swift in Sources */,
 				FC1EE84A20BC51B300A9CD84 /* AppDelegate.swift in Sources */,
 				FCE47D6B20BEDC7500D380FB /* IocContainer.swift in Sources */,
 				FC1EE86E20BC611000A9CD84 /* Colors.swift in Sources */,
-				FC4C76C820BD93F700E930B5 /* UIView + Border.swift in Sources */,
+				FC4C76C820BD93F700E930B5 /* UIView+Border.swift in Sources */,
 				FC1EE86920BC5E2C00A9CD84 /* MainTabBarController.swift in Sources */,
 				FCE47D7420BEE07500D380FB /* TradeIocContainer.swift in Sources */,
 				FC1EE87020BC62A600A9CD84 /* UIInterface.swift in Sources */,
-				FC4C76D320BDBB3800E930B5 /* Date + String.swift in Sources */,
+				FC4C76D320BDBB3800E930B5 /* Date+String.swift in Sources */,
 				FC4C76D120BDBAD600E930B5 /* NetWorks.swift in Sources */,
-				FC4C76C420BD927F00E930B5 /* UIViewController + IView.swift in Sources */,
-				FC4C76CA20BD941A00E930B5 /* JSONHelper + Serializable.swift in Sources */,
+				FC4C76C420BD927F00E930B5 /* UIViewController+IView.swift in Sources */,
 				FCE47D7B20BEE9A700D380FB /* WalletInteface.swift in Sources */,
 				FC1EE86C20BC606300A9CD84 /* R.generated.swift in Sources */,
 				FCE47D7D20BEEA2B00D380FB /* WalletController.swift in Sources */,
 				FCE47D7120BEE03500D380FB /* WalletIocContainer.swift in Sources */,
 				FC1EE87320BC656900A9CD84 /* BrowserVC.swift in Sources */,
 				FCE47D7720BEE0A100D380FB /* MeIocContainer.swift in Sources */,
-				FC4C76CE20BDB8B700E930B5 /* UIImageView + URL.swift in Sources */,
+				FC4C76CE20BDB8B700E930B5 /* UIImageView+URL.swift in Sources */,
 				FCE47D6E20BEDD7E00D380FB /* WelcomeIocContainer.swift in Sources */,
 				FCE47D6920BEDC2500D380FB /* Engine.swift in Sources */,
 				FCE47D7920BEE89500D380FB /* WalletVC.swift in Sources */,
