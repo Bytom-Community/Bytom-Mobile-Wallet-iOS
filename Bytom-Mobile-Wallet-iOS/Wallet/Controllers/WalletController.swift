@@ -19,6 +19,10 @@ class WalletController {
     
     func bindInterface(interface: WalletInteface) {
         self.interface = interface
+        loadBytom()
+    }
+    
+    private func loadBytom() {
         self.interface.showActivityIndicator()
         self.walletRepo.bytom()
             .done { html -> Void in
@@ -26,7 +30,7 @@ class WalletController {
             }.ensure {
                 self.interface.hideActivityIndicator()
             }.catch { error in
-                    print(error)
+                print(error)
         }
     }
 }

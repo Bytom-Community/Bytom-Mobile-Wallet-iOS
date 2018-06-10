@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="39d-d1-VDt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="39d-d1-VDt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,7 +20,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="V0K-Hp-sob" kind="relationship" relationship="viewControllers" id="jRp-K4-hpZ"/>
-                        <segue destination="0Bc-yz-4fs" kind="relationship" relationship="viewControllers" id="ksc-Ix-tYl"/>
                         <segue destination="MmD-7f-XAL" kind="relationship" relationship="viewControllers" id="vBR-J0-MUM"/>
                     </connections>
                 </tabBarController>
@@ -37,16 +36,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqC-Iq-Ceo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="317" y="-112"/>
-        </scene>
-        <!--Trade-->
-        <scene sceneID="SBn-WU-ug7">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Trade" id="0Bc-yz-4fs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="n3x-GU-s9i"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wMC-N7-G2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="333.60000000000002" y="155.17241379310346"/>
         </scene>
         <!--Me-->
         <scene sceneID="oqi-o6-ng7">

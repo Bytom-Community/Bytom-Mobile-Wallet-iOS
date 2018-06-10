@@ -26,6 +26,7 @@
 		FC4C76CE20BDB8B700E930B5 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76CD20BDB8B700E930B5 /* UIImageView+URL.swift */; };
 		FC4C76D120BDBAD600E930B5 /* NetWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76D020BDBAD600E930B5 /* NetWorks.swift */; };
 		FC4C76D320BDBB3800E930B5 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76D220BDBB3800E930B5 /* Date+String.swift */; };
+		FCA9644220CD7B06003116BD /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA9644120CD7B06003116BD /* Welcome.storyboard */; };
 		FCE47D6320BEDB4400D380FB /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE47D6220BEDB4400D380FB /* Me.storyboard */; };
 		FCE47D6520BEDB5800D380FB /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE47D6420BEDB5800D380FB /* Wallet.storyboard */; };
 		FCE47D6720BEDB6A00D380FB /* Trade.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE47D6620BEDB6A00D380FB /* Trade.storyboard */; };
@@ -86,6 +87,7 @@
 		FC4C76CD20BDB8B700E930B5 /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		FC4C76D020BDBAD600E930B5 /* NetWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorks.swift; sourceTree = "<group>"; };
 		FC4C76D220BDBB3800E930B5 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		FCA9644120CD7B06003116BD /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		FCE47D6220BEDB4400D380FB /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		FCE47D6420BEDB5800D380FB /* Wallet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
 		FCE47D6620BEDB6A00D380FB /* Trade.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Trade.storyboard; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 		FC1EE85320BC565C00A9CD84 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FCA9644120CD7B06003116BD /* Welcome.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -448,6 +451,8 @@
 				FC1EE85820BC565C00A9CD84 /* Wallet */,
 				FC1EE85E20BC565C00A9CD84 /* Trade */,
 				FC1EE84C20BC565C00A9CD84 /* Me */,
+				FCA9643520CD757D003116BD /* WalletManage */,
+				FCA9643620CD757E003116BD /* Security */,
 				FC1EE87120BC654A00A9CD84 /* Browser */,
 				FC1EE83A20BC51B300A9CD84 /* Extensions */,
 				FC1EE83B20BC51B300A9CD84 /* Resource */,
@@ -483,6 +488,92 @@
 				FC4C76D020BDBAD600E930B5 /* NetWorks.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		FCA9643520CD757D003116BD /* WalletManage */ = {
+			isa = PBXGroup;
+			children = (
+				FCA9643E20CD76D3003116BD /* Controllers */,
+				FCA9643D20CD76D3003116BD /* Domains */,
+				FCA9644020CD76D3003116BD /* IocContainer */,
+				FCA9643F20CD76D3003116BD /* Repositories */,
+				FCA9643B20CD76D3003116BD /* UI */,
+				FCA9643C20CD76D3003116BD /* UI_Interfaces */,
+			);
+			path = WalletManage;
+			sourceTree = "<group>";
+		};
+		FCA9643620CD757E003116BD /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				FCA9643A20CD76A1003116BD /* IocContainer */,
+				FCA9643920CD7662003116BD /* Domains */,
+				FCA9643720CD7662003116BD /* Repositories */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		FCA9643720CD7662003116BD /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		FCA9643920CD7662003116BD /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domains;
+			sourceTree = "<group>";
+		};
+		FCA9643A20CD76A1003116BD /* IocContainer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IocContainer;
+			sourceTree = "<group>";
+		};
+		FCA9643B20CD76D3003116BD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FCA9643C20CD76D3003116BD /* UI_Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI_Interfaces;
+			sourceTree = "<group>";
+		};
+		FCA9643D20CD76D3003116BD /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domains;
+			sourceTree = "<group>";
+		};
+		FCA9643E20CD76D3003116BD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FCA9643F20CD76D3003116BD /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		FCA9644020CD76D3003116BD /* IocContainer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IocContainer;
 			sourceTree = "<group>";
 		};
 		FCE47D6C20BEDD5E00D380FB /* IocContainer */ = {
@@ -630,6 +721,7 @@
 				FCE47D6720BEDB6A00D380FB /* Trade.storyboard in Resources */,
 				FC1EE84620BC51B300A9CD84 /* Assets.xcassets in Resources */,
 				FC1EE84820BC51B300A9CD84 /* LaunchScreen.storyboard in Resources */,
+				FCA9644220CD7B06003116BD /* Welcome.storyboard in Resources */,
 				FCE47D6320BEDB4400D380FB /* Me.storyboard in Resources */,
 				FCE47D6520BEDB5800D380FB /* Wallet.storyboard in Resources */,
 			);
