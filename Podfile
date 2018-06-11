@@ -14,4 +14,5 @@ target 'Bytom-Mobile-Wallet-iOS' do
   pod 'DynamicColor'
   pod 'IQKeyboardManagerSwift'
   pod 'FDFullscreenPopGesture', '1.1'
+  pod 'CryptoSwift'
 end
