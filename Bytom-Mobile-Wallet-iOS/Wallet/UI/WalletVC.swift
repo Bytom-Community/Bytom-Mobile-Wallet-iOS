@@ -11,19 +11,30 @@ import WebKit
 
 class WalletVC: UIViewController {
     private let controller = IocContainer.resolve(WalletController.self)
-    var webView: WKWebView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        webView = WKWebView(frame: self.view.bounds, configuration: WKWebViewConfiguration())
-        view.addSubview(webView)
-        // 模拟一个网络请求
-        controller.bindInterface(interface: self)
+        navigationController?.isNavigationBarHidden = true
+        fd_prefersNavigationBarHidden = true
+
+        let statusBarBackgroundView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: view.bounds.width, height: UIApplication.shared.statusBarFrame.height))
+        statusBarBackgroundView.backgroundColor = Colors.backgroundColor
+        view.addSubview(statusBarBackgroundView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        UIApplication.shared.statusBarStyle = .default
     }
 }
 
 extension WalletVC: WalletInteface {
     func reloadWebView(html: String) {
-        webView.loadHTMLString(html, baseURL: nil)
+
     }
 }

@@ -27,6 +27,7 @@
 		FC4C76D120BDBAD600E930B5 /* NetWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76D020BDBAD600E930B5 /* NetWorks.swift */; };
 		FC4C76D320BDBB3800E930B5 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76D220BDBB3800E930B5 /* Date+String.swift */; };
 		FCA9644220CD7B06003116BD /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA9644120CD7B06003116BD /* Welcome.storyboard */; };
+		FCA9644420CD8680003116BD /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA9644320CD8680003116BD /* WelcomeVC.swift */; };
 		FCE47D6320BEDB4400D380FB /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE47D6220BEDB4400D380FB /* Me.storyboard */; };
 		FCE47D6520BEDB5800D380FB /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE47D6420BEDB5800D380FB /* Wallet.storyboard */; };
 		FCE47D6720BEDB6A00D380FB /* Trade.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE47D6620BEDB6A00D380FB /* Trade.storyboard */; };
@@ -88,6 +89,7 @@
 		FC4C76D020BDBAD600E930B5 /* NetWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorks.swift; sourceTree = "<group>"; };
 		FC4C76D220BDBB3800E930B5 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		FCA9644120CD7B06003116BD /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		FCA9644320CD8680003116BD /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		FCE47D6220BEDB4400D380FB /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		FCE47D6420BEDB5800D380FB /* Wallet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
 		FCE47D6620BEDB6A00D380FB /* Trade.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Trade.storyboard; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				FCA9644120CD7B06003116BD /* Welcome.storyboard */,
+				FCA9644320CD8680003116BD /* WelcomeVC.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -752,6 +755,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Bytom-Mobile-Wallet-iOS/Pods-Bytom-Mobile-Wallet-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
+				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/OMGHTTPURLRQ/OMGHTTPURLRQ.framework",
@@ -763,6 +767,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OMGHTTPURLRQ.framework",
@@ -822,6 +827,7 @@
 				FC1EE86E20BC611000A9CD84 /* Colors.swift in Sources */,
 				FC4C76C820BD93F700E930B5 /* UIView+Border.swift in Sources */,
 				FC1EE86920BC5E2C00A9CD84 /* MainTabBarController.swift in Sources */,
+				FCA9644420CD8680003116BD /* WelcomeVC.swift in Sources */,
 				FCE47D7420BEE07500D380FB /* TradeIocContainer.swift in Sources */,
 				FC1EE87020BC62A600A9CD84 /* UIInterface.swift in Sources */,
 				FC4C76D320BDBB3800E930B5 /* Date+String.swift in Sources */,
