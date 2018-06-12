@@ -328,6 +328,9 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try main.validate()
+      try wallet.validate()
+      try me.validate()
+      try welcome.validate()
     }
     
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
@@ -351,17 +354,24 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
+        if UIKit.UIImage(named: "me_select") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'me_select' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "me") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'me' is used in storyboard 'Main', but couldn't be loaded.") }
         if _R.storyboard.main().mainTabBarController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainTabBarController' could not be loaded from storyboard 'Main' as 'MainTabBarController'.") }
       }
       
       fileprivate init() {}
     }
     
-    struct me: Rswift.StoryboardResourceWithInitialControllerType {
+    struct me: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
       
       let bundle = R.hostingBundle
       let name = "Me"
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "me_select") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'me_select' is used in storyboard 'Me', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "me") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'me' is used in storyboard 'Me', but couldn't be loaded.") }
+      }
       
       fileprivate init() {}
     }
@@ -375,11 +385,45 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct wallet: Rswift.StoryboardResourceWithInitialControllerType {
+    struct wallet: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
       
       let bundle = R.hostingBundle
       let name = "Wallet"
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "currency") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'currency' is used in storyboard 'Wallet', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "currency_select") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'currency_select' is used in storyboard 'Wallet', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct welcome: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "Welcome"
+      let testVC = StoryboardViewControllerResource<UIKit.UIViewController>(identifier: "TestVC")
+      let welComeNavVC = StoryboardViewControllerResource<UIKit.UINavigationController>(identifier: "WelComeNavVC")
+      let welcomeVC = StoryboardViewControllerResource<WelcomeVC>(identifier: "WelcomeVC")
+      
+      func testVC(_: Void = ()) -> UIKit.UIViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: testVC)
+      }
+      
+      func welComeNavVC(_: Void = ()) -> UIKit.UINavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: welComeNavVC)
+      }
+      
+      func welcomeVC(_: Void = ()) -> WelcomeVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: welcomeVC)
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "logo_with_title") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo_with_title' is used in storyboard 'Welcome', but couldn't be loaded.") }
+        if _R.storyboard.welcome().welcomeVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'welcomeVC' could not be loaded from storyboard 'Welcome' as 'WelcomeVC'.") }
+        if _R.storyboard.welcome().welComeNavVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'welComeNavVC' could not be loaded from storyboard 'Welcome' as 'UIKit.UINavigationController'.") }
+        if _R.storyboard.welcome().testVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'testVC' could not be loaded from storyboard 'Welcome' as 'UIKit.UIViewController'.") }
+      }
       
       fileprivate init() {}
     }

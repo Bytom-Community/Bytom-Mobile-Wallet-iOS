@@ -15,4 +15,6 @@ target 'Bytom-Mobile-Wallet-iOS' do
   pod 'IQKeyboardManagerSwift'
   pod 'SnapKit'
   pod 'SwiftForms'
+  pod 'FDFullscreenPopGesture', '1.1'
+  pod 'CryptoSwift'
 end

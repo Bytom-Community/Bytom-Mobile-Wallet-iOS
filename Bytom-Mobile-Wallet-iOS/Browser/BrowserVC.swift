@@ -63,8 +63,8 @@ class BrowserVC: UIViewController {
         if (keyPath == estimatedProgress) {
             loadProgress.isHidden = webView.estimatedProgress == 1
             loadProgress.setProgress(Float(webView.estimatedProgress), animated: true)
-            loadProgress.progressTintColor = Colors.blue
-            loadProgress.trackTintColor = UIColor.gray
+            loadProgress.progressTintColor = Colors.mainColor
+            loadProgress.trackTintColor = Colors.lineColor
         }
     }
     

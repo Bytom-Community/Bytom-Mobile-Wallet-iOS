@@ -10,6 +10,15 @@ import UIKit
 import DynamicColor
 
 struct Colors {
-    static let blue = UIColor(hexString: "3375BB")
-    static let gray = UIColor.gray
+    static let mainColor = UIColor(hexString: "#10C2AE")
+    static let remindColor = UIColor(hexString: "#D57272")
+    static let backgroundColor = UIColor(hexString: "#20252D")
+    static let lineColor = UIColor(hexString: "#F0F0F0")
+    static let indicateColor = UIColor(hexString: "#666666")
+    static let whiteColor = UIColor(hexString: "#ffffff")
+    
+    // Font Color
+    static let lightGreyColor = UIColor(hexString: "#CED1D9")
+    static let darkGreyColor = UIColor(hexString: "#999999")
+    static let blackColor = UIColor(hexString: "#1D2128")
 }
