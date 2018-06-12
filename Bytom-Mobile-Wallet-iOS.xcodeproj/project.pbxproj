@@ -25,6 +25,12 @@
 		FC1EE87320BC656900A9CD84 /* BrowserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EE87220BC656900A9CD84 /* BrowserVC.swift */; };
 		FC3E229620BAF878004DA087 /* Bytom_Mobile_Wallet_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E229520BAF878004DA087 /* Bytom_Mobile_Wallet_iOSTests.swift */; };
 		FC3E22A120BAF878004DA087 /* Bytom_Mobile_Wallet_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3E22A020BAF878004DA087 /* Bytom_Mobile_Wallet_iOSUITests.swift */; };
+		FC4AB51A20D02479003B6033 /* TokenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AB51820D02478003B6033 /* TokenCell.swift */; };
+		FC4AB51B20D02479003B6033 /* SwitchWalletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AB51920D02478003B6033 /* SwitchWalletCell.swift */; };
+		FC4AB51D20D02480003B6033 /* SwitchWalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AB51C20D02480003B6033 /* SwitchWalletVC.swift */; };
+		FC4AB51F20D024D8003B6033 /* UITableViewCell+ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AB51E20D024D8003B6033 /* UITableViewCell+ID.swift */; };
+		FC4AB52220D02AD9003B6033 /* AssetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AB52120D02AD9003B6033 /* AssetsModel.swift */; };
+		FC4AB52420D02D43003B6033 /* GetAssetsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AB52320D02D43003B6033 /* GetAssetsRequest.swift */; };
 		FC4C76C420BD927F00E930B5 /* UIViewController+IView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76C220BD90A600E930B5 /* UIViewController+IView.swift */; };
 		FC4C76C820BD93F700E930B5 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76C720BD93F700E930B5 /* UIView+Border.swift */; };
 		FC4C76CC20BD953600E930B5 /* Promise+asAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76CB20BD953600E930B5 /* Promise+asAny.swift */; };
@@ -91,6 +97,12 @@
 		FC3E229C20BAF878004DA087 /* Bytom-Mobile-Wallet-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bytom-Mobile-Wallet-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3E22A020BAF878004DA087 /* Bytom_Mobile_Wallet_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bytom_Mobile_Wallet_iOSUITests.swift; sourceTree = "<group>"; };
 		FC3E22A220BAF878004DA087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC4AB51820D02478003B6033 /* TokenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenCell.swift; sourceTree = "<group>"; };
+		FC4AB51920D02478003B6033 /* SwitchWalletCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchWalletCell.swift; sourceTree = "<group>"; };
+		FC4AB51C20D02480003B6033 /* SwitchWalletVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchWalletVC.swift; sourceTree = "<group>"; };
+		FC4AB51E20D024D8003B6033 /* UITableViewCell+ID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+ID.swift"; sourceTree = "<group>"; };
+		FC4AB52120D02AD9003B6033 /* AssetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsModel.swift; sourceTree = "<group>"; };
+		FC4AB52320D02D43003B6033 /* GetAssetsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAssetsRequest.swift; sourceTree = "<group>"; };
 		FC4C76C120BD904300E930B5 /* Bytom-Wallet-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bytom-Wallet-Bridging-Header.h"; sourceTree = "<group>"; };
 		FC4C76C220BD90A600E930B5 /* UIViewController+IView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+IView.swift"; sourceTree = "<group>"; };
 		FC4C76C720BD93F700E930B5 /* UIView+Border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
@@ -241,6 +253,7 @@
 				FC4C76CB20BD953600E930B5 /* Promise+asAny.swift */,
 				FC4C76CD20BDB8B700E930B5 /* UIImageView+URL.swift */,
 				FC4C76D220BDBB3800E930B5 /* Date+String.swift */,
+				FC4AB51E20D024D8003B6033 /* UITableViewCell+ID.swift */,
 				57D43EDF20CE60CB009DC827 /* UIDevices+Extension.swift */,
 			);
 			path = Extensions;
@@ -379,7 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE47D6F20BEE01100D380FB /* IocContainer */,
-				FC1EE85A20BC565C00A9CD84 /* Domains */,
+				FC4AB52020D02986003B6033 /* Domains */,
 				FC1EE85920BC565C00A9CD84 /* UI */,
 				FC1EE85B20BC565C00A9CD84 /* UI_Interfaces */,
 				FC1EE85C20BC565C00A9CD84 /* Repositories */,
@@ -391,17 +404,12 @@
 		FC1EE85920BC565C00A9CD84 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FC4AB51720D02478003B6033 /* Cell */,
+				FC4AB51C20D02480003B6033 /* SwitchWalletVC.swift */,
 				FCE47D7820BEE89500D380FB /* WalletVC.swift */,
 				FCE47D6420BEDB5800D380FB /* Wallet.storyboard */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		FC1EE85A20BC565C00A9CD84 /* Domains */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domains;
 			sourceTree = "<group>";
 		};
 		FC1EE85B20BC565C00A9CD84 /* UI_Interfaces */ = {
@@ -561,6 +569,24 @@
 				FC3E22A220BAF878004DA087 /* Info.plist */,
 			);
 			path = "Bytom-Mobile-Wallet-iOSUITests";
+			sourceTree = "<group>";
+		};
+		FC4AB51720D02478003B6033 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FC4AB51820D02478003B6033 /* TokenCell.swift */,
+				FC4AB51920D02478003B6033 /* SwitchWalletCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FC4AB52020D02986003B6033 /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				FC4AB52120D02AD9003B6033 /* AssetsModel.swift */,
+				FC4AB52320D02D43003B6033 /* GetAssetsRequest.swift */,
+			);
+			path = Domains;
 			sourceTree = "<group>";
 		};
 		FC4C76CF20BDBA8600E930B5 /* Configuration */ = {
@@ -851,6 +877,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D43ED720CE3CAF009DC827 /* MeVC.swift in Sources */,
+				FC4AB52420D02D43003B6033 /* GetAssetsRequest.swift in Sources */,
 				FC4C76CC20BD953600E930B5 /* Promise+asAny.swift in Sources */,
 				FCE47D7F20BEF2A400D380FB /* WalletRepository.swift in Sources */,
 				FC1EE84A20BC51B300A9CD84 /* AppDelegate.swift in Sources */,
@@ -862,9 +889,12 @@
 				FCA9644420CD8680003116BD /* WelcomeVC.swift in Sources */,
 				FCE47D7420BEE07500D380FB /* TradeIocContainer.swift in Sources */,
 				FC1EE87020BC62A600A9CD84 /* UIInterface.swift in Sources */,
+				FC4AB51F20D024D8003B6033 /* UITableViewCell+ID.swift in Sources */,
 				FC4C76D320BDBB3800E930B5 /* Date+String.swift in Sources */,
 				57D43EDC20CE4179009DC827 /* MeHeaderView.swift in Sources */,
 				FC4C76D120BDBAD600E930B5 /* NetWorks.swift in Sources */,
+				FC4AB52220D02AD9003B6033 /* AssetsModel.swift in Sources */,
+				FC4AB51A20D02479003B6033 /* TokenCell.swift in Sources */,
 				FC4C76C420BD927F00E930B5 /* UIViewController+IView.swift in Sources */,
 				FCE47D7B20BEE9A700D380FB /* WalletInteface.swift in Sources */,
 				FC1EE86C20BC606300A9CD84 /* R.generated.swift in Sources */,
@@ -874,6 +904,8 @@
 				FC1EE87320BC656900A9CD84 /* BrowserVC.swift in Sources */,
 				FCE47D7720BEE0A100D380FB /* MeIocContainer.swift in Sources */,
 				FC4C76CE20BDB8B700E930B5 /* UIImageView+URL.swift in Sources */,
+				FC4AB51D20D02480003B6033 /* SwitchWalletVC.swift in Sources */,
+				FC4AB51B20D02479003B6033 /* SwitchWalletCell.swift in Sources */,
 				FCE47D6E20BEDD7E00D380FB /* WelcomeIocContainer.swift in Sources */,
 				FCE47D6920BEDC2500D380FB /* Engine.swift in Sources */,
 				FCE47D7920BEE89500D380FB /* WalletVC.swift in Sources */,

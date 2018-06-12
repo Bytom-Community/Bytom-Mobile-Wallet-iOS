@@ -9,5 +9,5 @@
 import Foundation
 
 protocol WalletInteface: UIInterface {
-    func reloadWebView(html: String)
+    func reload()
 }
