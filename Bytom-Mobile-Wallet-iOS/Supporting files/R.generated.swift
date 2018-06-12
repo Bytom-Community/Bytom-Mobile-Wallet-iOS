@@ -428,13 +428,6 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct welcome: Rswift.StoryboardResourceType {
-      let bundle = R.hostingBundle
-      let name = "Welcome"
-      
-      fileprivate init() {}
-    }
-    
     fileprivate init() {}
   }
   
