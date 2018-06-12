@@ -13,4 +13,6 @@ target 'Bytom-Mobile-Wallet-iOS' do
   pod 'Swinject'
   pod 'DynamicColor'
   pod 'IQKeyboardManagerSwift'
+  pod 'SnapKit'
+  pod 'SwiftForms'
 end
