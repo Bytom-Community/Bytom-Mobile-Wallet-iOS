@@ -11,7 +11,8 @@ import WebKit
 
 class WalletVC: UIViewController {
     private let controller = IocContainer.resolve(WalletController.self)
-
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
@@ -20,6 +21,9 @@ class WalletVC: UIViewController {
         let statusBarBackgroundView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: view.bounds.width, height: UIApplication.shared.statusBarFrame.height))
         statusBarBackgroundView.backgroundColor = Colors.backgroundColor
         view.addSubview(statusBarBackgroundView)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +34,29 @@ class WalletVC: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         UIApplication.shared.statusBarStyle = .default
+    }
+    
+    @IBAction func memuClick(_ sender: UIButton) {
+        let rootVC = UIApplication.shared.keyWindow?.rootViewController
+        let vc = R.storyboard.wallet.switchWalletVC()
+        vc?.modalPresentationStyle = .overCurrentContext
+        rootVC?.definesPresentationContext = true
+        rootVC?.present(vc!, animated: false, completion: nil)
+    }
+}
+
+extension WalletVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TokenCell.ID, for: indexPath)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
 }
 

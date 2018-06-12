@@ -240,8 +240,13 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 0 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `SwitchWalletCell`.
+    static let switchWalletCell: Rswift.ReuseIdentifier<SwitchWalletCell> = Rswift.ReuseIdentifier(identifier: "SwitchWalletCell")
+    /// Reuse identifier `TokenCell`.
+    static let tokenCell: Rswift.ReuseIdentifier<TokenCell> = Rswift.ReuseIdentifier(identifier: "TokenCell")
+    
     fileprivate init() {}
   }
   
@@ -390,10 +395,21 @@ struct _R: Rswift.Validatable {
       
       let bundle = R.hostingBundle
       let name = "Wallet"
+      let switchWalletVC = StoryboardViewControllerResource<SwitchWalletVC>(identifier: "SwitchWalletVC")
+      
+      func switchWalletVC(_: Void = ()) -> SwitchWalletVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: switchWalletVC)
+      }
       
       static func validate() throws {
+        if UIKit.UIImage(named: "menu") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'menu' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "currency") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'currency' is used in storyboard 'Wallet', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "logo") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'logo' is used in storyboard 'Wallet', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "scan_gray") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'scan_gray' is used in storyboard 'Wallet', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "qrcode_darkgray") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'qrcode_darkgray' is used in storyboard 'Wallet', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "transfer") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'transfer' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "currency_select") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'currency_select' is used in storyboard 'Wallet', but couldn't be loaded.") }
+        if _R.storyboard.wallet().switchWalletVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'switchWalletVC' could not be loaded from storyboard 'Wallet' as 'SwitchWalletVC'.") }
       }
       
       fileprivate init() {}
