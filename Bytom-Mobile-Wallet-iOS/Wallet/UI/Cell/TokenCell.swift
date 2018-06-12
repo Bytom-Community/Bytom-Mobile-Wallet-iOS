@@ -9,7 +9,16 @@
 import UIKit
 
 class TokenCell: UITableViewCell {
-
+    @IBOutlet weak var tokenNameLb: UILabel!
+    @IBOutlet weak var tokenCountLb: UILabel!
+    @IBOutlet weak var costLb: UILabel!
+    
+    var asset = AssetsModel() {
+        didSet {
+            tokenCountLb.text = "\(asset.amount)"
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

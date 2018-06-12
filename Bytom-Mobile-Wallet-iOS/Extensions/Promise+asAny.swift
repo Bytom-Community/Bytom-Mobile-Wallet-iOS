@@ -17,6 +17,12 @@ extension Promise {
             try JSONDecoder().decode(T.self, from: ($0 as? Result)?.data ?? Data())
         }
     }
+    
+    func asObject<T: Codable>() -> Promise<[T]> {
+        return map {
+            try JSONDecoder().decode([T].self, from: ($0 as? Result)?.data ?? Data())
+        }
+    }
 
     func asString() -> Promise<String> {
         return map {

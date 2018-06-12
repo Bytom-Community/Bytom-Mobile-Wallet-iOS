@@ -47,21 +47,22 @@ class WalletVC: UIViewController {
 
 extension WalletVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return controller.row
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TokenCell.ID, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: TokenCell.ID, for: indexPath) as! TokenCell
+        cell.asset = controller.asset(row: indexPath.row)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        print(controller.asset(row: indexPath.row))
     }
 }
 
 extension WalletVC: WalletInteface {
-    func reloadWebView(html: String) {
-
+    func reload() {
+        tableView.reloadData()
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 import PromiseKit
 
 struct WalletRepository {
-    func bytom() -> Promise<String> {
-        return URLSession.shared.GET("https://bytom.io/").asString()
+    func getListAssets(address: String) -> Promise<GetAssetsRequest> {
+        return URLSession.shared.POST(NetWorks.api + "list-assets", json: ["address":address]).asObject()
     }
 }

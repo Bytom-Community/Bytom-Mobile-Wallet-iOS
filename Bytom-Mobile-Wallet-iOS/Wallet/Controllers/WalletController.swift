@@ -12,6 +12,7 @@ import PromiseKit
 class WalletController {
     private weak var interface: WalletInteface!
     private let walletRepo: WalletRepository
+    private var assets = [AssetsModel]()
     
     init(walletRepo: WalletRepository) {
         self.walletRepo = walletRepo
@@ -24,13 +25,21 @@ class WalletController {
     
     private func loadBytom() {
         self.interface.showActivityIndicator()
-        self.walletRepo.bytom()
-            .done { html -> Void in
-                self.interface.reloadWebView(html: html)
+        self.walletRepo.getListAssets(address: "BTMAddress").done { (assetsRequest) in
+                self.assets = assetsRequest.assets
+                self.interface.reload()
             }.ensure {
                 self.interface.hideActivityIndicator()
             }.catch { error in
                 print(error)
         }
+    }
+    
+    var row: Int {
+        return assets.count
+    }
+    
+    func asset(row: Int) -> AssetsModel {
+        return assets[row]
     }
 }
