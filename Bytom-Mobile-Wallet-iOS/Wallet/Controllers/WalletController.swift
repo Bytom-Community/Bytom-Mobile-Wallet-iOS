@@ -20,10 +20,10 @@ class WalletController {
     
     func bindInterface(interface: WalletInteface) {
         self.interface = interface
-        loadBytom()
+        getListAssets()
     }
     
-    private func loadBytom() {
+    private func getListAssets() {
         self.interface.showActivityIndicator()
         self.walletRepo.getListAssets(address: "BTMAddress").done { (assetsRequest) in
                 self.assets = assetsRequest.assets
