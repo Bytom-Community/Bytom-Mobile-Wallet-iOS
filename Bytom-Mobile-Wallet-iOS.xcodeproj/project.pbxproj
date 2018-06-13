@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		436AD2AA20D0374B00298C59 /* WalletManage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 436AD2A420D0374A00298C59 /* WalletManage.storyboard */; };
+		436AD2AC20D0F12400298C59 /* WalletManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AD2AB20D0F12400298C59 /* WalletManageVC.swift */; };
+		436AD2AE20D0F1ED00298C59 /* WalletDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AD2AD20D0F1ED00298C59 /* WalletDetailsVC.swift */; };
+		436AD2B020D0F2AE00298C59 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AD2AF20D0F2AE00298C59 /* ChangePasswordVC.swift */; };
+		436AD2B220D0F2E300298C59 /* BackupWalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AD2B120D0F2E300298C59 /* BackupWalletVC.swift */; };
+		436AD2B420D0F30700298C59 /* CreateWalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AD2B320D0F30700298C59 /* CreateWalletVC.swift */; };
+		436AD2B620D0F32600298C59 /* ImportWalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AD2B520D0F32600298C59 /* ImportWalletVC.swift */; };
+		436AD2B920D0FDDA00298C59 /* WalletManageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AD2B820D0FDDA00298C59 /* WalletManageCell.swift */; };
 		57D43ED720CE3CAF009DC827 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D43ED620CE3CAF009DC827 /* MeVC.swift */; };
 		57D43EDC20CE4179009DC827 /* MeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D43EDB20CE4179009DC827 /* MeHeaderView.swift */; };
 		57D43EE020CE60CB009DC827 /* UIDevices+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D43EDF20CE60CB009DC827 /* UIDevices+Extension.swift */; };
@@ -72,6 +79,13 @@
 
 /* Begin PBXFileReference section */
 		436AD2A420D0374A00298C59 /* WalletManage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WalletManage.storyboard; sourceTree = "<group>"; };
+		436AD2AB20D0F12400298C59 /* WalletManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManageVC.swift; sourceTree = "<group>"; };
+		436AD2AD20D0F1ED00298C59 /* WalletDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailsVC.swift; sourceTree = "<group>"; };
+		436AD2AF20D0F2AE00298C59 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		436AD2B120D0F2E300298C59 /* BackupWalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupWalletVC.swift; sourceTree = "<group>"; };
+		436AD2B320D0F30700298C59 /* CreateWalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletVC.swift; sourceTree = "<group>"; };
+		436AD2B520D0F32600298C59 /* ImportWalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportWalletVC.swift; sourceTree = "<group>"; };
+		436AD2B820D0FDDA00298C59 /* WalletManageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManageCell.swift; sourceTree = "<group>"; };
 		57D43ED620CE3CAF009DC827 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		57D43EDB20CE4179009DC827 /* MeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeHeaderView.swift; sourceTree = "<group>"; };
 		57D43EDF20CE60CB009DC827 /* UIDevices+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevices+Extension.swift"; sourceTree = "<group>"; };
@@ -176,7 +190,14 @@
 		436AD2A320D0374A00298C59 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				436AD2B720D0FDBC00298C59 /* Cell */,
 				436AD2A420D0374A00298C59 /* WalletManage.storyboard */,
+				436AD2AB20D0F12400298C59 /* WalletManageVC.swift */,
+				436AD2AD20D0F1ED00298C59 /* WalletDetailsVC.swift */,
+				436AD2B320D0F30700298C59 /* CreateWalletVC.swift */,
+				436AD2B520D0F32600298C59 /* ImportWalletVC.swift */,
+				436AD2AF20D0F2AE00298C59 /* ChangePasswordVC.swift */,
+				436AD2B120D0F2E300298C59 /* BackupWalletVC.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -214,6 +235,14 @@
 			children = (
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		436AD2B720D0FDBC00298C59 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				436AD2B820D0FDDA00298C59 /* WalletManageCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		556E07F9056CB8AF5A2F9368 /* Frameworks */ = {
@@ -876,6 +905,7 @@
 				57D43ED720CE3CAF009DC827 /* MeVC.swift in Sources */,
 				FC4AB52420D02D43003B6033 /* GetAssetsRequest.swift in Sources */,
 				FC4C76CC20BD953600E930B5 /* Promise+asAny.swift in Sources */,
+				436AD2B920D0FDDA00298C59 /* WalletManageCell.swift in Sources */,
 				FCE47D7F20BEF2A400D380FB /* WalletRepository.swift in Sources */,
 				FC1EE84A20BC51B300A9CD84 /* AppDelegate.swift in Sources */,
 				FCE47D6B20BEDC7500D380FB /* IocContainer.swift in Sources */,
@@ -896,15 +926,21 @@
 				FCE47D7B20BEE9A700D380FB /* WalletInteface.swift in Sources */,
 				FC1EE86C20BC606300A9CD84 /* R.generated.swift in Sources */,
 				FCE47D7D20BEEA2B00D380FB /* WalletController.swift in Sources */,
+				436AD2B220D0F2E300298C59 /* BackupWalletVC.swift in Sources */,
 				FCE47D7120BEE03500D380FB /* WalletIocContainer.swift in Sources */,
 				FC1EE87320BC656900A9CD84 /* BrowserVC.swift in Sources */,
 				FCE47D7720BEE0A100D380FB /* MeIocContainer.swift in Sources */,
+				436AD2AE20D0F1ED00298C59 /* WalletDetailsVC.swift in Sources */,
+				436AD2B420D0F30700298C59 /* CreateWalletVC.swift in Sources */,
 				FC4C76CE20BDB8B700E930B5 /* UIImageView+URL.swift in Sources */,
+				436AD2B620D0F32600298C59 /* ImportWalletVC.swift in Sources */,
 				FC4AB51D20D02480003B6033 /* SwitchWalletVC.swift in Sources */,
 				FC4AB51B20D02479003B6033 /* SwitchWalletCell.swift in Sources */,
 				FCE47D6E20BEDD7E00D380FB /* WelcomeIocContainer.swift in Sources */,
 				FCE47D6920BEDC2500D380FB /* Engine.swift in Sources */,
+				436AD2AC20D0F12400298C59 /* WalletManageVC.swift in Sources */,
 				FCE47D7920BEE89500D380FB /* WalletVC.swift in Sources */,
+				436AD2B020D0F2AE00298C59 /* ChangePasswordVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

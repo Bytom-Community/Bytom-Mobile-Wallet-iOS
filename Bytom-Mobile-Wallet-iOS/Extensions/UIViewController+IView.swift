@@ -29,4 +29,22 @@ extension UIViewController: UIInterface {
     func openBrowserVC(title: String?, url: URL) {
         navigationController?.pushViewController(BrowserVC.init(title: title, url: url), animated: true)
     }
+    
+    typealias ToastCallBack = ()->Void
+    func showSuccessToast(_ string: String, _ callBack: ToastCallBack? = nil ) {
+        // TODO: add Success image
+        view.makeToast(string, duration: 1.5, position: .center, title: nil, image: nil, style: ToastManager.shared.style) { _ in
+            callBack?()
+        }
+    }
+    
+    func showErrorToast(_ string: String, _ callBack: ToastCallBack? = nil ) {
+        // TODO: add Error image
+        view.makeToast(string, duration: 1.5, position: .center, title: nil, image: nil, style: ToastManager.shared.style) { _ in
+            callBack?()
+        }
+    }
 }
+
+
+

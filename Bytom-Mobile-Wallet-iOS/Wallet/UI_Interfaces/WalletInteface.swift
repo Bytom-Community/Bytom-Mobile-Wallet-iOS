@@ -11,3 +11,4 @@ import Foundation
 protocol WalletInteface: UIInterface {
     func reload()
 }
+

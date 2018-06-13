@@ -22,12 +22,15 @@ class WelcomeVC: UIViewController {
     }
     
     @IBAction func createClick(_ sender: UIButton) {
-        let vc = R.storyboard.welcome.testVC()
+        // let vc = R.storyboard.walletManage.createWalletVC()
+        // test jump
+        let vc = R.storyboard.walletManage.walletManageVC()
         navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func importClick(_ sender: UIButton) {
-        
+        let vc = R.storyboard.walletManage.importWalletVC()
+        navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func mainClick(_ sender: UIButton) {
