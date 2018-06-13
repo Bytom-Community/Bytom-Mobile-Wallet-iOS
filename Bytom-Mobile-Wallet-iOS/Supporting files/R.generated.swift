@@ -255,7 +255,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
@@ -265,6 +265,8 @@ struct R: Rswift.Validatable {
     static let me = _R.storyboard.me()
     /// Storyboard `Trade`.
     static let trade = _R.storyboard.trade()
+    /// Storyboard `WalletManage`.
+    static let walletManage = _R.storyboard.walletManage()
     /// Storyboard `Wallet`.
     static let wallet = _R.storyboard.wallet()
     /// Storyboard `Welcome`.
@@ -293,6 +295,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Wallet", bundle: ...)`
     static func wallet(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.wallet)
+    }
+    
+    /// `UIStoryboard(name: "WalletManage", bundle: ...)`
+    static func walletManage(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.walletManage)
     }
     
     /// `UIStoryboard(name: "Welcome", bundle: ...)`
@@ -333,9 +340,10 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try main.validate()
-      try wallet.validate()
-      try me.validate()
       try welcome.validate()
+      try wallet.validate()
+      try walletManage.validate()
+      try me.validate()
     }
     
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
@@ -374,8 +382,12 @@ struct _R: Rswift.Validatable {
       let name = "Me"
       
       static func validate() throws {
+        if UIKit.UIImage(named: "info") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'info' is used in storyboard 'Me', but couldn't be loaded.") }
         if UIKit.UIImage(named: "me_select") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'me_select' is used in storyboard 'Me', but couldn't be loaded.") }
         if UIKit.UIImage(named: "me") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'me' is used in storyboard 'Me', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "node") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'node' is used in storyboard 'Me', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "legal_tender") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'legal_tender' is used in storyboard 'Me', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "share") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'share' is used in storyboard 'Me', but couldn't be loaded.") }
       }
       
       fileprivate init() {}
@@ -410,6 +422,19 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "transfer") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'transfer' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "currency_select") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'currency_select' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if _R.storyboard.wallet().switchWalletVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'switchWalletVC' could not be loaded from storyboard 'Wallet' as 'SwitchWalletVC'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct walletManage: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
+      
+      let bundle = R.hostingBundle
+      let name = "WalletManage"
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "wallet_darkgray") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'wallet_darkgray' is used in storyboard 'WalletManage', but couldn't be loaded.") }
       }
       
       fileprivate init() {}

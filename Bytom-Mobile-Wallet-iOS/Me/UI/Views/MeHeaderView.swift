@@ -10,65 +10,29 @@ import UIKit
 import SnapKit
 
 class MeHeaderView: UIView {
-    
-    var titleLB : UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.textColor = UIColor.white
-        label.font = UIFont.systemFont(ofSize: 18)
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    
-    var walletBtn : UIButton = UIButton()
-    var recordBtn : UIButton = UIButton()
+   
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        setupUI()
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+    }
+    
+    func setupUI(){
         
-        titleLB.text = "我"
-        addSubview(titleLB)
-        titleLB.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(0)
-            make.right.equalToSuperview().offset(0)
-            if !UIDevice.current.isX() {
-                make.top.equalToSuperview().offset(33)
-            }else{
-                make.top.equalToSuperview().offset(13)
-            }
-            make.height.equalTo(20)
-        }
+        let walletBtn = viewWithTag(1000) as! UIButton
+        let recordBtn = viewWithTag(2000) as! UIButton
 
-        walletBtn.frame = CGRect(x: 0, y: 0, width: 170, height: 170)
         walletBtn.set(image: R.image.wallet_white(), title: "钱包", titlePosition: UIViewContentMode.bottom, additionalSpacing: 16, state: UIControlState.normal)
         walletBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
         walletBtn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        addSubview(walletBtn)
-        walletBtn.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(0)
-            make.centerY.equalToSuperview()
-            make.width.height.equalTo(170)
-        }
 
-        recordBtn.frame = CGRect(x: 0, y: 0, width: 170, height: 170)
         recordBtn.set(image: R.image.record(), title: "交易记录", titlePosition: UIViewContentMode.bottom, additionalSpacing: 16, state: UIControlState.normal)
         recordBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
         recordBtn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        addSubview(recordBtn)
-        recordBtn.snp.makeConstraints { (make) in
-            make.right.equalToSuperview().offset(0)
-            make.centerY.equalToSuperview()
-            make.width.height.equalTo(170)
-        }
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    
 }
 
 extension UIButton {
