@@ -240,12 +240,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `SwitchWalletCell`.
     static let switchWalletCell: Rswift.ReuseIdentifier<SwitchWalletCell> = Rswift.ReuseIdentifier(identifier: "SwitchWalletCell")
     /// Reuse identifier `TokenCell`.
     static let tokenCell: Rswift.ReuseIdentifier<TokenCell> = Rswift.ReuseIdentifier(identifier: "TokenCell")
+    /// Reuse identifier `WalletManageCell`.
+    static let walletManageCell: Rswift.ReuseIdentifier<WalletManageCell> = Rswift.ReuseIdentifier(identifier: "WalletManageCell")
     
     fileprivate init() {}
   }
@@ -255,7 +257,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
@@ -265,6 +267,8 @@ struct R: Rswift.Validatable {
     static let me = _R.storyboard.me()
     /// Storyboard `Trade`.
     static let trade = _R.storyboard.trade()
+    /// Storyboard `WalletManage`.
+    static let walletManage = _R.storyboard.walletManage()
     /// Storyboard `Wallet`.
     static let wallet = _R.storyboard.wallet()
     /// Storyboard `Welcome`.
@@ -293,6 +297,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Wallet", bundle: ...)`
     static func wallet(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.wallet)
+    }
+    
+    /// `UIStoryboard(name: "WalletManage", bundle: ...)`
+    static func walletManage(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.walletManage)
     }
     
     /// `UIStoryboard(name: "Welcome", bundle: ...)`
@@ -333,9 +342,10 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try main.validate()
-      try wallet.validate()
-      try me.validate()
       try welcome.validate()
+      try wallet.validate()
+      try walletManage.validate()
+      try me.validate()
     }
     
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
@@ -374,8 +384,12 @@ struct _R: Rswift.Validatable {
       let name = "Me"
       
       static func validate() throws {
+        if UIKit.UIImage(named: "info") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'info' is used in storyboard 'Me', but couldn't be loaded.") }
         if UIKit.UIImage(named: "me_select") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'me_select' is used in storyboard 'Me', but couldn't be loaded.") }
         if UIKit.UIImage(named: "me") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'me' is used in storyboard 'Me', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "node") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'node' is used in storyboard 'Me', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "legal_tender") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'legal_tender' is used in storyboard 'Me', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "share") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'share' is used in storyboard 'Me', but couldn't be loaded.") }
       }
       
       fileprivate init() {}
@@ -410,6 +424,55 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "transfer") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'transfer' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "currency_select") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'currency_select' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if _R.storyboard.wallet().switchWalletVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'switchWalletVC' could not be loaded from storyboard 'Wallet' as 'SwitchWalletVC'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct walletManage: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
+      
+      let backupWalletVC = StoryboardViewControllerResource<BackupWalletVC>(identifier: "BackupWalletVC")
+      let bundle = R.hostingBundle
+      let changePasswordVC = StoryboardViewControllerResource<ChangePasswordVC>(identifier: "ChangePasswordVC")
+      let createWalletVC = StoryboardViewControllerResource<CreateWalletVC>(identifier: "CreateWalletVC")
+      let importWalletVC = StoryboardViewControllerResource<ImportWalletVC>(identifier: "ImportWalletVC")
+      let name = "WalletManage"
+      let walletDetailsVC = StoryboardViewControllerResource<WalletDetailsVC>(identifier: "WalletDetailsVC")
+      let walletManageVC = StoryboardViewControllerResource<WalletManageVC>(identifier: "WalletManageVC")
+      
+      func backupWalletVC(_: Void = ()) -> BackupWalletVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: backupWalletVC)
+      }
+      
+      func changePasswordVC(_: Void = ()) -> ChangePasswordVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: changePasswordVC)
+      }
+      
+      func createWalletVC(_: Void = ()) -> CreateWalletVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: createWalletVC)
+      }
+      
+      func importWalletVC(_: Void = ()) -> ImportWalletVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: importWalletVC)
+      }
+      
+      func walletDetailsVC(_: Void = ()) -> WalletDetailsVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: walletDetailsVC)
+      }
+      
+      func walletManageVC(_: Void = ()) -> WalletManageVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: walletManageVC)
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "wallet_darkgray") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'wallet_darkgray' is used in storyboard 'WalletManage', but couldn't be loaded.") }
+        if _R.storyboard.walletManage().walletManageVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'walletManageVC' could not be loaded from storyboard 'WalletManage' as 'WalletManageVC'.") }
+        if _R.storyboard.walletManage().importWalletVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'importWalletVC' could not be loaded from storyboard 'WalletManage' as 'ImportWalletVC'.") }
+        if _R.storyboard.walletManage().backupWalletVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'backupWalletVC' could not be loaded from storyboard 'WalletManage' as 'BackupWalletVC'.") }
+        if _R.storyboard.walletManage().walletDetailsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'walletDetailsVC' could not be loaded from storyboard 'WalletManage' as 'WalletDetailsVC'.") }
+        if _R.storyboard.walletManage().changePasswordVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'changePasswordVC' could not be loaded from storyboard 'WalletManage' as 'ChangePasswordVC'.") }
+        if _R.storyboard.walletManage().createWalletVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createWalletVC' could not be loaded from storyboard 'WalletManage' as 'CreateWalletVC'.") }
       }
       
       fileprivate init() {}

@@ -24,6 +24,8 @@ class WalletVC: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        controller.bindInterface(interface: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
