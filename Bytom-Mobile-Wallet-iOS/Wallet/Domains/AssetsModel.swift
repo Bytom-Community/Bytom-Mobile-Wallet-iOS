@@ -9,6 +9,6 @@
 import Foundation
 
 struct AssetsModel: Codable {
-    var address = ""
-    var amount = 0.0
+    var assetID = ""
+    var amount = ""
 }

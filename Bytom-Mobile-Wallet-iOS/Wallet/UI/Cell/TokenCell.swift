@@ -15,7 +15,7 @@ class TokenCell: UITableViewCell {
     
     var asset = AssetsModel() {
         didSet {
-            tokenCountLb.text = "\(asset.amount)"
+            tokenCountLb.text = asset.amount
         }
     }
     
