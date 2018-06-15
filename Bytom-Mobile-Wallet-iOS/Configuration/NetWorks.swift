@@ -9,6 +9,6 @@
 import Foundation
 
 class NetWorks {
-    static let host = "http://localhost:9889"
+    static let host = "http://39.104.187.161:9888"
     static let api = host + "/v1/"
 }

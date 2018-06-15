@@ -25,7 +25,8 @@ class WalletController {
     
     private func getListAssets() {
         self.interface.showActivityIndicator()
-        self.walletRepo.getListAssets(address: "BTMAddress").done { (assetsRequest) in
+        self.walletRepo.getListAssets(address:
+            "bm1q5p9d4gelfm4cc3zq3slj7vh2njx23ma2cf866j").done { (assetsRequest) in
                 self.assets = assetsRequest.assets
                 self.interface.reload()
             }.ensure {

@@ -1129,10 +1129,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CA52F8B10F3572976C28E8F0 /* Pods-Bytom-Mobile-Wallet-iOS.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4E9YB2PQ89;
+				DEVELOPMENT_TEAM = ZSV274MYFS;
 				INFOPLIST_FILE = "$(SRCROOT)/Bytom-Mobile-Wallet-iOS/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1152,10 +1153,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E9E00CCEDDF7EF84E14F385 /* Pods-Bytom-Mobile-Wallet-iOS.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4E9YB2PQ89;
+				DEVELOPMENT_TEAM = ZSV274MYFS;
 				INFOPLIST_FILE = "$(SRCROOT)/Bytom-Mobile-Wallet-iOS/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
