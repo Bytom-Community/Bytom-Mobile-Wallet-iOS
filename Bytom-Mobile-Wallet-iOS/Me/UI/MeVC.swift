@@ -13,17 +13,20 @@ class MeVC: UITableViewController {
     @IBOutlet weak var nodeLB: UILabel!
     @IBOutlet weak var iconLB: UILabel!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.isNavigationBarHidden = true
         fd_prefersNavigationBarHidden = true
 
         setStatusBarBg()
        
+        self.tableView.tableFooterView = UIView()
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
     }
@@ -34,7 +37,6 @@ class MeVC: UITableViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
         super.viewWillDisappear(animated)
         UIApplication.shared.statusBarStyle = .default
     }
@@ -51,7 +53,33 @@ class MeVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView .deselectRow(at: indexPath, animated: true)
+        
+        switch indexPath.row {
+        case 0:
+            let vc = R.storyboard.me.nodeVC()
+            navigationController?.pushViewController(vc!, animated: true)
+            break
+        case 1:
+            let vc = R.storyboard.me.iconVC()
+            vc?.resultClosure = {(_ string:String)->Void in
+                self.iconLB.text = string
+            }
+            navigationController?.pushViewController(vc!, animated: true)
+        case 2:
+            
+            break
+        default:
+            break
+        }
     }
+    
+    
+    @IBAction func recordOnClick(_ sender: UIButton) {
+        let vc = R.storyboard.me.recordVC()
+        navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
 }
 
 

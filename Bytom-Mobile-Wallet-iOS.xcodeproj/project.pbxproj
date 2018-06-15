@@ -15,6 +15,12 @@
 		436AD2B420D0F30700298C59 /* CreateWalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AD2B320D0F30700298C59 /* CreateWalletVC.swift */; };
 		436AD2B620D0F32600298C59 /* ImportWalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AD2B520D0F32600298C59 /* ImportWalletVC.swift */; };
 		436AD2B920D0FDDA00298C59 /* WalletManageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AD2B820D0FDDA00298C59 /* WalletManageCell.swift */; };
+		57A4D79120D265A0005CA862 /* RecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79020D265A0005CA862 /* RecordVC.swift */; };
+		57A4D79320D26FCD005CA862 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79220D26FCC005CA862 /* RecordCell.swift */; };
+		57A4D79520D2A45C005CA862 /* RecordSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79420D2A45C005CA862 /* RecordSectionHeaderView.swift */; };
+		57A4D79A20D2AA7A005CA862 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79920D2AA79005CA862 /* RecordModel.swift */; };
+		57A4D79C20D3707C005CA862 /* NodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79B20D3707C005CA862 /* NodeVC.swift */; };
+		57A4D79E20D3740D005CA862 /* IconVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79D20D3740D005CA862 /* IconVC.swift */; };
 		57D43ED720CE3CAF009DC827 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D43ED620CE3CAF009DC827 /* MeVC.swift */; };
 		57D43EDC20CE4179009DC827 /* MeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D43EDB20CE4179009DC827 /* MeHeaderView.swift */; };
 		57D43EE020CE60CB009DC827 /* UIDevices+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D43EDF20CE60CB009DC827 /* UIDevices+Extension.swift */; };
@@ -86,6 +92,12 @@
 		436AD2B320D0F30700298C59 /* CreateWalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletVC.swift; sourceTree = "<group>"; };
 		436AD2B520D0F32600298C59 /* ImportWalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportWalletVC.swift; sourceTree = "<group>"; };
 		436AD2B820D0FDDA00298C59 /* WalletManageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManageCell.swift; sourceTree = "<group>"; };
+		57A4D79020D265A0005CA862 /* RecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
+		57A4D79220D26FCC005CA862 /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
+		57A4D79420D2A45C005CA862 /* RecordSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSectionHeaderView.swift; sourceTree = "<group>"; };
+		57A4D79920D2AA79005CA862 /* RecordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
+		57A4D79B20D3707C005CA862 /* NodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeVC.swift; sourceTree = "<group>"; };
+		57A4D79D20D3740D005CA862 /* IconVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconVC.swift; sourceTree = "<group>"; };
 		57D43ED620CE3CAF009DC827 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		57D43EDB20CE4179009DC827 /* MeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeHeaderView.swift; sourceTree = "<group>"; };
 		57D43EDF20CE60CB009DC827 /* UIDevices+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevices+Extension.swift"; sourceTree = "<group>"; };
@@ -253,10 +265,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		57A4D79820D2AA79005CA862 /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				57A4D79920D2AA79005CA862 /* RecordModel.swift */,
+			);
+			path = Domains;
+			sourceTree = "<group>";
+		};
 		57D43EDA20CE4162009DC827 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				57D43EDB20CE4179009DC827 /* MeHeaderView.swift */,
+				57A4D79220D26FCC005CA862 /* RecordCell.swift */,
+				57A4D79420D2A45C005CA862 /* RecordSectionHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -318,7 +340,7 @@
 			children = (
 				FCE47D7520BEE0A100D380FB /* IocContainer */,
 				FC1EE84D20BC565C00A9CD84 /* UI */,
-				FC1EE84E20BC565C00A9CD84 /* Domains */,
+				57A4D79820D2AA79005CA862 /* Domains */,
 				FC1EE84F20BC565C00A9CD84 /* UI_Interfaces */,
 				FC1EE85020BC565C00A9CD84 /* Repositories */,
 				FC1EE85120BC565C00A9CD84 /* Controllers */,
@@ -332,15 +354,11 @@
 				57D43EDA20CE4162009DC827 /* Views */,
 				FCE47D6220BEDB4400D380FB /* Me.storyboard */,
 				57D43ED620CE3CAF009DC827 /* MeVC.swift */,
+				57A4D79020D265A0005CA862 /* RecordVC.swift */,
+				57A4D79B20D3707C005CA862 /* NodeVC.swift */,
+				57A4D79D20D3740D005CA862 /* IconVC.swift */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		FC1EE84E20BC565C00A9CD84 /* Domains */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domains;
 			sourceTree = "<group>";
 		};
 		FC1EE84F20BC565C00A9CD84 /* UI_Interfaces */ = {
@@ -902,6 +920,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57A4D79520D2A45C005CA862 /* RecordSectionHeaderView.swift in Sources */,
 				57D43ED720CE3CAF009DC827 /* MeVC.swift in Sources */,
 				FC4AB52420D02D43003B6033 /* GetAssetsRequest.swift in Sources */,
 				FC4C76CC20BD953600E930B5 /* Promise+asAny.swift in Sources */,
@@ -922,11 +941,15 @@
 				FC4C76D120BDBAD600E930B5 /* NetWorks.swift in Sources */,
 				FC4AB52220D02AD9003B6033 /* AssetsModel.swift in Sources */,
 				FC4AB51A20D02479003B6033 /* TokenCell.swift in Sources */,
+				57A4D79A20D2AA7A005CA862 /* RecordModel.swift in Sources */,
+				57A4D79C20D3707C005CA862 /* NodeVC.swift in Sources */,
+				57A4D79320D26FCD005CA862 /* RecordCell.swift in Sources */,
 				FC4C76C420BD927F00E930B5 /* UIViewController+IView.swift in Sources */,
 				FCE47D7B20BEE9A700D380FB /* WalletInteface.swift in Sources */,
 				FC1EE86C20BC606300A9CD84 /* R.generated.swift in Sources */,
 				FCE47D7D20BEEA2B00D380FB /* WalletController.swift in Sources */,
 				436AD2B220D0F2E300298C59 /* BackupWalletVC.swift in Sources */,
+				57A4D79120D265A0005CA862 /* RecordVC.swift in Sources */,
 				FCE47D7120BEE03500D380FB /* WalletIocContainer.swift in Sources */,
 				FC1EE87320BC656900A9CD84 /* BrowserVC.swift in Sources */,
 				FCE47D7720BEE0A100D380FB /* MeIocContainer.swift in Sources */,
@@ -941,6 +964,7 @@
 				436AD2AC20D0F12400298C59 /* WalletManageVC.swift in Sources */,
 				FCE47D7920BEE89500D380FB /* WalletVC.swift in Sources */,
 				436AD2B020D0F2AE00298C59 /* ChangePasswordVC.swift in Sources */,
+				57A4D79E20D3740D005CA862 /* IconVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
