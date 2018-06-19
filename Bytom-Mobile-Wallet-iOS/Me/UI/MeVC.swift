@@ -57,6 +57,9 @@ class MeVC: UITableViewController {
         switch indexPath.row {
         case 0:
             let vc = R.storyboard.me.nodeVC()
+            vc?.resultClosure = {(_ string:String)->Void in
+                
+            }
             navigationController?.pushViewController(vc!, animated: true)
             break
         case 1:
@@ -66,7 +69,28 @@ class MeVC: UITableViewController {
             }
             navigationController?.pushViewController(vc!, animated: true)
         case 2:
-            
+
+            let activityViewController = UIActivityViewController(
+                activityItems: ["https://bytom.io/"],
+                applicationActivities: nil)
+//            activityViewController.excludedActivityTypes =  [
+//                UIActivityType.postToTwitter,
+//                UIActivityType.postToFacebook,
+//                UIActivityType.postToWeibo,
+//                UIActivityType.message,
+//                UIActivityType.mail,
+//                UIActivityType.print,
+//                UIActivityType.copyToPasteboard,
+//                UIActivityType.assignToContact,
+//                UIActivityType.saveToCameraRoll,
+//                UIActivityType.addToReadingList,
+//                UIActivityType.postToFlickr,
+//                UIActivityType.postToVimeo,
+//                UIActivityType.postToTencentWeibo
+//            ]
+            self.navigationController?.present(activityViewController,
+                                                            animated: true,
+                                                            completion: nil)
             break
         default:
             break
@@ -76,6 +100,11 @@ class MeVC: UITableViewController {
     
     @IBAction func recordOnClick(_ sender: UIButton) {
         let vc = R.storyboard.me.recordVC()
+        navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    @IBAction func walletOnClick(_ sender: UIButton) {
+        let vc = R.storyboard.walletManage.walletManageVC()
         navigationController?.pushViewController(vc!, animated: true)
     }
     

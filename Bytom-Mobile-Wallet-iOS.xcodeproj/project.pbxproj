@@ -15,6 +15,7 @@
 		436AD2B420D0F30700298C59 /* CreateWalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AD2B320D0F30700298C59 /* CreateWalletVC.swift */; };
 		436AD2B620D0F32600298C59 /* ImportWalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AD2B520D0F32600298C59 /* ImportWalletVC.swift */; };
 		436AD2B920D0FDDA00298C59 /* WalletManageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AD2B820D0FDDA00298C59 /* WalletManageCell.swift */; };
+		5700163A20D3A8DA00DA68A5 /* RecordDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700163920D3A8DA00DA68A5 /* RecordDetailVC.swift */; };
 		57A4D79120D265A0005CA862 /* RecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79020D265A0005CA862 /* RecordVC.swift */; };
 		57A4D79320D26FCD005CA862 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79220D26FCC005CA862 /* RecordCell.swift */; };
 		57A4D79520D2A45C005CA862 /* RecordSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79420D2A45C005CA862 /* RecordSectionHeaderView.swift */; };
@@ -92,6 +93,7 @@
 		436AD2B320D0F30700298C59 /* CreateWalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletVC.swift; sourceTree = "<group>"; };
 		436AD2B520D0F32600298C59 /* ImportWalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportWalletVC.swift; sourceTree = "<group>"; };
 		436AD2B820D0FDDA00298C59 /* WalletManageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManageCell.swift; sourceTree = "<group>"; };
+		5700163920D3A8DA00DA68A5 /* RecordDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailVC.swift; sourceTree = "<group>"; };
 		57A4D79020D265A0005CA862 /* RecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
 		57A4D79220D26FCC005CA862 /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		57A4D79420D2A45C005CA862 /* RecordSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSectionHeaderView.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				FCE47D6220BEDB4400D380FB /* Me.storyboard */,
 				57D43ED620CE3CAF009DC827 /* MeVC.swift */,
 				57A4D79020D265A0005CA862 /* RecordVC.swift */,
+				5700163920D3A8DA00DA68A5 /* RecordDetailVC.swift */,
 				57A4D79B20D3707C005CA862 /* NodeVC.swift */,
 				57A4D79D20D3740D005CA862 /* IconVC.swift */,
 			);
@@ -952,6 +955,7 @@
 				57A4D79120D265A0005CA862 /* RecordVC.swift in Sources */,
 				FCE47D7120BEE03500D380FB /* WalletIocContainer.swift in Sources */,
 				FC1EE87320BC656900A9CD84 /* BrowserVC.swift in Sources */,
+				5700163A20D3A8DA00DA68A5 /* RecordDetailVC.swift in Sources */,
 				FCE47D7720BEE0A100D380FB /* MeIocContainer.swift in Sources */,
 				436AD2AE20D0F1ED00298C59 /* WalletDetailsVC.swift in Sources */,
 				436AD2B420D0F30700298C59 /* CreateWalletVC.swift in Sources */,
@@ -1133,7 +1137,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZSV274MYFS;
+				DEVELOPMENT_TEAM = 4E9YB2PQ89;
 				INFOPLIST_FILE = "$(SRCROOT)/Bytom-Mobile-Wallet-iOS/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1157,7 +1161,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZSV274MYFS;
+				DEVELOPMENT_TEAM = 4E9YB2PQ89;
 				INFOPLIST_FILE = "$(SRCROOT)/Bytom-Mobile-Wallet-iOS/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

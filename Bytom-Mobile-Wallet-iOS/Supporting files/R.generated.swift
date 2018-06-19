@@ -240,10 +240,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `RecordCell`.
     static let recordCell: Rswift.ReuseIdentifier<RecordCell> = Rswift.ReuseIdentifier(identifier: "RecordCell")
+    /// Reuse identifier `RecordDetailCellID`.
+    static let recordDetailCellID: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "RecordDetailCellID")
     /// Reuse identifier `SwitchWalletCell`.
     static let switchWalletCell: Rswift.ReuseIdentifier<SwitchWalletCell> = Rswift.ReuseIdentifier(identifier: "SwitchWalletCell")
     /// Reuse identifier `TokenCell`.
@@ -386,6 +388,7 @@ struct _R: Rswift.Validatable {
       let iconVC = StoryboardViewControllerResource<IconVC>(identifier: "IconVC")
       let name = "Me"
       let nodeVC = StoryboardViewControllerResource<NodeVC>(identifier: "NodeVC")
+      let recordDetailVC = StoryboardViewControllerResource<RecordDetailVC>(identifier: "RecordDetailVC")
       let recordVC = StoryboardViewControllerResource<RecordVC>(identifier: "RecordVC")
       
       func iconVC(_: Void = ()) -> IconVC? {
@@ -394,6 +397,10 @@ struct _R: Rswift.Validatable {
       
       func nodeVC(_: Void = ()) -> NodeVC? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: nodeVC)
+      }
+      
+      func recordDetailVC(_: Void = ()) -> RecordDetailVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: recordDetailVC)
       }
       
       func recordVC(_: Void = ()) -> RecordVC? {
@@ -408,6 +415,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "me_select") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'me_select' is used in storyboard 'Me', but couldn't be loaded.") }
         if UIKit.UIImage(named: "me") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'me' is used in storyboard 'Me', but couldn't be loaded.") }
         if UIKit.UIImage(named: "legal_tender") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'legal_tender' is used in storyboard 'Me', but couldn't be loaded.") }
+        if _R.storyboard.me().recordDetailVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'recordDetailVC' could not be loaded from storyboard 'Me' as 'RecordDetailVC'.") }
         if _R.storyboard.me().iconVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'iconVC' could not be loaded from storyboard 'Me' as 'IconVC'.") }
         if _R.storyboard.me().recordVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'recordVC' could not be loaded from storyboard 'Me' as 'RecordVC'.") }
         if _R.storyboard.me().nodeVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'nodeVC' could not be loaded from storyboard 'Me' as 'NodeVC'.") }
