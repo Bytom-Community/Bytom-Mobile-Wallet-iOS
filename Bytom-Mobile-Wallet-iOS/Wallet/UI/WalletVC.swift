@@ -55,12 +55,19 @@ class WalletVC: UIViewController {
     @IBAction func qrCodeScanClick(_ sender: UIButton) {
         let vc = QRCodeScannerVC()
         vc.hidesBottomBarWhenPushed = true
-        vc.resultClosure = { address in
+        vc.resultClosure = { [weak self] address in
             print(address)
-            // TODO: - push转账页面
-            
+            // TODO: -
+            let vc = R.storyboard.wallet.transferVC()!
+            vc.testAddress = address
+            self!.navigationController?.pushViewController(vc, animated: true)
         }
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func transferClick(_ sender: UIButton) {
+        let vc = R.storyboard.wallet.transferVC()
+        navigationController?.pushViewController(vc!, animated: true)
     }
 }
 

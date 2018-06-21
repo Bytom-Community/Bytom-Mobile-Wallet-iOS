@@ -17,6 +17,7 @@
 		436AD2B920D0FDDA00298C59 /* WalletManageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AD2B820D0FDDA00298C59 /* WalletManageCell.swift */; };
 		4388C51520DBE2B500998447 /* QRCodeScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388C51420DBE2B500998447 /* QRCodeScannerVC.swift */; };
 		4388C51720DBE2D300998447 /* WalletAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388C51620DBE2D300998447 /* WalletAddressVC.swift */; };
+		4388C51920DBEC6700998447 /* TransferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388C51820DBEC6700998447 /* TransferVC.swift */; };
 		5700163A20D3A8DA00DA68A5 /* RecordDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700163920D3A8DA00DA68A5 /* RecordDetailVC.swift */; };
 		57A4D79120D265A0005CA862 /* RecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79020D265A0005CA862 /* RecordVC.swift */; };
 		57A4D79320D26FCD005CA862 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79220D26FCC005CA862 /* RecordCell.swift */; };
@@ -97,6 +98,7 @@
 		436AD2B820D0FDDA00298C59 /* WalletManageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManageCell.swift; sourceTree = "<group>"; };
 		4388C51420DBE2B500998447 /* QRCodeScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerVC.swift; sourceTree = "<group>"; };
 		4388C51620DBE2D300998447 /* WalletAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAddressVC.swift; sourceTree = "<group>"; };
+		4388C51820DBEC6700998447 /* TransferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferVC.swift; sourceTree = "<group>"; };
 		5700163920D3A8DA00DA68A5 /* RecordDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailVC.swift; sourceTree = "<group>"; };
 		57A4D79020D265A0005CA862 /* RecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
 		57A4D79220D26FCC005CA862 /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 				FCE47D7820BEE89500D380FB /* WalletVC.swift */,
 				4388C51420DBE2B500998447 /* QRCodeScannerVC.swift */,
 				4388C51620DBE2D300998447 /* WalletAddressVC.swift */,
+				4388C51820DBEC6700998447 /* TransferVC.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -955,6 +958,7 @@
 				FC4AB52220D02AD9003B6033 /* AssetsModel.swift in Sources */,
 				FC4AB51A20D02479003B6033 /* TokenCell.swift in Sources */,
 				57A4D79A20D2AA7A005CA862 /* RecordModel.swift in Sources */,
+				4388C51920DBEC6700998447 /* TransferVC.swift in Sources */,
 				57A4D79C20D3707C005CA862 /* NodeVC.swift in Sources */,
 				57A4D79320D26FCD005CA862 /* RecordCell.swift in Sources */,
 				FC4C76C420BD927F00E930B5 /* UIViewController+IView.swift in Sources */,
