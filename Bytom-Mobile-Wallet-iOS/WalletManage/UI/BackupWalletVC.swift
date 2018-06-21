@@ -20,7 +20,9 @@ class BackupWalletVC: UITableViewController {
     
     @IBAction func copyClick(_ sender: UIButton) {
         UIPasteboard.general.string = keystoreTextView.text
-        self.showSuccessToast("复制成功")
+        self.showSuccessToast("复制成功") {
+            sender.isSelected = true
+        }
     }
 }
 

@@ -45,6 +45,23 @@ class WalletVC: UIViewController {
         rootVC?.definesPresentationContext = true
         rootVC?.present(vc!, animated: false, completion: nil)
     }
+    
+    @IBAction func addressClick(_ sender: UIButton) {
+        let vc = R.storyboard.wallet.walletAddressVC()!
+        vc.address = "bm57527c69a5587b45176265268d0f8c5958411d56"
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func qrCodeScanClick(_ sender: UIButton) {
+        let vc = QRCodeScannerVC()
+        vc.hidesBottomBarWhenPushed = true
+        vc.resultClosure = { address in
+            print(address)
+            // TODO: - push转账页面
+            
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension WalletVC: UITableViewDelegate, UITableViewDataSource {

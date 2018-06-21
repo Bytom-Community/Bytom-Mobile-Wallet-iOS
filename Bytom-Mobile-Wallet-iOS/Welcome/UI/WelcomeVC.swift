@@ -9,22 +9,16 @@
 import UIKit
 
 class WelcomeVC: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         fd_prefersNavigationBarHidden = true
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func createClick(_ sender: UIButton) {
-        // let vc = R.storyboard.walletManage.createWalletVC()
-        // test jump
-        let vc = R.storyboard.walletManage.walletManageVC()
+        let vc = R.storyboard.walletManage.createWalletVC()
         navigationController?.pushViewController(vc!, animated: true)
     }
     

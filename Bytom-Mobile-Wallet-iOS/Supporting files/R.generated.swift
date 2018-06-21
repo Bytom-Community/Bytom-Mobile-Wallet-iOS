@@ -40,7 +40,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 27 images.
+  /// This `R.image` struct is generated, and contains static references to 28 images.
   struct image {
     /// Image `arrow_down`.
     static let arrow_down = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrow_down")
@@ -74,6 +74,8 @@ struct R: Rswift.Validatable {
     static let qrcode_darkgray = Rswift.ImageResource(bundle: R.hostingBundle, name: "qrcode_darkgray")
     /// Image `qrcode_gray`.
     static let qrcode_gray = Rswift.ImageResource(bundle: R.hostingBundle, name: "qrcode_gray")
+    /// Image `qrcode_scan_line`.
+    static let qrcode_scan_line = Rswift.ImageResource(bundle: R.hostingBundle, name: "qrcode_scan_line")
     /// Image `record`.
     static let record = Rswift.ImageResource(bundle: R.hostingBundle, name: "record")
     /// Image `round_select`.
@@ -175,6 +177,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "qrcode_gray", bundle: ..., traitCollection: ...)`
     static func qrcode_gray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.qrcode_gray, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "qrcode_scan_line", bundle: ..., traitCollection: ...)`
+    static func qrcode_scan_line(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.qrcode_scan_line, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "record", bundle: ..., traitCollection: ...)`
@@ -439,9 +446,14 @@ struct _R: Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "Wallet"
       let switchWalletVC = StoryboardViewControllerResource<SwitchWalletVC>(identifier: "SwitchWalletVC")
+      let walletAddressVC = StoryboardViewControllerResource<WalletAddressVC>(identifier: "WalletAddressVC")
       
       func switchWalletVC(_: Void = ()) -> SwitchWalletVC? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: switchWalletVC)
+      }
+      
+      func walletAddressVC(_: Void = ()) -> WalletAddressVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: walletAddressVC)
       }
       
       static func validate() throws {
@@ -452,6 +464,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "qrcode_darkgray") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'qrcode_darkgray' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "transfer") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'transfer' is used in storyboard 'Wallet', but couldn't be loaded.") }
         if UIKit.UIImage(named: "currency_select") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'currency_select' is used in storyboard 'Wallet', but couldn't be loaded.") }
+        if _R.storyboard.wallet().walletAddressVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'walletAddressVC' could not be loaded from storyboard 'Wallet' as 'WalletAddressVC'.") }
         if _R.storyboard.wallet().switchWalletVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'switchWalletVC' could not be loaded from storyboard 'Wallet' as 'SwitchWalletVC'.") }
       }
       

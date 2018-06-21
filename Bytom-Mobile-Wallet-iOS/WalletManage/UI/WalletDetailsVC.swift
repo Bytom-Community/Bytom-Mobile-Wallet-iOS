@@ -12,6 +12,7 @@ class WalletDetailsVC: UITableViewController {
     
     
     @IBOutlet weak var publicAddressLabel: UILabel!
+    @IBOutlet weak var copyButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ class WalletDetailsVC: UITableViewController {
     
     
     enum CellClickType:Int {
-        case copyAdress = 0, alias, changePassword, backupWallet
+        case copyAddress = 0, alias, changePassword, backupWallet
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -31,10 +32,12 @@ class WalletDetailsVC: UITableViewController {
         }
         
         switch cellClick {
-        case .copyAdress:
+        case .copyAddress:
             
             UIPasteboard.general.string = publicAddressLabel.text
-            self.showSuccessToast("复制成功") 
+            self.showSuccessToast("复制成功") { [weak self] in
+                self!.copyButton.isSelected = true
+            }
         case .alias:
             
             let alertVC = UIAlertController(title: nil, message: "请输入钱包别名", preferredStyle: .alert)

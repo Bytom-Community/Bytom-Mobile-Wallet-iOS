@@ -31,16 +31,16 @@ extension UIViewController: UIInterface {
     }
     
     typealias ToastCallBack = ()->Void
-    func showSuccessToast(_ string: String, _ callBack: ToastCallBack? = nil ) {
+    func showSuccessToast(_ string: String, duration:TimeInterval = 1.0, _ callBack: ToastCallBack? = nil ) {
         // TODO: add Success image
-        view.makeToast(string, duration: 1.5, position: .center, title: nil, image: nil, style: ToastManager.shared.style) { _ in
+        view.makeToast(string, duration: duration, position: .center, title: nil, image: nil, style: ToastManager.shared.style) { _ in
             callBack?()
         }
     }
     
-    func showErrorToast(_ string: String, _ callBack: ToastCallBack? = nil ) {
+    func showErrorToast(_ string: String, duration:TimeInterval = 1.0, _ callBack: ToastCallBack? = nil ) {
         // TODO: add Error image
-        view.makeToast(string, duration: 1.5, position: .center, title: nil, image: nil, style: ToastManager.shared.style) { _ in
+        view.makeToast(string, duration: duration, position: .center, title: nil, image: nil, style: ToastManager.shared.style) { _ in
             callBack?()
         }
     }

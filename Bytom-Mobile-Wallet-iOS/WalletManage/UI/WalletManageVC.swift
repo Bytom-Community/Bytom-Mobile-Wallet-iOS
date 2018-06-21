@@ -53,7 +53,7 @@ extension WalletManageVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer {
-            tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+            tableView.deselectRow(at: indexPath, animated: true)
         }
         
         let vc = R.storyboard.walletManage.walletDetailsVC()

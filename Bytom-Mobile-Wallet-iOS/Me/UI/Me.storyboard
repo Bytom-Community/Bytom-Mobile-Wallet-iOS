@@ -16,7 +16,7 @@
             <objects>
                 <navigationController id="fsp-zx-ztC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" image="me" selectedImage="me_select" id="O5k-Qg-J99"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G66-tQ-ICK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="G66-tQ-ICK">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -128,7 +128,7 @@
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="Qi3-tM-ner" userLabel="我的" customClass="MeVC" customModule="Bytom_Mobile_Wallet_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="48" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MJw-H5-fHE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="UCc-jb-Cy1" customClass="MeHeaderView" customModule="Bytom_Mobile_Wallet_iOS" customModuleProvider="target">

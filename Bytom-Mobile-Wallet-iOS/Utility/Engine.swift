@@ -24,12 +24,17 @@ class Engine {
         UINavigationBar.appearance().titleTextAttributes = [
             NSAttributedStringKey.foregroundColor: Colors.blackColor
         ]
-        UIBarButtonItem.appearance().setTitleTextAttributes([
-            NSAttributedStringKey.foregroundColor: UIColor.clear
-            ], for: .normal)
-        UIBarButtonItem.appearance().setTitleTextAttributes([
-            NSAttributedStringKey.foregroundColor: UIColor.clear
-            ], for: .highlighted)
+        //        UIBarButtonItem.appearance().setTitleTextAttributes([
+        //            NSAttributedStringKey.foregroundColor: UIColor.clear
+        //            ], for: .normal)
+        //        UIBarButtonItem.appearance().setTitleTextAttributes([
+        //            NSAttributedStringKey.foregroundColor: UIColor.clear
+        //            ], for: .highlighted)
+        if #available(iOS 11, *) {
+            UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(-200, 0), for: .default)
+        } else {
+            UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), for: .default)
+        }
         UITabBar.appearance().barTintColor = Colors.whiteColor
         UITabBar.appearance().tintColor = Colors.mainColor
         
