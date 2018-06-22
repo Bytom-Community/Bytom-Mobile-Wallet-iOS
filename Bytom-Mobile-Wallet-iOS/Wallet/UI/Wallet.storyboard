@@ -386,6 +386,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="kzC-Sn-cYS">
+                            <rect key="frame" x="0.0" y="388" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZn-hL-ego">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <color key="backgroundColor" red="0.062745098039215685" green="0.76078431372549016" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" title="转账">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="transferClick:" destination="DFr-VQ-tak" eventType="touchUpInside" id="QH8-Rv-op1"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="jZn-hL-ego" firstAttribute="top" secondItem="kzC-Sn-cYS" secondAttribute="top" id="Os9-fh-39p"/>
+                                <constraint firstAttribute="trailing" secondItem="jZn-hL-ego" secondAttribute="trailing" id="Ss9-pj-8ak"/>
+                                <constraint firstItem="jZn-hL-ego" firstAttribute="leading" secondItem="kzC-Sn-cYS" secondAttribute="leading" id="VTf-MU-Sn2"/>
+                                <constraint firstAttribute="bottom" secondItem="jZn-hL-ego" secondAttribute="bottom" id="tpE-da-62g"/>
+                            </constraints>
+                        </view>
                         <sections>
                             <tableViewSection id="prS-bz-Qpj">
                                 <cells>
@@ -765,8 +787,17 @@
                             <outlet property="delegate" destination="DFr-VQ-tak" id="TOR-fK-AN3"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="转账" id="UxC-TX-fvc">
+                        <barButtonItem key="rightBarButtonItem" image="scan_gray" id="vQx-Bz-YOg">
+                            <color key="tintColor" red="0.11372549019607843" green="0.12941176470588234" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="qrCodeScanClick:" destination="DFr-VQ-tak" id="yTb-C3-PTv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="bottomView" destination="kzC-Sn-cYS" id="KQE-Ud-cIB"/>
                         <outlet property="customGasNumberTF" destination="LcW-Ws-V4J" id="sEq-Ze-SzY"/>
                         <outlet property="customGasView" destination="nq9-ai-aLQ" id="Oem-Dd-kFN"/>
                         <outlet property="numberTF" destination="L45-3P-aUe" id="qlq-fG-2mP"/>

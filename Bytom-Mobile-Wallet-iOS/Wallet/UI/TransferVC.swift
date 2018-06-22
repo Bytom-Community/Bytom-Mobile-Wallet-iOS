@@ -10,6 +10,9 @@ import UIKit
 
 class TransferVC: UITableViewController {
     
+    @IBOutlet weak var walletAddressTF: UITextField!
+    @IBOutlet weak var numberTF: UITextField!
+    @IBOutlet weak var remarkTF: UITextField!
     
     @IBOutlet weak var unitListView: UIView!
     @IBOutlet weak var unitListViewHeight: NSLayoutConstraint!
@@ -20,11 +23,11 @@ class TransferVC: UITableViewController {
     @IBOutlet weak var customGasView: UIView!
     @IBOutlet weak var customGasNumberTF: UITextField!
     
+    @IBOutlet weak var bottomView: UIView!
     
-    @IBOutlet weak var walletAddressTF: UITextField!
-    @IBOutlet weak var numberTF: UITextField!
-    @IBOutlet weak var remarkTF: UITextField!
-    
+    var bottomViewCenterY:CGFloat {
+        return tableView.bounds.height - bottomView.bounds.midY + tableView.contentOffset.y
+    }
     
     enum GasType:Int {
         case standard = 0, fast, custom
@@ -41,16 +44,17 @@ class TransferVC: UITableViewController {
         didSet {
             switch isExpandedUnitList {
             case true:
-                UIView.animate(withDuration: 0.5) {
+                UIView.animate(withDuration: 0.39) {
                     self.unitListView.isHidden = false
                     self.unitListViewHeight.constant = 74
                     self.view.layoutIfNeeded()
                 }
             case false:
-                UIView.animate(withDuration: 0.5) {
-                    self.unitListView.isHidden = true
+                UIView.animate(withDuration: 0.3, animations: {
                     self.unitListViewHeight.constant = 0
                     self.view.layoutIfNeeded()
+                }) { _ in
+                    self.unitListView.isHidden = true
                 }
             }
         }
@@ -61,14 +65,29 @@ class TransferVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initUIConfig()
+        // test
+        walletAddressTF.text = testAddress
+    }
+    
+   private func initUIConfig() {
         customGasView.isHidden = true
         unitListView.isHidden = true
         unitListViewHeight.constant = 0
         gasTypeButtons.forEach { $0.isSelected = $0.tag == 0 }
-        walletAddressTF.text = testAddress
-        
-        // TODO: - 扫描按钮、转账按钮
+        bottomView.alpha = 0
     }
+    
+    @IBAction func qrCodeScanClick(_ sender: UIBarButtonItem) {
+        let vc = QRCodeScannerVC()
+        vc.hidesBottomBarWhenPushed = true
+        vc.resultClosure = { [weak self] address in
+            self!.testAddress = address
+            self!.walletAddressTF.text = address
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     @IBAction func gasTypeBtnsClick(_ sender: UIButton) {
         gasTypeButtons.forEach{ $0.isSelected = $0.tag == sender.tag }
@@ -92,6 +111,31 @@ class TransferVC: UITableViewController {
         isExpandedUnitList = false
     }
     
+    @IBAction func transferClick(_ sender: UIButton) {
+        let alertVC = UIAlertController(title: nil, message: "请输入钱包密码", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+        alertVC.addTextField { $0.placeholder = "请输入钱包密码"}
+        alertVC.addAction(UIAlertAction(title: "确认", style: .destructive) { _ in
+            let password = alertVC.textFields!.first!.text ?? ""
+            print(password)
+        })
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        bottomView.center.y = bottomViewCenterY
+        UIView.animate(withDuration: 0.32) {
+             self.bottomView.alpha = 1
+             self.view.layoutIfNeeded()
+        }
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        bottomView.center.y = bottomViewCenterY
+    }
     
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         UIApplication.shared.keyWindow?.endEditing(true)
