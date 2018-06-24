@@ -24,7 +24,7 @@ class WalletVC: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
+        tableView.tableFooterView = UIView()
         controller.bindInterface(interface: self)
     }
     
@@ -33,8 +33,13 @@ class WalletVC: UIViewController {
         UIApplication.shared.statusBarStyle = .lightContent
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         UIApplication.shared.statusBarStyle = .default
     }
     
