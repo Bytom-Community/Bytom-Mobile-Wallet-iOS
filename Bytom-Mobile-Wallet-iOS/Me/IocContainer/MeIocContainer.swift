@@ -12,7 +12,8 @@ import Swinject
 class MeIocContainer {
     
     static func register(container: Container) {
-        
+        container.register(MeRepository.self) { _ in MeRepository() }
+        container.register(RecordController.self) { _ in RecordController(meRepo: container.resolve(MeRepository.self)! )}
     }
 }
 

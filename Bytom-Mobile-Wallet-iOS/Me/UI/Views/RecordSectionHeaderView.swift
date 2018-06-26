@@ -10,7 +10,7 @@ import UIKit
 
 class RecordSectionHeaderView: UITableViewHeaderFooterView {
     
-    var recordModel: RecordModel? {
+    var recordModel: TransactionsModel? {
         didSet {
             if (recordModel?.isExpanded)! {
                 directionImage.image = R.image.arrow_down()

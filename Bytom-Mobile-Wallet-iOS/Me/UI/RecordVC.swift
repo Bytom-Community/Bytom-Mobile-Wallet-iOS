@@ -9,17 +9,20 @@
 import UIKit
 
 class RecordVC: UITableViewController {
-    
-    fileprivate lazy var dataSource: [RecordModel]? = [RecordModel]()
+    private let controller = IocContainer.resolve(RecordController.self)
+
+    fileprivate lazy var dataSource: [TransactionsModel]? = [TransactionsModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        dataSource?.append(RecordModel())
-        dataSource?.append(RecordModel())
+        
+        dataSource?.append(TransactionsModel())
+        dataSource?.append(TransactionsModel())
 
         self.tableView.register(RecordSectionHeaderView.classForCoder(), forHeaderFooterViewReuseIdentifier: "RecordSectionHeaderView")
         self.tableView.tableFooterView = UIView()
+        
+        controller.bindInterface(interface: self)
     }
 
     // MARK: - Table view data source
@@ -37,7 +40,7 @@ class RecordVC: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return controller.section
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -45,7 +48,9 @@ class RecordVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (dataSource![section].isExpanded != false) ? 2 : 0
+        return (dataSource![section].isExpanded != false) ?  2: 0
+        
+//        return controller.transaction(section: section)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,6 +67,12 @@ class RecordVC: UITableViewController {
         navigationController?.pushViewController(vc!, animated: true)
         
     }
-
-
 }
+
+
+extension RecordVC: RecordInterface {
+    func reload() {
+        tableView.reloadData()
+    }
+}
+

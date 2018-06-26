@@ -19,10 +19,14 @@
 		4388C51720DBE2D300998447 /* WalletAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388C51620DBE2D300998447 /* WalletAddressVC.swift */; };
 		4388C51920DBEC6700998447 /* TransferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388C51820DBEC6700998447 /* TransferVC.swift */; };
 		5700163A20D3A8DA00DA68A5 /* RecordDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700163920D3A8DA00DA68A5 /* RecordDetailVC.swift */; };
+		573FF6DB20E084CB00F615E2 /* MeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573FF6D820E084CB00F615E2 /* MeRepository.swift */; };
+		573FF6DC20E084CB00F615E2 /* RecordInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573FF6DA20E084CB00F615E2 /* RecordInterface.swift */; };
+		573FF6DE20E084E100F615E2 /* RecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573FF6DD20E084E100F615E2 /* RecordController.swift */; };
+		573FF6E020E0869600F615E2 /* GetTransactionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573FF6DF20E0869600F615E2 /* GetTransactionsRequest.swift */; };
 		57A4D79120D265A0005CA862 /* RecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79020D265A0005CA862 /* RecordVC.swift */; };
 		57A4D79320D26FCD005CA862 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79220D26FCC005CA862 /* RecordCell.swift */; };
 		57A4D79520D2A45C005CA862 /* RecordSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79420D2A45C005CA862 /* RecordSectionHeaderView.swift */; };
-		57A4D79A20D2AA7A005CA862 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79920D2AA79005CA862 /* RecordModel.swift */; };
+		57A4D79A20D2AA7A005CA862 /* TransactionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79920D2AA79005CA862 /* TransactionsModel.swift */; };
 		57A4D79C20D3707C005CA862 /* NodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79B20D3707C005CA862 /* NodeVC.swift */; };
 		57A4D79E20D3740D005CA862 /* IconVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79D20D3740D005CA862 /* IconVC.swift */; };
 		57D43ED720CE3CAF009DC827 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D43ED620CE3CAF009DC827 /* MeVC.swift */; };
@@ -100,10 +104,14 @@
 		4388C51620DBE2D300998447 /* WalletAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAddressVC.swift; sourceTree = "<group>"; };
 		4388C51820DBEC6700998447 /* TransferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferVC.swift; sourceTree = "<group>"; };
 		5700163920D3A8DA00DA68A5 /* RecordDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailVC.swift; sourceTree = "<group>"; };
+		573FF6D820E084CB00F615E2 /* MeRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeRepository.swift; sourceTree = "<group>"; };
+		573FF6DA20E084CB00F615E2 /* RecordInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordInterface.swift; sourceTree = "<group>"; };
+		573FF6DD20E084E100F615E2 /* RecordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordController.swift; sourceTree = "<group>"; };
+		573FF6DF20E0869600F615E2 /* GetTransactionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsRequest.swift; sourceTree = "<group>"; };
 		57A4D79020D265A0005CA862 /* RecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
 		57A4D79220D26FCC005CA862 /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		57A4D79420D2A45C005CA862 /* RecordSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSectionHeaderView.swift; sourceTree = "<group>"; };
-		57A4D79920D2AA79005CA862 /* RecordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
+		57A4D79920D2AA79005CA862 /* TransactionsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsModel.swift; sourceTree = "<group>"; };
 		57A4D79B20D3707C005CA862 /* NodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeVC.swift; sourceTree = "<group>"; };
 		57A4D79D20D3740D005CA862 /* IconVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconVC.swift; sourceTree = "<group>"; };
 		57D43ED620CE3CAF009DC827 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
@@ -273,10 +281,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		573FF6D620E084CB00F615E2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				573FF6DD20E084E100F615E2 /* RecordController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		573FF6D720E084CB00F615E2 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				573FF6D820E084CB00F615E2 /* MeRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		573FF6D920E084CB00F615E2 /* UI_Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				573FF6DA20E084CB00F615E2 /* RecordInterface.swift */,
+			);
+			path = UI_Interfaces;
+			sourceTree = "<group>";
+		};
 		57A4D79820D2AA79005CA862 /* Domains */ = {
 			isa = PBXGroup;
 			children = (
-				57A4D79920D2AA79005CA862 /* RecordModel.swift */,
+				57A4D79920D2AA79005CA862 /* TransactionsModel.swift */,
+				573FF6DF20E0869600F615E2 /* GetTransactionsRequest.swift */,
 			);
 			path = Domains;
 			sourceTree = "<group>";
@@ -346,12 +379,12 @@
 		FC1EE84C20BC565C00A9CD84 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				573FF6D620E084CB00F615E2 /* Controllers */,
+				573FF6D720E084CB00F615E2 /* Repositories */,
+				573FF6D920E084CB00F615E2 /* UI_Interfaces */,
 				FCE47D7520BEE0A100D380FB /* IocContainer */,
 				FC1EE84D20BC565C00A9CD84 /* UI */,
 				57A4D79820D2AA79005CA862 /* Domains */,
-				FC1EE84F20BC565C00A9CD84 /* UI_Interfaces */,
-				FC1EE85020BC565C00A9CD84 /* Repositories */,
-				FC1EE85120BC565C00A9CD84 /* Controllers */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -368,27 +401,6 @@
 				57A4D79D20D3740D005CA862 /* IconVC.swift */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		FC1EE84F20BC565C00A9CD84 /* UI_Interfaces */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UI_Interfaces;
-			sourceTree = "<group>";
-		};
-		FC1EE85020BC565C00A9CD84 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		FC1EE85120BC565C00A9CD84 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		FC1EE85220BC565C00A9CD84 /* Welcome */ = {
@@ -936,10 +948,12 @@
 			files = (
 				57A4D79520D2A45C005CA862 /* RecordSectionHeaderView.swift in Sources */,
 				57D43ED720CE3CAF009DC827 /* MeVC.swift in Sources */,
+				573FF6DC20E084CB00F615E2 /* RecordInterface.swift in Sources */,
 				FC4AB52420D02D43003B6033 /* GetAssetsRequest.swift in Sources */,
 				FC4C76CC20BD953600E930B5 /* Promise+asAny.swift in Sources */,
 				436AD2B920D0FDDA00298C59 /* WalletManageCell.swift in Sources */,
 				FCE47D7F20BEF2A400D380FB /* WalletRepository.swift in Sources */,
+				573FF6DE20E084E100F615E2 /* RecordController.swift in Sources */,
 				FC1EE84A20BC51B300A9CD84 /* AppDelegate.swift in Sources */,
 				FCE47D6B20BEDC7500D380FB /* IocContainer.swift in Sources */,
 				4388C51720DBE2D300998447 /* WalletAddressVC.swift in Sources */,
@@ -957,10 +971,11 @@
 				FC4C76D120BDBAD600E930B5 /* NetWorks.swift in Sources */,
 				FC4AB52220D02AD9003B6033 /* AssetsModel.swift in Sources */,
 				FC4AB51A20D02479003B6033 /* TokenCell.swift in Sources */,
-				57A4D79A20D2AA7A005CA862 /* RecordModel.swift in Sources */,
+				57A4D79A20D2AA7A005CA862 /* TransactionsModel.swift in Sources */,
 				4388C51920DBEC6700998447 /* TransferVC.swift in Sources */,
 				57A4D79C20D3707C005CA862 /* NodeVC.swift in Sources */,
 				57A4D79320D26FCD005CA862 /* RecordCell.swift in Sources */,
+				573FF6DB20E084CB00F615E2 /* MeRepository.swift in Sources */,
 				FC4C76C420BD927F00E930B5 /* UIViewController+IView.swift in Sources */,
 				FCE47D7B20BEE9A700D380FB /* WalletInteface.swift in Sources */,
 				FC1EE86C20BC606300A9CD84 /* R.generated.swift in Sources */,
@@ -979,6 +994,7 @@
 				FC4AB51B20D02479003B6033 /* SwitchWalletCell.swift in Sources */,
 				FCE47D6E20BEDD7E00D380FB /* WelcomeIocContainer.swift in Sources */,
 				FCE47D6920BEDC2500D380FB /* Engine.swift in Sources */,
+				573FF6E020E0869600F615E2 /* GetTransactionsRequest.swift in Sources */,
 				436AD2AC20D0F12400298C59 /* WalletManageVC.swift in Sources */,
 				FCE47D7920BEE89500D380FB /* WalletVC.swift in Sources */,
 				436AD2B020D0F2AE00298C59 /* ChangePasswordVC.swift in Sources */,
