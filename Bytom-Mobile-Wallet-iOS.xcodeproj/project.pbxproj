@@ -19,6 +19,7 @@
 		4388C51720DBE2D300998447 /* WalletAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388C51620DBE2D300998447 /* WalletAddressVC.swift */; };
 		4388C51920DBEC6700998447 /* TransferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388C51820DBEC6700998447 /* TransferVC.swift */; };
 		5700163A20D3A8DA00DA68A5 /* RecordDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700163920D3A8DA00DA68A5 /* RecordDetailVC.swift */; };
+		5720602220EB411200A1400F /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5720602120EB411200A1400F /* RecordModel.swift */; };
 		573FF6DB20E084CB00F615E2 /* MeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573FF6D820E084CB00F615E2 /* MeRepository.swift */; };
 		573FF6DC20E084CB00F615E2 /* RecordInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573FF6DA20E084CB00F615E2 /* RecordInterface.swift */; };
 		573FF6DE20E084E100F615E2 /* RecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573FF6DD20E084E100F615E2 /* RecordController.swift */; };
@@ -104,6 +105,7 @@
 		4388C51620DBE2D300998447 /* WalletAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAddressVC.swift; sourceTree = "<group>"; };
 		4388C51820DBEC6700998447 /* TransferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferVC.swift; sourceTree = "<group>"; };
 		5700163920D3A8DA00DA68A5 /* RecordDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailVC.swift; sourceTree = "<group>"; };
+		5720602120EB411200A1400F /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
 		573FF6D820E084CB00F615E2 /* MeRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeRepository.swift; sourceTree = "<group>"; };
 		573FF6DA20E084CB00F615E2 /* RecordInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordInterface.swift; sourceTree = "<group>"; };
 		573FF6DD20E084E100F615E2 /* RecordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordController.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 			children = (
 				57A4D79920D2AA79005CA862 /* TransactionsModel.swift */,
 				573FF6DF20E0869600F615E2 /* GetTransactionsRequest.swift */,
+				5720602120EB411200A1400F /* RecordModel.swift */,
 			);
 			path = Domains;
 			sourceTree = "<group>";
@@ -948,6 +951,7 @@
 			files = (
 				57A4D79520D2A45C005CA862 /* RecordSectionHeaderView.swift in Sources */,
 				57D43ED720CE3CAF009DC827 /* MeVC.swift in Sources */,
+				5720602220EB411200A1400F /* RecordModel.swift in Sources */,
 				573FF6DC20E084CB00F615E2 /* RecordInterface.swift in Sources */,
 				FC4AB52420D02D43003B6033 /* GetAssetsRequest.swift in Sources */,
 				FC4C76CC20BD953600E930B5 /* Promise+asAny.swift in Sources */,

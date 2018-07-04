@@ -14,6 +14,65 @@ class RecordCell: UITableViewCell {
     @IBOutlet weak var tradeStatusLB: UILabel!
     @IBOutlet weak var tradeValueLB: UILabel!
     @IBOutlet weak var tradeTimeLB: UILabel!
+    @IBOutlet weak var opIV: UIImageView!
+    
+    var transaction = TransactionsModel() {
+        didSet {
+            
+            switch transaction.op {
+            case "send":
+                opIV.image = R.image.transfer_out()
+                
+                var address = ""
+                
+                if transaction.outputs.count > 0{
+                    
+                    for output in transaction.outputs{
+                        
+                        if output.position == 1{
+                            address = output.address
+                            break
+                        }
+                    }
+                    
+                    if address.isEmpty{
+                        address = transaction.outputs[0].address
+                    }
+                }
+                
+                btmAddressLB.text = address
+                
+                break
+            case "receive":
+                opIV.image = R.image.transfer_in()
+                
+                var address = ""
+
+                if transaction.inputs.count > 0{
+
+                    if address.isEmpty{
+                        address = transaction.inputs[0].address
+                    }
+                }
+
+                btmAddressLB.text = address
+
+                break
+            default:
+                opIV.image = nil
+                break
+            }
+
+            if Int(transaction.confirmation)! > 6{
+               tradeStatusLB.text = "交易成功"
+            }else{
+               tradeStatusLB.text = "\(transaction.confirmation)/6 确认中"
+            }
+            
+            tradeTimeLB.text = transaction.timestampToShow
+        }
+    }
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

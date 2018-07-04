@@ -9,6 +9,8 @@
 import UIKit
 
 class RecordDetailVC: UITableViewController {
+    
+    var transaction: TransactionsModel = TransactionsModel()
 
     fileprivate lazy var dataSource: [String] = ["交易状态","发送方","接收方","矿工费","备注","交易号","时间"]
 
@@ -40,11 +42,99 @@ class RecordDetailVC: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordDetailCellID", for: indexPath) as UITableViewCell
         
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        
         let titleLB = cell.viewWithTag(1000) as! UILabel
         let contentLB = cell.viewWithTag(2000) as! UILabel
         
         titleLB.text = dataSource[indexPath.row]
-        contentLB.text = "bmsdafasdffsadfsdafsadsafsadfsadfsdafsd"
+        
+        switch indexPath.row {
+        case 0:
+            if Int(self.transaction.confirmation)! <= 6 {
+                contentLB.text = "\(self.transaction.confirmation)/6 确认中"
+            }else{
+                contentLB.text = "交易成功"
+            }
+            break
+        case 1:
+            switch transaction.op {
+            case "send":
+                var address = ""
+                if transaction.inputs.count > 0{
+                    if address.isEmpty{
+                        address = transaction.inputs[0].address
+                    }
+                }
+                contentLB.text = address
+                break
+            case "receive":
+                var address = ""
+                if transaction.inputs.count > 0{
+                    if address.isEmpty{
+                        address = transaction.inputs[0].address
+                    }
+                }
+                contentLB.text = address
+                break
+            default:
+                break
+            }
+            break
+        case 2:
+            switch transaction.op {
+            case "send":
+                var address = ""
+                if transaction.outputs.count > 0{
+                    for output in transaction.outputs{
+                        if output.position == 1{
+                            address = output.address
+                            break
+                        }
+                    }
+                    if address.isEmpty{
+                        address = transaction.outputs[0].address
+                    }
+                }
+                contentLB.text = address
+
+                break
+            case "receive":
+                var address = ""
+                if transaction.outputs.count > 0{
+                    for output in transaction.outputs{
+                        if output.position == 1{
+                            address = output.address
+                            break
+                        }
+                    }
+                    if address.isEmpty{
+                        address = transaction.outputs[0].address
+                    }
+                }
+                contentLB.text = address
+                
+                break
+            default:
+                break
+            }
+
+            break
+        case 3:
+            contentLB.text = String(Double(transaction.fee)! / 1e8)
+            break
+        case 5:
+            contentLB.text = transaction.ID
+            break
+        case 6:
+            contentLB.text = transaction.timestampToShow
+            break
+            
+            
+        default:
+            contentLB.text = ""
+            break
+        }
         
         return cell
     }

@@ -13,7 +13,12 @@ class RecordController {
     private weak var interface: RecordInterface!
     private let meRepo: MeRepository
     private var transactions = [TransactionsModel]()
-    private var allTrans = [TransactionsModel]()
+
+    private var records = [RecordModel]()
+    
+    private var allTrans = [String:[TransactionsModel]]()
+    
+    private var sectionSource = [String:String]()
 
     init(meRepo: MeRepository) {
         self.meRepo = meRepo
@@ -27,8 +32,32 @@ class RecordController {
     private func getListTransactions() {
         self.interface.showActivityIndicator()
         self.meRepo.getListTransactions(address:
-            "bm1q5p9d4gelfm4cc3zq3slj7vh2njx23ma2cf866j", assetID: "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff").done { (request) in
+            "bm1qe3g790gkvgg8qy8lhkd42dnq59e2g52cychplv", assetID: "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff").done { (request) in
                 self.transactions = request.transactions
+                
+                self.transactions.sort(by: { (trans1, trans2) -> Bool in
+                    let timestamp1 = NSString(string: trans1.timestamp)
+                    let timestamp2 = NSString(string: trans2.timestamp)
+
+                    return timestamp1.doubleValue > timestamp2.doubleValue
+                })
+                
+                
+                for trans in self.transactions {
+                    
+                    let key = self.timeStampToString(timeStamp: trans.timestamp)
+                    
+                    if self.allTrans[key] == nil {
+                        self.allTrans[key] = [TransactionsModel]()
+                        
+                        let record = RecordModel()
+                        record.headerTitle = key
+                        self.records.append(record)
+                    }
+
+                    self.allTrans[key]?.append(trans)
+                }
+                
                 self.interface.reload()
             }.ensure {
                 self.interface.hideActivityIndicator()
@@ -38,19 +67,43 @@ class RecordController {
     }
 
     var section: Int {
-        return transactions.count
+        return self.records.count
     }
     
     func row(section: Int) -> Int {
-        return transactions[section].allPuts.count
+        
+        let key = self.records[section].headerTitle
+
+        let values = allTrans[key]
+
+        return values!.count
     }
     
-    func transaction(section: Int) -> TransactionsModel {
-        return transactions[section]
+    func record(section: Int) -> RecordModel {
+
+        return self.records[section]
+    }
+    
+    func transaction(section: Int, row: Int) -> TransactionsModel {
+        
+        let key = self.records[section].headerTitle
+
+        let values = allTrans[key]
+
+        return values![row]
     }
 
-    func inOutPut(section: Int, row: Int) -> InOutPutModel {
-        return transactions[section].allPuts[row]
+    func timeStampToString(timeStamp:String)->String {
+        
+        let string = NSString(string: timeStamp)
+        
+        let timeSta:TimeInterval = string.doubleValue
+        let dfmatter = DateFormatter()
+        dfmatter.dateFormat="yyyy年MM月"
+        
+        let date = NSDate(timeIntervalSince1970: timeSta)
+        
+        return dfmatter.string(from: date as Date)
     }
-    
+
 }

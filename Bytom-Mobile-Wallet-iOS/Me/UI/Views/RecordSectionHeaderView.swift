@@ -10,7 +10,7 @@ import UIKit
 
 class RecordSectionHeaderView: UITableViewHeaderFooterView {
     
-    var recordModel: TransactionsModel? {
+    var recordModel: RecordModel? {
         didSet {
             if (recordModel?.isExpanded)! {
                 directionImage.image = R.image.arrow_down()
@@ -20,6 +20,8 @@ class RecordSectionHeaderView: UITableViewHeaderFooterView {
             if (recordModel?.isExpanded)! {
                 
             }
+
+            titleLB.text = recordModel?.headerTitle
         }
     }
     
@@ -78,6 +80,7 @@ class RecordSectionHeaderView: UITableViewHeaderFooterView {
     }
     
     @objc func onExpand(onExpand: UIButton) {
+        
         recordModel?.isExpanded = !(recordModel?.isExpanded)!
         
         expandCallBack((recordModel?.isExpanded)!)
