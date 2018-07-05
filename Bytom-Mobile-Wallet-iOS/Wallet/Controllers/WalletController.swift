@@ -13,9 +13,11 @@ class WalletController {
     private weak var interface: WalletInteface!
     private let walletRepo: WalletRepository
     private var assets = [AssetsModel]()
+    private let urlErrorHandler: URLErrorHandler
     
-    init(walletRepo: WalletRepository) {
+    init(walletRepo: WalletRepository, urlErrorHandler: URLErrorHandler) {
         self.walletRepo = walletRepo
+        self.urlErrorHandler = urlErrorHandler
     }
     
     func bindInterface(interface: WalletInteface) {
@@ -32,7 +34,7 @@ class WalletController {
             }.ensure {
                 self.interface.hideActivityIndicator()
             }.catch { error in
-                print(error)
+                self.urlErrorHandler.handle(error: error, interface: self.interface)
         }
     }
     

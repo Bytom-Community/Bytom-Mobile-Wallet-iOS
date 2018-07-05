@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2315DCB120EE088D006C4471 /* URLErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2315DCB020EE088D006C4471 /* URLErrorHandler.swift */; };
+		2315DCB320EE08EE006C4471 /* HTTPClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2315DCB220EE08EE006C4471 /* HTTPClientError.swift */; };
 		436AD2AA20D0374B00298C59 /* WalletManage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 436AD2A420D0374A00298C59 /* WalletManage.storyboard */; };
 		436AD2AC20D0F12400298C59 /* WalletManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AD2AB20D0F12400298C59 /* WalletManageVC.swift */; };
 		436AD2AE20D0F1ED00298C59 /* WalletDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AD2AD20D0F1ED00298C59 /* WalletDetailsVC.swift */; };
@@ -93,6 +95,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2315DCB020EE088D006C4471 /* URLErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLErrorHandler.swift; sourceTree = "<group>"; };
+		2315DCB220EE08EE006C4471 /* HTTPClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientError.swift; sourceTree = "<group>"; };
 		436AD2A420D0374A00298C59 /* WalletManage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WalletManage.storyboard; sourceTree = "<group>"; };
 		436AD2AB20D0F12400298C59 /* WalletManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManageVC.swift; sourceTree = "<group>"; };
 		436AD2AD20D0F1ED00298C59 /* WalletDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailsVC.swift; sourceTree = "<group>"; };
@@ -333,6 +337,8 @@
 				FC1EE86F20BC62A600A9CD84 /* UIInterface.swift */,
 				FCE47D6820BEDC2500D380FB /* Engine.swift */,
 				FCE47D6A20BEDC7500D380FB /* IocContainer.swift */,
+				2315DCB020EE088D006C4471 /* URLErrorHandler.swift */,
+				2315DCB220EE08EE006C4471 /* HTTPClientError.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -958,6 +964,7 @@
 				436AD2B920D0FDDA00298C59 /* WalletManageCell.swift in Sources */,
 				FCE47D7F20BEF2A400D380FB /* WalletRepository.swift in Sources */,
 				573FF6DE20E084E100F615E2 /* RecordController.swift in Sources */,
+				2315DCB320EE08EE006C4471 /* HTTPClientError.swift in Sources */,
 				FC1EE84A20BC51B300A9CD84 /* AppDelegate.swift in Sources */,
 				FCE47D6B20BEDC7500D380FB /* IocContainer.swift in Sources */,
 				4388C51720DBE2D300998447 /* WalletAddressVC.swift in Sources */,
@@ -1000,6 +1007,7 @@
 				FCE47D6920BEDC2500D380FB /* Engine.swift in Sources */,
 				573FF6E020E0869600F615E2 /* GetTransactionsRequest.swift in Sources */,
 				436AD2AC20D0F12400298C59 /* WalletManageVC.swift in Sources */,
+				2315DCB120EE088D006C4471 /* URLErrorHandler.swift in Sources */,
 				FCE47D7920BEE89500D380FB /* WalletVC.swift in Sources */,
 				436AD2B020D0F2AE00298C59 /* ChangePasswordVC.swift in Sources */,
 				57A4D79E20D3740D005CA862 /* IconVC.swift in Sources */,

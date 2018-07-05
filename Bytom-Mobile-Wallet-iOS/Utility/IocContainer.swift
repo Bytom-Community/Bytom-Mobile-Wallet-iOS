@@ -17,9 +17,14 @@ class IocContainer {
     }
     
     static func registerAll() {
+        registerUtility()
         WelcomeIocContainer.register(container: container)
         WalletIocContainer.register(container: container)
         TradeIocContainer.register(container: container)
         MeIocContainer.register(container: container)
+    }
+    
+    private static func registerUtility() {
+        container.register(URLErrorHandler.self) { _ in URLErrorHandler()}
     }
 }

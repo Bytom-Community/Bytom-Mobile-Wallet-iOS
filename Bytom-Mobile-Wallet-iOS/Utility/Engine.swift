@@ -24,12 +24,6 @@ class Engine {
         UINavigationBar.appearance().titleTextAttributes = [
             NSAttributedStringKey.foregroundColor: Colors.blackColor
         ]
-        //        UIBarButtonItem.appearance().setTitleTextAttributes([
-        //            NSAttributedStringKey.foregroundColor: UIColor.clear
-        //            ], for: .normal)
-        //        UIBarButtonItem.appearance().setTitleTextAttributes([
-        //            NSAttributedStringKey.foregroundColor: UIColor.clear
-        //            ], for: .highlighted)
         if #available(iOS 11, *) {
             UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(-200, 0), for: .default)
         } else {

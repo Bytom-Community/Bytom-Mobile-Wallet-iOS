@@ -12,6 +12,6 @@ import Swinject
 class WalletIocContainer {
     static func register(container: Container) {
         container.register(WalletRepository.self) { _ in WalletRepository() }
-        container.register(WalletController.self) { _ in WalletController(walletRepo: container.resolve(WalletRepository.self)! )}
+        container.register(WalletController.self) { _ in WalletController(walletRepo: container.resolve(WalletRepository.self)!, urlErrorHandler: container.resolve(URLErrorHandler.self)!)}
     }
 }
