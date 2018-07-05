@@ -2,7 +2,7 @@
 //  HTTPClientError.swift
 //  Bytom-Mobile-Wallet-iOS
 //
-//  Created by 量之信息科技 on 2018/7/5.
+//  Created by 曲终叶落 on 2018/7/5.
 //  Copyright © 2018年 曲终叶落. All rights reserved.
 //
 
