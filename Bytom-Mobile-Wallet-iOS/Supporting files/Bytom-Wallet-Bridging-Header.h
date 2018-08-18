@@ -3,3 +3,4 @@
 //
 
 #import <FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>
+#import <Wallet/Wallet.h>
