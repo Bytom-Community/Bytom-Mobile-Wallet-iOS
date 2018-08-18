@@ -1,5 +1,5 @@
 //
-//  RecordController.swift
+//  RecordPresenter.swift
 //  Bytom-Mobile-Wallet-iOS
 //
 //  Created by ldp on 2018/6/25.
@@ -9,7 +9,7 @@
 import Foundation
 import PromiseKit
 
-class RecordController {
+class RecordPresenter {
     private weak var interface: RecordInterface!
     private let meRepo: MeRepository
     private var transactions = [TransactionsModel]()

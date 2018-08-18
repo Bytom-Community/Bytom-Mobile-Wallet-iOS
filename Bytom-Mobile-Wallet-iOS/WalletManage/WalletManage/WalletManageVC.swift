@@ -24,13 +24,11 @@ class WalletManageVC: UIViewController {
     
     
     @IBAction func createWalletClick(_ sender: UIButton) {
-        
         let vc = R.storyboard.walletManage.createWalletVC()
         navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func importWalletClick(_ sender: UIButton) {
-        
         let vc = R.storyboard.walletManage.importWalletVC()
         navigationController?.pushViewController(vc!, animated: true)
     }
@@ -55,10 +53,7 @@ extension WalletManageVC: UITableViewDelegate, UITableViewDataSource {
         defer {
             tableView.deselectRow(at: indexPath, animated: true)
         }
-        
         let vc = R.storyboard.walletManage.walletDetailsVC()
         navigationController?.pushViewController(vc!, animated: true)
-        
-        print(indexPath.row)
     }
 }

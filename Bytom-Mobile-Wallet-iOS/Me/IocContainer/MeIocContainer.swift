@@ -13,7 +13,7 @@ class MeIocContainer {
     
     static func register(container: Container) {
         container.register(MeRepository.self) { _ in MeRepository() }
-        container.register(RecordController.self) { _ in RecordController(meRepo: container.resolve(MeRepository.self)! )}
+        container.register(RecordPresenter.self) { _ in RecordPresenter(meRepo: container.resolve(MeRepository.self)! )}
     }
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 
 class RecordVC: UITableViewController {
-    private let controller = IocContainer.resolve(RecordController.self)
+    private let controller = IocContainer.resolve(RecordPresenter.self)
 
 //    fileprivate lazy var dataSource: [TransactionsModel]? = [TransactionsModel]()
 

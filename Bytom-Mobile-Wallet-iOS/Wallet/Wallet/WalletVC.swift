@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 class WalletVC: UIViewController {
-    private let controller = IocContainer.resolve(WalletController.self)
+    private let presenter = IocContainer.resolve(WalletPresenter.self)
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class WalletVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-        controller.bindInterface(interface: self)
+        presenter.bindInterface(interface: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,17 +78,17 @@ class WalletVC: UIViewController {
 
 extension WalletVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return controller.row
+        return presenter.row
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TokenCell.ID, for: indexPath) as! TokenCell
-        cell.asset = controller.asset(row: indexPath.row)
+        cell.asset = presenter.asset(row: indexPath.row)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(controller.asset(row: indexPath.row))
+        print(presenter.asset(row: indexPath.row))
     }
 }
 

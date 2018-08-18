@@ -1,5 +1,5 @@
 //
-//  WalletController.swift
+//  WalletPresenter.swift
 //  Bytom-Mobile-Wallet-iOS
 //
 //  Created by 曲终叶落 on 2018/5/30.
@@ -9,7 +9,7 @@
 import Foundation
 import PromiseKit
 
-class WalletController {
+class WalletPresenter {
     private weak var interface: WalletInteface!
     private let walletRepo: WalletRepository
     private var assets = [AssetsModel]()

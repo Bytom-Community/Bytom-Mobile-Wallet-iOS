@@ -107,8 +107,6 @@ class MeVC: UITableViewController {
         let vc = R.storyboard.walletManage.walletManageVC()
         navigationController?.pushViewController(vc!, animated: true)
     }
-    
-    
 }
 
 

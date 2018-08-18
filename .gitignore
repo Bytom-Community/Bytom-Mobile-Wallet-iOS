@@ -8,3 +8,5 @@ UserInterfaceState.xcuserstate
 build/
 DerivedData/
 
+*.generated.swift
+
