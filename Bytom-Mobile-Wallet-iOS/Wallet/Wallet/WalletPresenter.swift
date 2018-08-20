@@ -22,13 +22,14 @@ class WalletPresenter {
     
     func bindInterface(interface: WalletInteface) {
         self.interface = interface
+        self.interface.reload()
         getListAssets()
     }
     
     private func getListAssets() {
         self.interface.showActivityIndicator()
         self.walletRepo.getListAssets(address:
-            "bm1q5p9d4gelfm4cc3zq3slj7vh2njx23ma2cf866j").done { (assetsRequest) in
+            selectedAccount().defaultAddress).done { (assetsRequest) in
                 self.assets = assetsRequest.assets
                 self.interface.reload()
             }.ensure {
@@ -38,11 +39,21 @@ class WalletPresenter {
         }
     }
     
+    
     var row: Int {
         return assets.count
     }
     
     func asset(row: Int) -> AssetsModel {
         return assets[row]
+    }
+}
+
+extension WalletPresenter {
+    
+    // TODO: - 本地保存选择的账号
+    func selectedAccount() -> WalletManageData {
+        // 现在默认第一个
+        return WalletManageRepository.getWalletAccountList().first!
     }
 }

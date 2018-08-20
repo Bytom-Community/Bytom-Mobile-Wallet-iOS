@@ -17,11 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Engine.instance.start()
         
-//        let mainTabBarVC = R.storyboard.main.mainTabBarController()
-        let welcomeVC = R.storyboard.welcome.welComeNavVC()
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = welcomeVC
-        window?.makeKeyAndVisible()
+        // TODO: - 优化加载
+        let isBeingAccount = WalletManageRepository.getWalletAccountList().count > 0
+        switch isBeingAccount {
+        case true:
+            let mainTabBarVC = R.storyboard.main.mainTabBarController()
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.rootViewController = mainTabBarVC
+            window?.makeKeyAndVisible()
+        case false:
+            let welcomeVC = R.storyboard.welcome.welComeNavVC()
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.rootViewController = welcomeVC
+            window?.makeKeyAndVisible()
+        }
         return true
     }
 

@@ -210,6 +210,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="钱包" id="aKM-xl-UUs"/>
                     <connections>
+                        <outlet property="addressLb" destination="vqO-0W-MdG" id="fkC-dn-89c"/>
+                        <outlet property="aliasLb" destination="Adg-U7-WKv" id="kRc-ND-UhA"/>
                         <outlet property="tableView" destination="uNK-z3-I2F" id="HtL-ep-iEU"/>
                     </connections>
                 </viewController>

@@ -15,10 +15,13 @@ class BackupWalletVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        keystoreTextView.text = WalletManageRepository.getWalletBackupWalletImage()
     }
     
     @IBAction func copyClick(_ sender: UIButton) {
+        
+        // WalletManageRepository.getWalletBackupWalletImage()
         UIPasteboard.general.string = keystoreTextView.text
         self.showSuccessToast("复制成功") {
             sender.isSelected = true

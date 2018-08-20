@@ -12,6 +12,9 @@ import WebKit
 class WalletVC: UIViewController {
     private let presenter = IocContainer.resolve(WalletPresenter.self)
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var aliasLb: UILabel!
+    @IBOutlet weak var addressLb:  UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,7 @@ class WalletVC: UIViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         presenter.bindInterface(interface: self)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,11 +53,24 @@ class WalletVC: UIViewController {
         vc?.modalPresentationStyle = .overCurrentContext
         rootVC?.definesPresentationContext = true
         rootVC?.present(vc!, animated: false, completion: nil)
+        
+        vc?.callBack = { click in
+            switch click {
+            case .selectedWallet(let index):
+                print("TODO: selected: \(index)")
+            case .createWallet:
+                let vc = R.storyboard.walletManage.createWalletVC()
+                self.navigationController?.pushViewController(vc!, animated: true)
+            case .importWallet:
+                let vc = R.storyboard.walletManage.importWalletVC()
+                self.navigationController?.pushViewController(vc!, animated: true)
+            }
+        }
     }
     
     @IBAction func addressClick(_ sender: UIButton) {
         let vc = R.storyboard.wallet.walletAddressVC()!
-        vc.address = "bm57527c69a5587b45176265268d0f8c5958411d56"
+        vc.address = presenter.selectedAccount().defaultAddress
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -94,6 +111,12 @@ extension WalletVC: UITableViewDelegate, UITableViewDataSource {
 
 extension WalletVC: WalletInteface {
     func reload() {
+        aliasLb.text = presenter.selectedAccount().alias
+        addressLb.text = presenter.selectedAccount().defaultAddress
         tableView.reloadData()
     }
 }
+
+
+
+

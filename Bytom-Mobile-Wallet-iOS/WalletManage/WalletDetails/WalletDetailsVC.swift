@@ -13,11 +13,15 @@ class WalletDetailsVC: UITableViewController {
     
     @IBOutlet weak var publicAddressLabel: UILabel!
     @IBOutlet weak var copyButton: UIButton!
+    @IBOutlet weak var aliasLabel: UILabel!
+    
+    var dataSouce = WalletManageData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        publicAddressLabel.text = dataSouce.defaultAddress
+        aliasLabel.text = dataSouce.alias
     }
     
     
@@ -40,23 +44,27 @@ class WalletDetailsVC: UITableViewController {
             }
         case .alias:
             
-            let alertVC = UIAlertController(title: nil, message: "请输入钱包别名", preferredStyle: .alert)
-            alertVC.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
-            alertVC.addTextField { $0.placeholder = "请输入钱包别名"}
-            alertVC.addAction(UIAlertAction(title: "确认", style: .destructive) { _ in
-                 let aliasText = alertVC.textFields!.first!.text ?? ""
-                 print(aliasText)
-            })
-            self.present(alertVC, animated: true, completion: nil)
+            break
+            
+//            let alertVC = UIAlertController(title: nil, message: "请输入钱包别名", preferredStyle: .alert)
+//            alertVC.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+//            alertVC.addTextField { $0.placeholder = "请输入钱包别名"}
+//            alertVC.addAction(UIAlertAction(title: "确认", style: .destructive) { _ in
+//                 let aliasText = alertVC.textFields!.first!.text ?? ""
+//                 print(aliasText)
+//            })
+//            self.present(alertVC, animated: true, completion: nil)
             
         case .changePassword:
             
             let vc = R.storyboard.walletManage.changePasswordVC()
+            vc?.dataSource = self.dataSouce
             navigationController?.pushViewController(vc!, animated: true)
         case .backupWallet:
 
-            let vc = R.storyboard.walletManage.backupWalletVC()
-            navigationController?.pushViewController(vc!, animated: true)
+            showErrorToast("暂不支持单个钱包备份")
+//            let vc = R.storyboard.walletManage.backupWalletVC()
+//            navigationController?.pushViewController(vc!, animated: true)
         }
     }
 }

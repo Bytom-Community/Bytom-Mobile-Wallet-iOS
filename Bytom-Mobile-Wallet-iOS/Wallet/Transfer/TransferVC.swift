@@ -26,7 +26,12 @@ class TransferVC: UITableViewController {
     @IBOutlet weak var bottomView: UIView!
     
     var bottomViewCenterY:CGFloat {
-        return tableView.bounds.height - bottomView.bounds.midY + tableView.contentOffset.y
+        let centerY = tableView.bounds.height - bottomView.bounds.midY + tableView.contentOffset.y
+        if #available(iOS 11.0, *) {
+            return centerY - tableView.adjustedContentInset.bottom
+        } else {
+            return centerY
+        }
     }
     
     enum GasType:Int {

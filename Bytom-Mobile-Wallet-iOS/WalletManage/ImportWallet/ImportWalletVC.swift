@@ -8,9 +8,12 @@
 
 import UIKit
 
+typealias ImportWalletVCCallBack = () -> ()
 class ImportWalletVC: UITableViewController {
     
     @IBOutlet weak var keystoreTextView: UITextView!
+    
+    var callBack:ImportWalletVCCallBack?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,14 +21,18 @@ class ImportWalletVC: UITableViewController {
     }
     
     @IBAction func importWalletClick(_ sender: UIButton) {
-        // TODO: - 
-        self.showSuccessToast("成功导入") {
-            self.navigationController?.popViewController(animated: true)
+        
+        let res = WalletManageRepository.walletRestore(walletImage: keystoreTextView.text)
+        // TODO: -
+        switch res {
+        case .fail(let errorMsg):
+            showErrorToast(errorMsg)
+        case .success:
+            self.showSuccessToast("成功导入") {
+                self.navigationController?.popViewController(animated: true)
+                self.callBack?()
+            }
         }
-    }
-    
-    deinit {
-        print("释放")
     }
 }
 

@@ -10,10 +10,11 @@ import UIKit
 
 class ChangePasswordVC: UIViewController {
     
-    
     @IBOutlet weak var oldPasswordTF: UITextField!
     @IBOutlet weak var newPasswordTF: UITextField!
     @IBOutlet weak var confirmPasswordTF: UITextField!
+    
+    var dataSource = WalletManageData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,30 @@ class ChangePasswordVC: UIViewController {
     }
     
     @IBAction func confirmClick(_ sender: UIButton) {
-        print("confirmClick")
+        
+        let oldPassword = oldPasswordTF.text!
+        let newPassword = newPasswordTF.text!
+        let confirmPassword = confirmPasswordTF.text!
+        guard !newPassword.isEmpty else { return showSuccessToast("新密码不能为空") }
+        guard newPassword == confirmPassword else { return showSuccessToast("新密码与确认密码不相同") }
+        
+        let res = WalletManageRepository.changePassword(dataSource.rootXPub, oldPassword: oldPassword, newPassword: newPassword)
+        switch res {
+        case .fail(let errorMsg):
+            showErrorToast(errorMsg)
+        case .success:
+            showSuccessToast("修改成功") {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
 }
+
+
+
+
+
+
+
+
+

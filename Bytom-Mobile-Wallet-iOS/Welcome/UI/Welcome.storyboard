@@ -71,7 +71,7 @@
                                     <action selector="createClick:" destination="ype-nu-n91" eventType="touchUpInside" id="KOg-DI-kYY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkX-O9-Xk6">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkX-O9-Xk6">
                                 <rect key="frame" x="156" y="607" width="62" height="30"/>
                                 <state key="normal" title="进入主页"/>
                                 <connections>

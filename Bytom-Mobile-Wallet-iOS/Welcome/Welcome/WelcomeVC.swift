@@ -20,11 +20,19 @@ class WelcomeVC: UIViewController {
     @IBAction func createClick(_ sender: UIButton) {
         let vc = R.storyboard.walletManage.createWalletVC()
         navigationController?.pushViewController(vc!, animated: true)
+        vc?.callBack = {
+            let mainTabBarVC = R.storyboard.main.mainTabBarController()
+            UIApplication.shared.keyWindow?.rootViewController = mainTabBarVC
+        }
     }
     
     @IBAction func importClick(_ sender: UIButton) {
         let vc = R.storyboard.walletManage.importWalletVC()
         navigationController?.pushViewController(vc!, animated: true)
+        vc?.callBack = {
+            let mainTabBarVC = R.storyboard.main.mainTabBarController()
+            UIApplication.shared.keyWindow?.rootViewController = mainTabBarVC
+        }
     }
     
     @IBAction func mainClick(_ sender: UIButton) {

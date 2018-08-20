@@ -16,16 +16,34 @@ class WalletManageVC: UIViewController {
         }
     }
     
+    var dataSoucre = [WalletManageData]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        reload()
+    }
+    
+    func reload() {
+        dataSoucre = WalletManageRepository.getWalletAccountList()
+    }
+    
+    @IBAction func backupWalletClick(_ sender: UIBarButtonItem) {
+        let vc = R.storyboard.walletManage.backupWalletVC()
+        navigationController?.pushViewController(vc!, animated: true)
     }
     
     
     @IBAction func createWalletClick(_ sender: UIButton) {
         let vc = R.storyboard.walletManage.createWalletVC()
         navigationController?.pushViewController(vc!, animated: true)
+        vc?.callBack = { [weak self] in
+            self!.reload()
+        }
     }
     
     @IBAction func importWalletClick(_ sender: UIButton) {
@@ -41,11 +59,13 @@ extension WalletManageVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return dataSoucre.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: WalletManageCell.ID) as! WalletManageCell
+        cell.aliasLb.text = dataSoucre[indexPath.row].alias
+        cell.addressLb.text = dataSoucre[indexPath.row].defaultAddress
         return cell
     }
     
@@ -54,6 +74,7 @@ extension WalletManageVC: UITableViewDelegate, UITableViewDataSource {
             tableView.deselectRow(at: indexPath, animated: true)
         }
         let vc = R.storyboard.walletManage.walletDetailsVC()
+        vc?.dataSouce = self.dataSoucre[indexPath.row]
         navigationController?.pushViewController(vc!, animated: true)
     }
 }

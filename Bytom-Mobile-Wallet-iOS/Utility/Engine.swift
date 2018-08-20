@@ -16,6 +16,7 @@ class Engine {
         IocContainer.registerAll()
         thirdParty()
         setUI()
+        initWallet() // TODO: - PATH
     }
     
     private func setUI() {
@@ -40,5 +41,10 @@ class Engine {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+    }
+    
+    private func initWallet() {
+        let docPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last
+        WalletInitWallet(docPath)
     }
 }

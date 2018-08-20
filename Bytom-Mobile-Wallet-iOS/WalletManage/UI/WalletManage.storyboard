@@ -60,6 +60,10 @@
                                                 <constraint firstItem="cf3-I2-9Cp" firstAttribute="leading" secondItem="RqP-8k-KZ9" secondAttribute="leading" constant="13" id="hzd-mt-6Og"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLb" destination="OqD-9q-W1a" id="wCe-Os-LHx"/>
+                                            <outlet property="aliasLb" destination="at6-AK-ji6" id="0ct-Jf-CCS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -120,7 +124,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zwG-sB-hpz"/>
                     </view>
-                    <navigationItem key="navigationItem" title="钱包管理" id="1et-mh-hd3"/>
+                    <navigationItem key="navigationItem" title="钱包管理" id="1et-mh-hd3">
+                        <barButtonItem key="rightBarButtonItem" title="备份" id="2dq-tW-xgU">
+                            <connections>
+                                <action selector="backupWalletClick:" destination="k8E-df-WGk" id="ttZ-Dj-Y6X"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="I7e-Xz-r7L" id="PCc-Fb-hVL"/>
                     </connections>
@@ -147,8 +157,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bmcf7dc31fecf4250c176dd4ec72498a49a3732f5749" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9k5-54-Evo">
-                                                    <rect key="frame" x="20" y="30" width="336" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9k5-54-Evo">
+                                                    <rect key="frame" x="21" y="30" width="334" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -187,11 +197,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="60" id="f2u-p4-gpT">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="f2u-p4-gpT">
                                         <rect key="frame" x="0.0" y="130" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f2u-p4-gpT" id="4o4-G1-0GX">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="别名" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4O-MW-M03">
@@ -201,14 +211,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybG-qV-Y21">
-                                                    <rect key="frame" x="16" y="59.5" width="361" height="0.5"/>
+                                                    <rect key="frame" x="16" y="59.5" width="395" height="0.5"/>
                                                     <color key="backgroundColor" red="0.73725490196078436" green="0.73725490196078436" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.5" id="bv5-fp-NOE"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="myWallet" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVQ-jS-T31">
-                                                    <rect key="frame" x="285.5" y="21.5" width="55.5" height="16"/>
+                                                    <rect key="frame" x="306.5" y="21.5" width="55.5" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -222,7 +232,7 @@
                                                 <constraint firstItem="ybG-qV-Y21" firstAttribute="leading" secondItem="4o4-G1-0GX" secondAttribute="leading" constant="16" id="baS-22-fCQ"/>
                                                 <constraint firstItem="W4O-MW-M03" firstAttribute="centerY" secondItem="4o4-G1-0GX" secondAttribute="centerY" id="dbi-xp-uKG"/>
                                                 <constraint firstItem="PVQ-jS-T31" firstAttribute="centerY" secondItem="W4O-MW-M03" secondAttribute="centerY" id="fyL-RS-jaN"/>
-                                                <constraint firstAttribute="trailing" secondItem="PVQ-jS-T31" secondAttribute="trailing" id="peD-1T-85F"/>
+                                                <constraint firstAttribute="trailing" secondItem="PVQ-jS-T31" secondAttribute="trailing" constant="13" id="peD-1T-85F"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -296,6 +306,7 @@
                     </tableView>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="aliasLabel" destination="PVQ-jS-T31" id="L40-QF-UIn"/>
                         <outlet property="copyButton" destination="wAa-6H-A09" id="wZ5-Po-g2g"/>
                         <outlet property="publicAddressLabel" destination="9k5-54-Evo" id="y7t-y8-SAV"/>
                     </connections>
@@ -556,7 +567,6 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zpb-Ah-bTe">
                                                     <rect key="frame" x="15" y="5" width="345" height="181"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <string key="text">{"version":3,"id":"b7467fcb-3c8b-41be-bccf-73d43a08c1b7","address":"540f18196da5a533fa36577a81de55f0a2f4e751","Crypto":{"ciphertext":"78ed11b8b6bf29b00f52b42b8542df0e4a6ac078e626af7edcf885c3b68154a4","cipherparams":{"iv":"4516579601d96695fe30ace985a9066f"},"cipher":"aes-128-ctr","kdf":"scrypt","kdfparams":{"dklen":32,"salt":"6276cfda7d40872352c801db5871e5a3368a8d0994cea39ed936760db78d1cdc","n":1024,"r":8,"p":1},"mac":"d889a5dc609c3f312a41394cc47640676d2612501a6f8c837ed55598158336db"}}</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <userDefinedRuntimeAttributes>
@@ -686,7 +696,6 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ntB-ug-4Qb">
                                                     <rect key="frame" x="15" y="5" width="345" height="221"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <string key="text">{"version":3,"id":"b7467fcb-3c8b-41be-bccf-73d43a08c1b7","address":"540f18196da5a533fa36577a81de55f0a2f4e751","Crypto":{"ciphertext":"78ed11b8b6bf29b00f52b42b8542df0e4a6ac078e626af7edcf885c3b68154a4","cipherparams":{"iv":"4516579601d96695fe30ace985a9066f"},"cipher":"aes-128-ctr","kdf":"scrypt","kdfparams":{"dklen":32,"salt":"6276cfda7d40872352c801db5871e5a3368a8d0994cea39ed936760db78d1cdc","n":1024,"r":8,"p":1},"mac":"d889a5dc609c3f312a41394cc47640676d2612501a6f8c837ed55598158336db"}}</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <userDefinedRuntimeAttributes>
