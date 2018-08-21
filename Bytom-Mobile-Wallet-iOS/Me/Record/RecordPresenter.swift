@@ -33,19 +33,16 @@ class RecordPresenter {
         self.interface.showActivityIndicator()
         self.meRepo.getListTransactions(address:
             "bm1qe3g790gkvgg8qy8lhkd42dnq59e2g52cychplv", assetID: "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff").done { (request) in
-                self.transactions = request.transactions
+                self.transactions = request.data
                 
                 self.transactions.sort(by: { (trans1, trans2) -> Bool in
-                    let timestamp1 = NSString(string: trans1.timestamp)
-                    let timestamp2 = NSString(string: trans2.timestamp)
-
-                    return timestamp1.doubleValue > timestamp2.doubleValue
+                    return trans1.timestamp > trans2.timestamp
                 })
                 
                 
                 for trans in self.transactions {
                     
-                    let key = self.timeStampToString(timeStamp: trans.timestamp)
+                    let key = self.timeStampToString(timeStamp: "\(trans.timestamp)")
                     
                     if self.allTrans[key] == nil {
                         self.allTrans[key] = [TransactionsModel]()

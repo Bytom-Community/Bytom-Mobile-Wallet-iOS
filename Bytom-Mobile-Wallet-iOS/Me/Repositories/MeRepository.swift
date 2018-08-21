@@ -11,6 +11,6 @@ import PromiseKit
 
 struct MeRepository {
     func getListTransactions(address: String, assetID: String) -> Promise<GetTransactionsRequest> {
-        return URLSession.shared.POST(NetWorks.api + "list-transactions", json: ["address":address, "assetID":assetID]).asObject()
+        return URLSession.shared.POST(NetWorks.api + "list-transactions", json: ["address":address, "asset_id":assetID]).asObject()
     }
 }
