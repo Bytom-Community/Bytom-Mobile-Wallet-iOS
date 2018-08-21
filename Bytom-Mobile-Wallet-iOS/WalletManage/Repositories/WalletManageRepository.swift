@@ -23,7 +23,7 @@ struct WalletManageRepository {
         let createKey = try! WalletCreateKey(alias, password).goDecode(WalletCreateKeyModel.self)
     
         if createKey.status == "fail"  {
-            return LoaclResponse.fail(createKey.error_detail)
+            return LoaclResponse.fail(createKey.msg)
         }
         
         // 2 - account
@@ -71,7 +71,6 @@ extension WalletManageRepository {
 }
 
 
-
 // MARK: - BackupWallet 、RestoreWallet
 extension WalletManageRepository {
     
@@ -80,11 +79,19 @@ extension WalletManageRepository {
         return backupWallet.data.toDictionary().jsonStr
     }
     
-    // FIXME: - bug
     static func walletRestore(walletImage: String) -> LoaclResponse {
-        let res = WalletRestoreWallet(walletImage) // GO-API直接奔溃
-        print(res ?? "")
-        return LoaclResponse.fail("FIXME: 直接奔溃")
+        // 转成下划线keyName
+        let walletImage = walletImage.convertJsonKeyName(.underscore)
+        // 验证符合格式要求
+        guard let data = try? walletImage.goDecode(WalletImage.self),
+              data.accountImage != nil else {
+              return LoaclResponse.fail("确认输入的信息是否正确")
+        }
+        let res = try! WalletRestoreWallet(walletImage).goDecode(WalletRestoreModel.self)
+        guard res.status == "success" else {
+            return LoaclResponse.fail(res.msg)
+        }
+        return LoaclResponse.success
     }
 }
 

@@ -21,11 +21,9 @@ class BackupWalletVC: UITableViewController {
     
     @IBAction func copyClick(_ sender: UIButton) {
         
-        // WalletManageRepository.getWalletBackupWalletImage()
         UIPasteboard.general.string = keystoreTextView.text
-        self.showSuccessToast("复制成功") {
-            sender.isSelected = true
-        }
+        self.showSuccessToast("复制成功")
+        sender.isSelected = true
     }
 }
 

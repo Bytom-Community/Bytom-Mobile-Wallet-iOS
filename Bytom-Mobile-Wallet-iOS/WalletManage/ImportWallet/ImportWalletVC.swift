@@ -23,7 +23,6 @@ class ImportWalletVC: UITableViewController {
     @IBAction func importWalletClick(_ sender: UIButton) {
         
         let res = WalletManageRepository.walletRestore(walletImage: keystoreTextView.text)
-        // TODO: -
         switch res {
         case .fail(let errorMsg):
             showErrorToast(errorMsg)

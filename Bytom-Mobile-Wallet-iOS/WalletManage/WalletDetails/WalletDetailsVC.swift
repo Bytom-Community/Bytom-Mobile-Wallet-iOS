@@ -39,9 +39,9 @@ class WalletDetailsVC: UITableViewController {
         case .copyAddress:
             
             UIPasteboard.general.string = publicAddressLabel.text
-            self.showSuccessToast("复制成功") { [weak self] in
-                self!.copyButton.isSelected = true
-            }
+            self.showSuccessToast("复制成功")
+            self.copyButton.isSelected = true
+            
         case .alias:
             
             break

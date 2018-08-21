@@ -82,6 +82,13 @@ struct WalletResetKeyPasswordData:Codable {
     var changed:Bool!
 }
 
+// MARK: - WalletRestoreWallet
+struct WalletRestoreModel:Codable {
+    var status:String!
+    var code:String!
+    var msg:String!
+    var error_detail:String!
+}
 
 // MARK: -  WalletBackupWallet
 struct WalletBackupModel:Codable {
