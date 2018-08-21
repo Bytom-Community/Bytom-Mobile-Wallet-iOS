@@ -9,5 +9,6 @@
 import Foundation
 
 struct GetTransactionsRequest: Codable {
-    var transactions = [TransactionsModel]()
+   
+    var data = [TransactionsModel]()
 }

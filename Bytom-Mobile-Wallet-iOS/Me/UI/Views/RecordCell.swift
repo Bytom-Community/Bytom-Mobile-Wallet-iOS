@@ -63,7 +63,7 @@ class RecordCell: UITableViewCell {
                 break
             }
 
-            if Int(transaction.confirmation)! > 6{
+            if transaction.confirmation > 6{
                tradeStatusLB.text = "交易成功"
             }else{
                tradeStatusLB.text = "\(transaction.confirmation)/6 确认中"

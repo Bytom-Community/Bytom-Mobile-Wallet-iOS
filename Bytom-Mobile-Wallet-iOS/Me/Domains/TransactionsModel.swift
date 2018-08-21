@@ -10,36 +10,38 @@ import UIKit
 
 struct TransactionsModel: Codable {
     
-    var ID = ""
+    var id = ""
 
-    var timestamp = ""
+    var timestamp = 0
     
     var timestampToShow:String? {
         
         get{
-            let string = NSString(string: timestamp)
-            
-            let timeSta:TimeInterval = string.doubleValue
+            let timeSta:TimeInterval = Double(timestamp)
             let dfmatter = DateFormatter()
             dfmatter.dateFormat="yyyy年MM月dd日 HH:mm"
-            
+
             let date = NSDate(timeIntervalSince1970: timeSta)
-            
+
             return dfmatter.string(from: date as Date)
         }
     }
 
-    var blockID = ""
+    var block_id = ""
+
+    var block_height = 0
     
-    var blockHeight = ""
+    var block_transaction_count = 0
     
-    var blockTransactionsCount = 0
+    var confirmation = 0
     
-    var confirmation = ""
+    var status_fail = false
     
     var op = ""
     
-    var fee = ""
+    var fee = 0
+    
+    var amount = 0
     
     var inputs = [InPutModel]()
 
@@ -50,13 +52,13 @@ struct InPutModel: Codable {
     
     var type = ""
     
-    var assetID = ""
+    var asset_id = ""
     
-    var amount = ""
+    var amount = 0
     
     var address = ""
     
-    var spentOutputID = ""
+    var spent_output_id = ""
     
 }
 
@@ -65,13 +67,13 @@ struct OutPutModel: Codable {
     
     var type = ""
     
-    var assetID = ""
+    var asset_id = ""
     
-    var amount = ""
+    var amount = 0
     
     var address = ""
     
-    var OutputID = ""
+    var output_id = ""
     
     var position:Int? = 0
 }

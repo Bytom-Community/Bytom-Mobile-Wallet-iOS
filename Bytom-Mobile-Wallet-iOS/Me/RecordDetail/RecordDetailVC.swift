@@ -51,7 +51,7 @@ class RecordDetailVC: UITableViewController {
         
         switch indexPath.row {
         case 0:
-            if Int(self.transaction.confirmation)! <= 6 {
+            if self.transaction.confirmation <= 6 {
                 contentLB.text = "\(self.transaction.confirmation)/6 确认中"
             }else{
                 contentLB.text = "交易成功"
@@ -121,10 +121,10 @@ class RecordDetailVC: UITableViewController {
 
             break
         case 3:
-            contentLB.text = String(Double(transaction.fee)! / 1e8)
+//            contentLB.text = String(Double(transaction.fee)! / 1e8)
             break
         case 5:
-            contentLB.text = transaction.ID
+            contentLB.text = transaction.id
             break
         case 6:
             contentLB.text = transaction.timestampToShow
