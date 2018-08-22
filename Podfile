@@ -18,4 +18,5 @@ target 'Bytom-Mobile-Wallet-iOS' do
   pod 'FDFullscreenPopGesture', '1.1'
   pod 'CryptoSwift'
   pod 'swiftScan', '~> 1.1.2'
+  pod 'MJRefresh'
 end
