@@ -9,7 +9,7 @@
 import UIKit
 
 enum SwitchWalletClick {
-    case selectedWallet(Int) // TODO: -
+    case selectedWallet(AccountData) // TODO: -
     case createWallet
     case importWallet
 }
@@ -32,9 +32,10 @@ class SwitchWalletVC: UIViewController {
         tableView.dataSource = self
     }
     
-    lazy var walletAccountList:[WalletManageData] = {
+    lazy var walletAccountList:[AccountData] = {
         return WalletManageRepository.getWalletAccountList()
     }()
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -81,8 +82,10 @@ extension SwitchWalletVC: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-             cell.titleLb.text = walletAccountList[indexPath.row].alias
-             cell.titleLb.textColor = indexPath.row == 0 ? Colors.mainColor : Colors.whiteColor
+             let alias = walletAccountList[indexPath.row].alias
+             let isSelected = alias == BytomWallet.shared.currentAccount!.alias
+             cell.titleLb.text = alias
+             cell.titleLb.textColor = isSelected ? Colors.mainColor : Colors.whiteColor
              cell.lineView.isHidden = indexPath.row != walletAccountList.count-1
         case 1:
              cell.titleLb.text = ["创建钱包","导入钱包"][indexPath.row]
@@ -90,19 +93,7 @@ extension SwitchWalletVC: UITableViewDelegate, UITableViewDataSource {
         default:
             return UITableViewCell()
         }
-        //let titles = ["私房钱","小金库","零钱包","创建钱包","导入钱包"]
-//        let cell = tableView.dequeueReusableCell(withIdentifier: SwitchWalletCell.ID) as! SwitchWalletCell
-//        cell.titleLb.text = titles[indexPath.row]
-//        cell.titleLb.textColor = Colors.whiteColor
-//        if indexPath.row == 0 {
-//            cell.titleLb.textColor = Colors.mainColor
-//        }
-//
-//        if indexPath.row == 2 {
-//            cell.lineView.isHidden = false
-//        }else{
-//            cell.lineView.isHidden = true
-//        }
+
         return cell
     }
     
@@ -112,7 +103,8 @@ extension SwitchWalletVC: UITableViewDelegate, UITableViewDataSource {
         
         switch (indexPath.section, indexPath.row) {
         case (0,_):
-            self.callBack?(SwitchWalletClick.selectedWallet(indexPath.row))
+            let selectedAccount = walletAccountList[indexPath.row]
+            self.callBack?(SwitchWalletClick.selectedWallet(selectedAccount))
         case (1,0):
             self.callBack?(SwitchWalletClick.createWallet)
         case (1,1):

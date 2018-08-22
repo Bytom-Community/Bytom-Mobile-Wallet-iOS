@@ -14,7 +14,7 @@ class ChangePasswordVC: UIViewController {
     @IBOutlet weak var newPasswordTF: UITextField!
     @IBOutlet weak var confirmPasswordTF: UITextField!
     
-    var dataSource = WalletManageData()
+    var dataSource = AccountData()
     
     override func viewDidLoad() {
         super.viewDidLoad()

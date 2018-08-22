@@ -15,7 +15,7 @@ class WalletDetailsVC: UITableViewController {
     @IBOutlet weak var copyButton: UIButton!
     @IBOutlet weak var aliasLabel: UILabel!
     
-    var dataSouce = WalletManageData()
+    var dataSouce = AccountData()
     
     override func viewDidLoad() {
         super.viewDidLoad()

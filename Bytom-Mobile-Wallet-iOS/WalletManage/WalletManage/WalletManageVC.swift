@@ -16,7 +16,7 @@ class WalletManageVC: UIViewController {
         }
     }
     
-    var dataSoucre = [WalletManageData]() {
+    var dataSoucre = [AccountData]() {
         didSet {
             tableView.reloadData()
         }

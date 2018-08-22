@@ -27,9 +27,11 @@ class WalletPresenter {
     }
     
     private func getListAssets() {
+        let address = BytomWallet.shared.currentAccount!.defaultAddress
+        //let testAddress = "bm1qe3g790gkvgg8qy8lhkd42dnq59e2g52cychplv"
         self.interface.showActivityIndicator()
         self.walletRepo.getListAssets(address:
-            selectedAccount().defaultAddress).done { (assetsRequest) in
+            address).done { (assetsRequest) in
                 self.assets = assetsRequest.assets
                 self.interface.reload()
             }.ensure {
@@ -37,6 +39,11 @@ class WalletPresenter {
             }.catch { error in
                 self.urlErrorHandler.handle(error: error, interface: self.interface)
         }
+    }
+    
+    func refreshPage()  {
+        self.interface.reload()
+        getListAssets()
     }
     
     
@@ -49,11 +56,4 @@ class WalletPresenter {
     }
 }
 
-extension WalletPresenter {
-    
-    // TODO: - 本地保存选择的账号
-    func selectedAccount() -> WalletManageData {
-        // 现在默认第一个
-        return WalletManageRepository.getWalletAccountList().first!
-    }
-}
+

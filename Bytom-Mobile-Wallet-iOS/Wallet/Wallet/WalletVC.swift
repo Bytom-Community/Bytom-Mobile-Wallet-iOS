@@ -56,8 +56,10 @@ class WalletVC: UIViewController {
         
         vc?.callBack = { click in
             switch click {
-            case .selectedWallet(let index):
-                print("TODO: selected: \(index)")
+            case .selectedWallet(let account):
+                BytomWallet.shared.currentAccount = account
+                Config.setSelectedAccount(alias: account.alias)
+                self.presenter.refreshPage()
             case .createWallet:
                 let vc = R.storyboard.walletManage.createWalletVC()
                 self.navigationController?.pushViewController(vc!, animated: true)
@@ -70,7 +72,7 @@ class WalletVC: UIViewController {
     
     @IBAction func addressClick(_ sender: UIButton) {
         let vc = R.storyboard.wallet.walletAddressVC()!
-        vc.address = presenter.selectedAccount().defaultAddress
+        vc.address = BytomWallet.shared.currentAccount!.defaultAddress
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -110,9 +112,10 @@ extension WalletVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension WalletVC: WalletInteface {
+    
     func reload() {
-        aliasLb.text = presenter.selectedAccount().alias
-        addressLb.text = presenter.selectedAccount().defaultAddress
+        aliasLb.text = BytomWallet.shared.currentAccount!.alias
+        addressLb.text = BytomWallet.shared.currentAccount!.defaultAddress
         tableView.reloadData()
     }
 }

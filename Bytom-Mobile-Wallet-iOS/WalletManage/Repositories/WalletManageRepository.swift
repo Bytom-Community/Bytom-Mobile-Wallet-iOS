@@ -42,20 +42,20 @@ struct WalletManageRepository {
         return LoaclResponse.success
     }
     
-    static func getWalletAccountList() -> [WalletManageData] {
+    static func getWalletAccountList() -> [AccountData] {
         
         let res = try! WalletListAccounts().goDecode(WalletListAccountsModel.self)
         
-        let data = res.data.map { accouts -> WalletManageData in
-            var manageData = WalletManageData()
-            manageData.accountID = accouts.id
-            manageData.alias = accouts.alias
-            manageData.rootXPub = accouts.xpubs.first! // FIXME: - rootXPub
-            manageData.xpubs = accouts.xpubs
+        let data = res.data.map { accouts -> AccountData in
+            var account = AccountData()
+            account.accountID = accouts.id
+            account.alias = accouts.alias
+            account.rootXPub = accouts.xpubs.first! // FIXME: - rootXPub
+            account.xpubs = accouts.xpubs
             let address = try! WalletListAddress(accouts.id, accouts.alias).goDecode(WalletAddressModel.self)
-            manageData.address = address.data.map { $0.address }
-            manageData.defaultAddress = address.data.first!.address  // 地址暂时默认列表第一个 TODO: - 默认选项
-            return manageData
+            account.address = address.data.map { $0.address }
+            account.defaultAddress = address.data.first!.address // 地址暂时默认列表第一个 TODO: - 默认选项
+            return account
         }
         return data
     }
@@ -85,7 +85,7 @@ extension WalletManageRepository {
         // 验证符合格式要求
         guard let data = try? walletImage.goDecode(WalletImage.self),
               data.accountImage != nil else {
-              return LoaclResponse.fail("确认输入的信息是否正确")
+              return LoaclResponse.fail("请确认输入的信息是否正确")
         }
         let res = try! WalletRestoreWallet(walletImage).goDecode(WalletRestoreModel.self)
         guard res.status == "success" else {

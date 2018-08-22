@@ -41,3 +41,17 @@ class Config {
     }
     
 }
+
+extension Config {
+    
+    static func setSelectedAccount(alias: String) {
+        UserDefaults.standard.set(alias, forKey: "ACCOUNT")
+    }
+    
+    static func selectedAccount() -> String? {
+        return UserDefaults.standard.string(forKey: "ACCOUNT")
+    }
+}
+
+
+
