@@ -33,6 +33,7 @@ class NodeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        urlTF.text = Config.selectedNode()
         urlTF.rightView = resetBtn
         urlTF.rightViewMode = UITextFieldViewMode.always
     }

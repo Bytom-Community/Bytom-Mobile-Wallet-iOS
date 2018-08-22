@@ -24,6 +24,8 @@ class MeVC: UITableViewController {
        
         self.tableView.tableFooterView = UIView()
 
+        self.nodeLB.text = Config.selectedNode()
+        self.iconLB.text = Config.selectedCoin()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -58,13 +60,15 @@ class MeVC: UITableViewController {
         case 0:
             let vc = R.storyboard.me.nodeVC()
             vc?.resultClosure = {(_ string:String)->Void in
-                
+                Config.setSelectedNode(node: string)
+               self.nodeLB.text = string
             }
             navigationController?.pushViewController(vc!, animated: true)
             break
         case 1:
             let vc = R.storyboard.me.iconVC()
             vc?.resultClosure = {(_ string:String)->Void in
+                Config.setSelectedCoin(coin: string)
                 self.iconLB.text = string
             }
             navigationController?.pushViewController(vc!, animated: true)

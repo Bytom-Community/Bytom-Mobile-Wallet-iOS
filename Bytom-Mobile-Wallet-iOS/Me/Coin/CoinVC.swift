@@ -1,5 +1,5 @@
 //
-//  IconVC.swift
+//  CoinVC.swift
 //  Bytom-Mobile-Wallet-iOS
 //
 //  Created by ldp on 2018/6/15.
@@ -10,11 +10,11 @@ import UIKit
 
 typealias selectResultClosure = (_ string:String)->Void
 
-class IconVC: UITableViewController {
+class CoinVC: UITableViewController {
 
-    fileprivate lazy var dataSource: [String] = ["美元 - USDT","人民币 - CNY","比特币 - BTC"]
-    
-    var selectValue: String = "美元 - USDT"
+    fileprivate lazy var dataSource: [String] = Config.CoinArray
+
+    var selectValue: String = Config.selectedCoin()
 
     var resultClosure: selectResultClosure?
 

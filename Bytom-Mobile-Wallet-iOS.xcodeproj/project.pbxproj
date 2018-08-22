@@ -23,6 +23,8 @@
 		57A4D79A20D2AA7A005CA862 /* TransactionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4D79920D2AA79005CA862 /* TransactionsModel.swift */; };
 		57D43EDC20CE4179009DC827 /* MeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D43EDB20CE4179009DC827 /* MeHeaderView.swift */; };
 		57D43EE020CE60CB009DC827 /* UIDevices+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D43EDF20CE60CB009DC827 /* UIDevices+Extension.swift */; };
+		57E9EED3212D35E60089A5B1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9EED2212D35E60089A5B1 /* Config.swift */; };
+		57E9EED6212D3C270089A5B1 /* CoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9EED5212D3C270089A5B1 /* CoinVC.swift */; };
 		8512E61193FB53F550FD9975 /* Pods_Bytom_Mobile_Wallet_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1EDD41CD96124EA14A522A /* Pods_Bytom_Mobile_Wallet_iOS.framework */; };
 		FC1EE84620BC51B300A9CD84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1EE83C20BC51B300A9CD84 /* Assets.xcassets */; };
 		FC1EE84820BC51B300A9CD84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1EE84020BC51B300A9CD84 /* LaunchScreen.storyboard */; };
@@ -66,7 +68,6 @@
 		FCC65E802128817300A18DB3 /* CreateWalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC65E782128817300A18DB3 /* CreateWalletVC.swift */; };
 		FCC65E812128817300A18DB3 /* ImportWalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC65E7A2128817300A18DB3 /* ImportWalletVC.swift */; };
 		FCC65E822128817300A18DB3 /* WalletDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC65E7C2128817300A18DB3 /* WalletDetailsVC.swift */; };
-		FCC65E8F2128824D00A18DB3 /* IconVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC65E842128824C00A18DB3 /* IconVC.swift */; };
 		FCC65E902128824D00A18DB3 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC65E862128824C00A18DB3 /* MeVC.swift */; };
 		FCC65E912128824D00A18DB3 /* RecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC65E882128824D00A18DB3 /* RecordVC.swift */; };
 		FCC65E922128824D00A18DB3 /* RecordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC65E892128824D00A18DB3 /* RecordPresenter.swift */; };
@@ -118,6 +119,8 @@
 		57A4D79920D2AA79005CA862 /* TransactionsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsModel.swift; sourceTree = "<group>"; };
 		57D43EDB20CE4179009DC827 /* MeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeHeaderView.swift; sourceTree = "<group>"; };
 		57D43EDF20CE60CB009DC827 /* UIDevices+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevices+Extension.swift"; sourceTree = "<group>"; };
+		57E9EED2212D35E60089A5B1 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		57E9EED5212D3C270089A5B1 /* CoinVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinVC.swift; sourceTree = "<group>"; };
 		7E9E00CCEDDF7EF84E14F385 /* Pods-Bytom-Mobile-Wallet-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bytom-Mobile-Wallet-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bytom-Mobile-Wallet-iOS/Pods-Bytom-Mobile-Wallet-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		7F1EDD41CD96124EA14A522A /* Pods_Bytom_Mobile_Wallet_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bytom_Mobile_Wallet_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA52F8B10F3572976C28E8F0 /* Pods-Bytom-Mobile-Wallet-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bytom-Mobile-Wallet-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bytom-Mobile-Wallet-iOS/Pods-Bytom-Mobile-Wallet-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,7 +172,6 @@
 		FCC65E782128817300A18DB3 /* CreateWalletVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateWalletVC.swift; sourceTree = "<group>"; };
 		FCC65E7A2128817300A18DB3 /* ImportWalletVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportWalletVC.swift; sourceTree = "<group>"; };
 		FCC65E7C2128817300A18DB3 /* WalletDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletDetailsVC.swift; sourceTree = "<group>"; };
-		FCC65E842128824C00A18DB3 /* IconVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconVC.swift; sourceTree = "<group>"; };
 		FCC65E862128824C00A18DB3 /* MeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		FCC65E882128824D00A18DB3 /* RecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
 		FCC65E892128824D00A18DB3 /* RecordPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordPresenter.swift; sourceTree = "<group>"; };
@@ -277,6 +279,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		57E9EED4212D3C270089A5B1 /* Coin */ = {
+			isa = PBXGroup;
+			children = (
+				57E9EED5212D3C270089A5B1 /* CoinVC.swift */,
+			);
+			path = Coin;
+			sourceTree = "<group>";
+		};
 		FC1EE83920BC51B300A9CD84 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,7 +350,7 @@
 				573FF6D720E084CB00F615E2 /* Repositories */,
 				FCE47D7520BEE0A100D380FB /* IocContainer */,
 				57A4D79820D2AA79005CA862 /* Domains */,
-				FCC65E832128824C00A18DB3 /* Icon */,
+				57E9EED4212D3C270089A5B1 /* Coin */,
 				FCC65E852128824C00A18DB3 /* Me */,
 				FCC65E8B2128824D00A18DB3 /* Node */,
 				FCC65E872128824D00A18DB3 /* Record */,
@@ -509,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				FC4C76D020BDBAD600E930B5 /* NetWorks.swift */,
+				57E9EED2212D35E60089A5B1 /* Config.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -698,14 +709,6 @@
 				FCC65E7C2128817300A18DB3 /* WalletDetailsVC.swift */,
 			);
 			path = WalletDetails;
-			sourceTree = "<group>";
-		};
-		FCC65E832128824C00A18DB3 /* Icon */ = {
-			isa = PBXGroup;
-			children = (
-				FCC65E842128824C00A18DB3 /* IconVC.swift */,
-			);
-			path = Icon;
 			sourceTree = "<group>";
 		};
 		FCC65E852128824C00A18DB3 /* Me */ = {
@@ -1019,6 +1022,8 @@
 				FCC65E6521287D3500A18DB3 /* WalletManageCell.swift in Sources */,
 				FCC65E7F2128817300A18DB3 /* BackupWalletVC.swift in Sources */,
 				57A4D79320D26FCD005CA862 /* RecordCell.swift in Sources */,
+				57E9EED6212D3C270089A5B1 /* CoinVC.swift in Sources */,
+				57E9EED3212D35E60089A5B1 /* Config.swift in Sources */,
 				FCC65E49212875F200A18DB3 /* WalletVC.swift in Sources */,
 				FCC65E4A212875F200A18DB3 /* WalletPresenter.swift in Sources */,
 				43291204212AA0A3009D979C /* Dictionary+Ex.swift in Sources */,
@@ -1046,7 +1051,6 @@
 				FCC65E812128817300A18DB3 /* ImportWalletVC.swift in Sources */,
 				573FF6E020E0869600F615E2 /* GetTransactionsRequest.swift in Sources */,
 				2315DCB120EE088D006C4471 /* URLErrorHandler.swift in Sources */,
-				FCC65E8F2128824D00A18DB3 /* IconVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
