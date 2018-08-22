@@ -34,8 +34,7 @@ class WalletAddressVC: UIViewController {
     
     @IBAction func copyClick(_ sender: UIButton) {
         UIPasteboard.general.string = address
-        self.showSuccessToast("复制成功") {
-            sender.isSelected = true
-        }
+         self.showSuccessToast("复制成功")
+         sender.isSelected = true
     }
 }

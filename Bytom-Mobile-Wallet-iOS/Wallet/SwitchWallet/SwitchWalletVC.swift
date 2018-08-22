@@ -108,6 +108,8 @@ extension SwitchWalletVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+        close()
+        
         switch (indexPath.section, indexPath.row) {
         case (0,_):
             self.callBack?(SwitchWalletClick.selectedWallet(indexPath.row))
@@ -118,7 +120,6 @@ extension SwitchWalletVC: UITableViewDelegate, UITableViewDataSource {
         default:
             break
         }
-        close()
     }
 }
 
