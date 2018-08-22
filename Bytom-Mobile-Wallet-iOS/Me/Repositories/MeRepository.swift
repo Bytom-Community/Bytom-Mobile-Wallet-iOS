@@ -10,7 +10,7 @@ import Foundation
 import PromiseKit
 
 struct MeRepository {
-    func getListTransactions(address: String, assetID: String) -> Promise<GetTransactionsRequest> {
-        return URLSession.shared.POST(NetWorks.api + "list-transactions", json: ["address":address, "asset_id":assetID]).asObject()
+    func getListTransactions(address: String, assetID: String, pageNumber: Int, pageSize: Int) -> Promise<GetTransactionsRequest> {
+        return URLSession.shared.POST(NetWorks.api + "list-transactions", json: ["address":address, "asset_id":assetID,"page_number": pageNumber, "page_size":pageSize]).asObject()
     }
 }

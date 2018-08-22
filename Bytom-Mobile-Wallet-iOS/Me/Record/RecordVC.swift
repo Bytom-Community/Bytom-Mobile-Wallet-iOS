@@ -8,20 +8,43 @@
 
 import UIKit
 
+import MJRefresh
+
 class RecordVC: UITableViewController {
     private let controller = IocContainer.resolve(RecordPresenter.self)
 
 //    fileprivate lazy var dataSource: [TransactionsModel]? = [TransactionsModel]()
-
+    
+    let header = MJRefreshNormalHeader()
+    let footer = MJRefreshAutoNormalFooter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.register(RecordSectionHeaderView.classForCoder(), forHeaderFooterViewReuseIdentifier: "RecordSectionHeaderView")
         self.tableView.tableFooterView = UIView()
         
+        initRefresh()
+        
         controller.bindInterface(interface: self)
     }
-
+    
+    func initRefresh() {
+        header.setRefreshingTarget(self, refreshingAction: #selector(headerRefresh))
+        self.tableView.mj_header = header
+        
+        footer.setRefreshingTarget(self, refreshingAction: #selector(footerRefresh))
+        self.tableView.mj_footer = footer
+    }
+    
+    @objc func headerRefresh(){
+        self.controller.headerRefresh()
+    }
+    
+    @objc func footerRefresh(){
+        self.controller.footerRefresh()
+    }
+   
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -71,6 +94,11 @@ class RecordVC: UITableViewController {
 extension RecordVC: RecordInterface {
     func reload() {
         tableView.reloadData()
+    }
+    
+    func endRefresh() {
+        self.tableView.mj_header.endRefreshing()
+        self.tableView.mj_footer.endRefreshing()
     }
 }
 

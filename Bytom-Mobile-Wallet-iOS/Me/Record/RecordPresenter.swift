@@ -18,7 +18,7 @@ class RecordPresenter {
     
     private var allTrans = [String:[TransactionsModel]]()
     
-    private var sectionSource = [String:String]()
+    private var pageIndex = 1, pageSize = 10
 
     init(meRepo: MeRepository) {
         self.meRepo = meRepo
@@ -29,16 +29,29 @@ class RecordPresenter {
         getListTransactions()
     }
     
+    func headerRefresh() {
+        self.pageIndex = 1
+        self.transactions.removeAll()
+        self.allTrans.removeAll()
+        self.records.removeAll()
+        getListTransactions()
+    }
+    
+    func footerRefresh() {
+        self.pageIndex += 1
+        getListTransactions()
+    }
+    
     private func getListTransactions() {
         self.interface.showActivityIndicator()
         self.meRepo.getListTransactions(address:
-            "bm1qe3g790gkvgg8qy8lhkd42dnq59e2g52cychplv", assetID: "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff").done { (request) in
-                self.transactions = request.data
+            "bm1qe3g790gkvgg8qy8lhkd42dnq59e2g52cychplv", assetID: "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", pageNumber: self.pageIndex, pageSize: self.pageSize).done { (request) in
+                
+                self.transactions.append(contentsOf: request.data)
                 
                 self.transactions.sort(by: { (trans1, trans2) -> Bool in
                     return trans1.timestamp > trans2.timestamp
                 })
-                
                 
                 for trans in self.transactions {
                     
@@ -52,12 +65,19 @@ class RecordPresenter {
                         self.records.append(record)
                     }
 
-                    self.allTrans[key]?.append(trans)
+                    let isExist = self.allTrans[key]?.contains(where: { (model) -> Bool in
+                        return model.id == trans.id
+                    })
+                    
+                    if isExist == false {
+                        self.allTrans[key]?.append(trans)
+                    }
                 }
                 
                 self.interface.reload()
             }.ensure {
                 self.interface.hideActivityIndicator()
+                self.interface.endRefresh()
             }.catch { error in
                 print(error)
         }

@@ -10,4 +10,5 @@ import Foundation
 
 protocol RecordInterface: UIInterface {
     func reload()
+    func endRefresh()
 }
