@@ -10,6 +10,8 @@ import UIKit
 
 class RecordDetailVC: UITableViewController {
     
+    @IBOutlet weak var amountLB: UILabel!
+    
     var transaction: TransactionsModel = TransactionsModel()
 
     fileprivate lazy var dataSource: [String] = ["交易状态","发送方","接收方","矿工费","备注","交易号","时间"]
@@ -20,6 +22,22 @@ class RecordDetailVC: UITableViewController {
         self.tableView.tableFooterView = UIView()
         self.tableView.estimatedRowHeight = 60
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        switch transaction.op {
+        case "send":
+            if transaction.amount != 0{
+                self.amountLB.text = "-\(transaction.amount)"
+            }
+            break;
+        case "receive":
+            if transaction.amount != 0{
+                self.amountLB.text = "+\(transaction.amount)"
+            }
+            break;
+        default:
+            break;
+        }
+
     }
 
     // MARK: - Table view data source
@@ -67,6 +85,7 @@ class RecordDetailVC: UITableViewController {
                     }
                 }
                 contentLB.text = address
+                
                 break
             case "receive":
                 var address = ""
@@ -121,7 +140,7 @@ class RecordDetailVC: UITableViewController {
 
             break
         case 3:
-//            contentLB.text = String(Double(transaction.fee)! / 1e8)
+            contentLB.text = String(Double(transaction.fee) / 1e8)
             break
         case 5:
             contentLB.text = transaction.id

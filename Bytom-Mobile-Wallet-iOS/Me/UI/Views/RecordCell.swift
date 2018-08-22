@@ -42,6 +42,10 @@ class RecordCell: UITableViewCell {
                 
                 btmAddressLB.text = address
                 
+                if transaction.amount != 0 {
+                    tradeValueLB.text = "-\(transaction.amount)"
+                }
+
                 break
             case "receive":
                 opIV.image = R.image.transfer_in()
@@ -56,6 +60,10 @@ class RecordCell: UITableViewCell {
                 }
 
                 btmAddressLB.text = address
+
+                if transaction.amount != 0{
+                    tradeValueLB.text = "+\(transaction.amount)"
+                }
 
                 break
             default:
