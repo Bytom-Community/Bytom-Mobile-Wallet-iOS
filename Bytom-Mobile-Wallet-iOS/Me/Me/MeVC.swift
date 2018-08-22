@@ -72,7 +72,14 @@ class MeVC: UITableViewController {
                 self.iconLB.text = string
             }
             navigationController?.pushViewController(vc!, animated: true)
+            break
         case 2:
+           
+            let vc = R.storyboard.walletManage.backupWalletVC()
+            navigationController?.pushViewController(vc!, animated: true)
+
+            break
+        case 3:
 
             let activityViewController = UIActivityViewController(
                 activityItems: ["https://bytom.io/"],
@@ -95,6 +102,9 @@ class MeVC: UITableViewController {
             self.navigationController?.present(activityViewController,
                                                             animated: true,
                                                             completion: nil)
+            break
+        case 4:
+            
             break
         default:
             break
