@@ -7,13 +7,11 @@
 //
 
 import UIKit
-
+import DeviceKit
 class MeVC: UITableViewController {
-    
     @IBOutlet weak var nodeLB: UILabel!
     @IBOutlet weak var iconLB: UILabel!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -99,6 +97,12 @@ class MeVC: UITableViewController {
 //                UIActivityType.postToVimeo,
 //                UIActivityType.postToTencentWeibo
 //            ]
+            if Device().isPad {
+                if let popOver = activityViewController.popoverPresentationController {
+                    popOver.sourceView = tableView.cellForRow(at: indexPath)
+                    popOver.permittedArrowDirections = .up
+                }
+            }
             self.navigationController?.present(activityViewController,
                                                             animated: true,
                                                             completion: nil)
