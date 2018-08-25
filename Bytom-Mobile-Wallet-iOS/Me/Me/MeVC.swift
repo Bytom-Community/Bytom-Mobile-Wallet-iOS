@@ -46,7 +46,7 @@ class MeVC: UITableViewController {
     }
 
     func setStatusBarBg() {
-        let statusBarBackgroundView = UIView.init(frame: CGRect.init(x: 0, y: -UIApplication.shared.statusBarFrame.height, width: view.bounds.width, height: UIApplication.shared.statusBarFrame.height))
+        let statusBarBackgroundView = UIView(frame: CGRect.init(x: 0, y: -UIApplication.shared.statusBarFrame.height, width: view.bounds.width, height: UIApplication.shared.statusBarFrame.height))
         statusBarBackgroundView.backgroundColor = Colors.backgroundColor
         view.addSubview(statusBarBackgroundView)
     }

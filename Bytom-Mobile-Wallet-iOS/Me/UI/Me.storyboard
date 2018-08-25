@@ -132,12 +132,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="UCc-jb-Cy1" customClass="MeHeaderView" customModule="Bytom_Mobile_Wallet_iOS" customModuleProvider="target">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="UCc-jb-Cy1" customClass="MeHeaderView" customModule="Bytom_Mobile_Wallet_iOS" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DY3-0t-geI">
-                                    <rect key="frame" x="0.0" y="-54" width="170" height="170"/>
+                                    <rect key="frame" x="0.0" y="10" width="170" height="170"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="170" id="GhC-JH-PVg"/>
                                         <constraint firstAttribute="width" constant="170" id="mdS-PW-AQJ"/>
@@ -158,7 +158,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" tag="2000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjl-wv-r2C">
-                                    <rect key="frame" x="205" y="-54" width="170" height="170"/>
+                                    <rect key="frame" x="205" y="10" width="170" height="170"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="170" id="g2z-kO-H6c"/>
                                         <constraint firstAttribute="height" constant="170" id="uV1-7v-5d4"/>
@@ -178,7 +178,6 @@
                                 <constraint firstAttribute="bottom" secondItem="DY3-0t-geI" secondAttribute="bottom" id="Zm1-ya-17n"/>
                                 <constraint firstAttribute="trailing" secondItem="g0v-Mh-s2p" secondAttribute="trailing" id="erA-po-aFJ"/>
                                 <constraint firstAttribute="bottom" secondItem="jjl-wv-r2C" secondAttribute="bottom" id="syB-6h-HJM"/>
-                                <constraint firstAttribute="height" constant="180" id="yzl-Zf-oBT"/>
                                 <constraint firstAttribute="trailing" secondItem="jjl-wv-r2C" secondAttribute="trailing" id="zXx-mM-IRf"/>
                             </constraints>
                         </view>

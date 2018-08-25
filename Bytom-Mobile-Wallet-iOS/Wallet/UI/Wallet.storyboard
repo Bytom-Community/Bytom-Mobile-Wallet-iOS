@@ -38,8 +38,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXY-fR-cUl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" red="0.12549019607843137" green="0.14509803921568626" blue="0.1764705882352941" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="i1S-34-aWc"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ar-F6-Uzs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="180"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="私房钱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adg-U7-WKv">
                                         <rect key="frame" x="15" y="15.5" width="52" height="21"/>
@@ -140,7 +147,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uNK-z3-I2F">
-                                <rect key="frame" x="0.0" y="180" width="375" height="423"/>
+                                <rect key="frame" x="0.0" y="200" width="375" height="403"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TokenCell" id="SLH-l6-tgJ" customClass="TokenCell" customModule="Bytom_Mobile_Wallet_iOS" customModuleProvider="target">
@@ -198,12 +205,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="XXY-fR-cUl" firstAttribute="top" secondItem="mwo-jX-4UL" secondAttribute="top" id="7t3-MZ-ODf"/>
                             <constraint firstItem="0ar-F6-Uzs" firstAttribute="leading" secondItem="FEZ-pf-rwb" secondAttribute="leading" id="8sn-ik-U90"/>
-                            <constraint firstItem="0ar-F6-Uzs" firstAttribute="top" secondItem="FEZ-pf-rwb" secondAttribute="top" id="KcR-7Y-77c"/>
                             <constraint firstAttribute="bottom" secondItem="uNK-z3-I2F" secondAttribute="bottom" id="U6k-sz-4W8"/>
+                            <constraint firstItem="0ar-F6-Uzs" firstAttribute="top" secondItem="XXY-fR-cUl" secondAttribute="bottom" id="aU8-Hx-fEM"/>
+                            <constraint firstAttribute="trailing" secondItem="XXY-fR-cUl" secondAttribute="trailing" id="e0B-GJ-iao"/>
                             <constraint firstItem="uNK-z3-I2F" firstAttribute="top" secondItem="0ar-F6-Uzs" secondAttribute="bottom" id="qwD-mP-a6q"/>
                             <constraint firstItem="0ar-F6-Uzs" firstAttribute="trailing" secondItem="FEZ-pf-rwb" secondAttribute="trailing" id="rDj-tE-7RC"/>
                             <constraint firstItem="FEZ-pf-rwb" firstAttribute="trailing" secondItem="uNK-z3-I2F" secondAttribute="trailing" id="sng-6j-Hjg"/>
+                            <constraint firstItem="XXY-fR-cUl" firstAttribute="leading" secondItem="mwo-jX-4UL" secondAttribute="leading" id="szR-rL-XnG"/>
                             <constraint firstItem="uNK-z3-I2F" firstAttribute="leading" secondItem="FEZ-pf-rwb" secondAttribute="leading" id="yho-QL-eJh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FEZ-pf-rwb"/>
@@ -212,6 +222,7 @@
                     <connections>
                         <outlet property="addressLb" destination="vqO-0W-MdG" id="fkC-dn-89c"/>
                         <outlet property="aliasLb" destination="Adg-U7-WKv" id="kRc-ND-UhA"/>
+                        <outlet property="statusBarBackgroundViewH" destination="i1S-34-aWc" id="eBM-Mp-YJ1"/>
                         <outlet property="tableView" destination="uNK-z3-I2F" id="HtL-ep-iEU"/>
                     </connections>
                 </viewController>

@@ -14,16 +14,13 @@ class WalletVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var aliasLb: UILabel!
     @IBOutlet weak var addressLb:  UILabel!
-    
+    @IBOutlet weak var statusBarBackgroundViewH: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         fd_prefersNavigationBarHidden = true
-
-        let statusBarBackgroundView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: view.bounds.width, height: UIApplication.shared.statusBarFrame.height))
-        statusBarBackgroundView.backgroundColor = Colors.backgroundColor
-        view.addSubview(statusBarBackgroundView)
+        statusBarBackgroundViewH.constant = UIApplication.shared.statusBarFrame.height
         
         tableView.delegate = self
         tableView.dataSource = self
