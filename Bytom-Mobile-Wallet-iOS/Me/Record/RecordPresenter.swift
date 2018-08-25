@@ -45,7 +45,7 @@ class RecordPresenter {
     private func getListTransactions() {
         self.interface.showActivityIndicator()
         self.meRepo.getListTransactions(address:
-            "bm1qe3g790gkvgg8qy8lhkd42dnq59e2g52cychplv", assetID: "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", pageNumber: self.pageIndex, pageSize: self.pageSize).done { (request) in
+            BytomWallet.shared.currentAccount!.defaultAddress, assetID: "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", pageNumber: self.pageIndex, pageSize: self.pageSize).done { (request) in
                 
                 self.transactions.append(contentsOf: request.data)
                 
