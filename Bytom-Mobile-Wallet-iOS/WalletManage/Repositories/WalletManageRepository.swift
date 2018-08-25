@@ -95,7 +95,7 @@ extension WalletManageRepository {
     }
 }
 
-// MARK: - changePassword
+// MARK: - changePassword、verifyPassword
 extension WalletManageRepository {
     
     static func changePassword(_ rootXPub: String, oldPassword:String, newPassword:String) -> LoaclResponse  {
@@ -104,6 +104,15 @@ extension WalletManageRepository {
              return LoaclResponse.success
         } else {
              return LoaclResponse.fail("请确认密码输入是否正确")
+        }
+    }
+    
+    static func verifyPassword(_ rootXPub: String, password:String) -> LoaclResponse  {
+        let res = try! WalletResetKeyPassword(rootXPub, password, password).goDecode(WalletResetKeyPasswordModel.self)
+        if res.data.changed == true {
+            return LoaclResponse.success
+        } else {
+            return LoaclResponse.fail("请确认密码输入是否正确")
         }
     }
 }

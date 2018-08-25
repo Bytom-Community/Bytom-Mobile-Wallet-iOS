@@ -32,7 +32,8 @@ class WalletPresenter {
         self.interface.showActivityIndicator()
         self.walletRepo.getListAssets(address:
             address).done { (assetsRequest) in
-                self.assets = assetsRequest.assets
+               // self.assets = assetsRequest.assets
+                self.testAmount = assetsRequest.data?.amount //test
                 self.interface.reload()
             }.ensure {
                 self.interface.hideActivityIndicator()
@@ -46,6 +47,7 @@ class WalletPresenter {
         getListAssets()
     }
     
+    var testAmount:Int!
     
     var row: Int {
         return assets.count

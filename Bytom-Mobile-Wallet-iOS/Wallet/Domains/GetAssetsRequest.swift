@@ -9,5 +9,13 @@
 import Foundation
 
 struct GetAssetsRequest: Codable {
-    var assets = [AssetsModel]()
+    var assets:[AssetsModel]! //= [AssetsModel]()
+    var data:AssetsData! // test
+}
+
+struct AssetsData: Codable {
+    var amount:Int!
+    private enum CodingKeys:String, CodingKey {
+        case amount = "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    }
 }

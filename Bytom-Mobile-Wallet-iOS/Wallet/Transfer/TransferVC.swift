@@ -64,15 +64,16 @@ class TransferVC: UITableViewController {
             }
         }
     }
-    
-    var testAddress = ""
+
+    var address:String? // from qrCodeScanning
+    var assetId:String! = "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initUIConfig()
-        // test
-        walletAddressTF.text = testAddress
+        
+        walletAddressTF.text = address
     }
     
    private func initUIConfig() {
@@ -87,7 +88,7 @@ class TransferVC: UITableViewController {
         let vc = QRCodeScannerVC()
         vc.hidesBottomBarWhenPushed = true
         vc.resultClosure = { [weak self] address in
-            self!.testAddress = address
+            self!.address = address
             self!.walletAddressTF.text = address
         }
         navigationController?.pushViewController(vc, animated: true)
@@ -117,14 +118,50 @@ class TransferVC: UITableViewController {
     }
     
     @IBAction func transferClick(_ sender: UIButton) {
+        
         let alertVC = UIAlertController(title: nil, message: "请输入钱包密码", preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
         alertVC.addTextField { $0.placeholder = "请输入钱包密码"}
         alertVC.addAction(UIAlertAction(title: "确认", style: .destructive) { _ in
-            let password = alertVC.textFields!.first!.text ?? ""
-            print(password)
+            
+          let password = alertVC.textFields!.first!.text!
+            
+          let res =  WalletManageRepository.verifyPassword(BytomWallet.shared.currentAccount!.rootXPub, password: password)
+            switch res {
+            case .success:
+                self.sendBuildRequest()
+            case .fail(let errorMsg):
+                self.showErrorToast(errorMsg)
+            }
         })
         self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    // test
+    func sendBuildRequest() {
+        
+         let address = walletAddressTF.text!
+        
+         // test
+        var buildRequest = BuildRequest()
+        
+        var spendAccount = SpendAction()
+        spendAccount.accountId = BytomWallet.shared.currentAccount!.accountID
+        spendAccount.assetAmount = AssetAmount(assetId: assetId, amount: 40000000)
+        
+        var spendAccount2 = SpendAction()
+        spendAccount2.accountId = BytomWallet.shared.currentAccount!.accountID
+        spendAccount2.assetAmount = AssetAmount(assetId: assetId, amount: 300000000)
+        
+        var controlAddressAction = ControlAddressAction()
+        controlAddressAction.address = address
+        controlAddressAction.assetAmount = AssetAmount(assetId: assetId, amount: 300000000)
+        
+        buildRequest.actions = [spendAccount, spendAccount2, controlAddressAction]
+        
+        WalletRepository.buildTransaction(model: buildRequest).done { res in
+            print("======>")
+        }.catch { print($0) }
     }
     
     

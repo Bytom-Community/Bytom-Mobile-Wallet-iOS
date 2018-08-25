@@ -83,7 +83,7 @@ class WalletVC: UIViewController {
             print(address)
             // TODO: -
             let vc = R.storyboard.wallet.transferVC()!
-            vc.testAddress = address
+            vc.address = address
             self!.navigationController?.pushViewController(vc, animated: true)
         }
         navigationController?.pushViewController(vc, animated: true)
@@ -97,12 +97,17 @@ class WalletVC: UIViewController {
 
 extension WalletVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.row
+        //return presenter.row
+        return presenter.testAmount == nil ? 0 : 1 //test
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TokenCell.ID, for: indexPath) as! TokenCell
-        cell.asset = presenter.asset(row: indexPath.row)
+        //cell.asset = presenter.asset(row: indexPath.row)
+        
+        //test
+        cell.asset.assetID = "BTM"
+        cell.asset.amount = "\(presenter.testAmount!)"
         return cell
     }
     

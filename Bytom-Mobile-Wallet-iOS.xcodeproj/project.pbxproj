@@ -16,6 +16,8 @@
 		43291209212B2496009D979C /* Wallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43291208212B2496009D979C /* Wallet.framework */; };
 		433280A2212DA69100B78578 /* BytomWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433280A1212DA69100B78578 /* BytomWallet.swift */; };
 		433280A4212DA7BF00B78578 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433280A3212DA7BF00B78578 /* AccountModel.swift */; };
+		43C363B32130F11F008EC2F1 /* BuildRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C363B22130F11F008EC2F1 /* BuildRequestModel.swift */; };
+		43C363B52131A180008EC2F1 /* TemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C363B42131A180008EC2F1 /* TemplateModel.swift */; };
 		5720602220EB411200A1400F /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5720602120EB411200A1400F /* RecordModel.swift */; };
 		573FF6DB20E084CB00F615E2 /* MeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573FF6D820E084CB00F615E2 /* MeRepository.swift */; };
 		573FF6E020E0869600F615E2 /* GetTransactionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573FF6DF20E0869600F615E2 /* GetTransactionsRequest.swift */; };
@@ -113,6 +115,8 @@
 		43291208212B2496009D979C /* Wallet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Wallet.framework; sourceTree = "<group>"; };
 		433280A1212DA69100B78578 /* BytomWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BytomWallet.swift; sourceTree = "<group>"; };
 		433280A3212DA7BF00B78578 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		43C363B22130F11F008EC2F1 /* BuildRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildRequestModel.swift; sourceTree = "<group>"; };
+		43C363B42131A180008EC2F1 /* TemplateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateModel.swift; sourceTree = "<group>"; };
 		5720602120EB411200A1400F /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
 		573FF6D820E084CB00F615E2 /* MeRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeRepository.swift; sourceTree = "<group>"; };
 		573FF6DF20E0869600F615E2 /* GetTransactionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsRequest.swift; sourceTree = "<group>"; };
@@ -513,6 +517,8 @@
 			children = (
 				FC4AB52120D02AD9003B6033 /* AssetsModel.swift */,
 				FC4AB52320D02D43003B6033 /* GetAssetsRequest.swift */,
+				43C363B22130F11F008EC2F1 /* BuildRequestModel.swift */,
+				43C363B42131A180008EC2F1 /* TemplateModel.swift */,
 			);
 			path = Domains;
 			sourceTree = "<group>";
@@ -998,6 +1004,7 @@
 				432911FE2129B267009D979C /* WalletManageRepository.swift in Sources */,
 				FCC65E802128817300A18DB3 /* CreateWalletVC.swift in Sources */,
 				FC4C76CC20BD953600E930B5 /* Promise+asAny.swift in Sources */,
+				43C363B32130F11F008EC2F1 /* BuildRequestModel.swift in Sources */,
 				FCE47D7F20BEF2A400D380FB /* WalletRepository.swift in Sources */,
 				2315DCB320EE08EE006C4471 /* HTTPClientError.swift in Sources */,
 				433280A2212DA69100B78578 /* BytomWallet.swift in Sources */,
@@ -1021,6 +1028,7 @@
 				FC4C76D120BDBAD600E930B5 /* NetWorks.swift in Sources */,
 				FCC65E46212875F200A18DB3 /* SwitchWalletVC.swift in Sources */,
 				FC4AB52220D02AD9003B6033 /* AssetsModel.swift in Sources */,
+				43C363B52131A180008EC2F1 /* TemplateModel.swift in Sources */,
 				FC4AB51A20D02479003B6033 /* TokenCell.swift in Sources */,
 				57A4D79A20D2AA7A005CA862 /* TransactionsModel.swift in Sources */,
 				FCC65E6521287D3500A18DB3 /* WalletManageCell.swift in Sources */,

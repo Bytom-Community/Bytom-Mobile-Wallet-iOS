@@ -14,3 +14,12 @@ struct WalletRepository {
         return URLSession.shared.POST(NetWorks.api + "list-assets", json: ["address":address]).asObject()
     }
 }
+
+// MARK: - build-transaction
+extension WalletRepository {
+    
+    static func buildTransaction(model: BuildRequest) -> Promise<TemplateModel> {
+        let json = model.toDictionary()
+        return URLSession.shared.POST(NetWorks.api + "build-transaction", json: json).asObject()
+    }
+}
