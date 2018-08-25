@@ -19,4 +19,5 @@ target 'Bytom-Mobile-Wallet-iOS' do
   pod 'CryptoSwift'
   pod 'swiftScan', '~> 1.1.2'
   pod 'MJRefresh'
+  pod 'DeviceKit', '~> 1.3'
 end
