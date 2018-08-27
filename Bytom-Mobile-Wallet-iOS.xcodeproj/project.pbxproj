@@ -44,6 +44,8 @@
 		FC4AB51F20D024D8003B6033 /* UITableViewCell+ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AB51E20D024D8003B6033 /* UITableViewCell+ID.swift */; };
 		FC4AB52220D02AD9003B6033 /* AssetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AB52120D02AD9003B6033 /* AssetsModel.swift */; };
 		FC4AB52420D02D43003B6033 /* GetAssetsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AB52320D02D43003B6033 /* GetAssetsRequest.swift */; };
+		FC4AB868213448C600F6FB58 /* WalletAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AB867213448C600F6FB58 /* WalletAddressVC.swift */; };
+		FC4AB86B213448DA00F6FB58 /* TransferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4AB86A213448DA00F6FB58 /* TransferVC.swift */; };
 		FC4C76C420BD927F00E930B5 /* UIViewController+IView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76C220BD90A600E930B5 /* UIViewController+IView.swift */; };
 		FC4C76C820BD93F700E930B5 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76C720BD93F700E930B5 /* UIView+Border.swift */; };
 		FC4C76CC20BD953600E930B5 /* Promise+asAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76CB20BD953600E930B5 /* Promise+asAny.swift */; };
@@ -51,10 +53,8 @@
 		FC4C76D120BDBAD600E930B5 /* NetWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76D020BDBAD600E930B5 /* NetWorks.swift */; };
 		FC4C76D320BDBB3800E930B5 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C76D220BDBB3800E930B5 /* Date+String.swift */; };
 		FCA9644220CD7B06003116BD /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA9644120CD7B06003116BD /* Welcome.storyboard */; };
-		FCC65E44212875F200A18DB3 /* WalletAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC65E39212875F100A18DB3 /* WalletAddressVC.swift */; };
 		FCC65E45212875F200A18DB3 /* QRCodeScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC65E3B212875F100A18DB3 /* QRCodeScannerVC.swift */; };
 		FCC65E46212875F200A18DB3 /* SwitchWalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC65E3D212875F100A18DB3 /* SwitchWalletVC.swift */; };
-		FCC65E47212875F200A18DB3 /* TransferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC65E3F212875F200A18DB3 /* TransferVC.swift */; };
 		FCC65E48212875F200A18DB3 /* WalletInteface.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC65E41212875F200A18DB3 /* WalletInteface.swift */; };
 		FCC65E49212875F200A18DB3 /* WalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC65E42212875F200A18DB3 /* WalletVC.swift */; };
 		FCC65E4A212875F200A18DB3 /* WalletPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC65E43212875F200A18DB3 /* WalletPresenter.swift */; };
@@ -151,6 +151,8 @@
 		FC4AB51E20D024D8003B6033 /* UITableViewCell+ID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+ID.swift"; sourceTree = "<group>"; };
 		FC4AB52120D02AD9003B6033 /* AssetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsModel.swift; sourceTree = "<group>"; };
 		FC4AB52320D02D43003B6033 /* GetAssetsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAssetsRequest.swift; sourceTree = "<group>"; };
+		FC4AB867213448C600F6FB58 /* WalletAddressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletAddressVC.swift; sourceTree = "<group>"; };
+		FC4AB86A213448DA00F6FB58 /* TransferVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferVC.swift; sourceTree = "<group>"; };
 		FC4C76C120BD904300E930B5 /* Bytom-Wallet-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bytom-Wallet-Bridging-Header.h"; sourceTree = "<group>"; };
 		FC4C76C220BD90A600E930B5 /* UIViewController+IView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+IView.swift"; sourceTree = "<group>"; };
 		FC4C76C720BD93F700E930B5 /* UIView+Border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
@@ -159,10 +161,8 @@
 		FC4C76D020BDBAD600E930B5 /* NetWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorks.swift; sourceTree = "<group>"; };
 		FC4C76D220BDBB3800E930B5 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		FCA9644120CD7B06003116BD /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
-		FCC65E39212875F100A18DB3 /* WalletAddressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletAddressVC.swift; sourceTree = "<group>"; };
 		FCC65E3B212875F100A18DB3 /* QRCodeScannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScannerVC.swift; sourceTree = "<group>"; };
 		FCC65E3D212875F100A18DB3 /* SwitchWalletVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchWalletVC.swift; sourceTree = "<group>"; };
-		FCC65E3F212875F200A18DB3 /* TransferVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferVC.swift; sourceTree = "<group>"; };
 		FCC65E41212875F200A18DB3 /* WalletInteface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletInteface.swift; sourceTree = "<group>"; };
 		FCC65E42212875F200A18DB3 /* WalletVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletVC.swift; sourceTree = "<group>"; };
 		FCC65E43212875F200A18DB3 /* WalletPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletPresenter.swift; sourceTree = "<group>"; };
@@ -405,8 +405,6 @@
 				FCC65E40212875F200A18DB3 /* Wallet */,
 				FCC65E3A212875F100A18DB3 /* QRCodeScanner */,
 				FCC65E3C212875F100A18DB3 /* SwitchWallet */,
-				FCC65E3E212875F200A18DB3 /* Transfer */,
-				FCC65E38212875F100A18DB3 /* WalletAddress */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -526,6 +524,22 @@
 			path = Domains;
 			sourceTree = "<group>";
 		};
+		FC4AB866213448C600F6FB58 /* WalletAddress */ = {
+			isa = PBXGroup;
+			children = (
+				FC4AB867213448C600F6FB58 /* WalletAddressVC.swift */,
+			);
+			path = WalletAddress;
+			sourceTree = "<group>";
+		};
+		FC4AB869213448DA00F6FB58 /* Transfer */ = {
+			isa = PBXGroup;
+			children = (
+				FC4AB86A213448DA00F6FB58 /* TransferVC.swift */,
+			);
+			path = Transfer;
+			sourceTree = "<group>";
+		};
 		FC4C76CF20BDBA8600E930B5 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,14 +581,6 @@
 			path = IocContainer;
 			sourceTree = "<group>";
 		};
-		FCC65E38212875F100A18DB3 /* WalletAddress */ = {
-			isa = PBXGroup;
-			children = (
-				FCC65E39212875F100A18DB3 /* WalletAddressVC.swift */,
-			);
-			path = WalletAddress;
-			sourceTree = "<group>";
-		};
 		FCC65E3A212875F100A18DB3 /* QRCodeScanner */ = {
 			isa = PBXGroup;
 			children = (
@@ -591,14 +597,6 @@
 			path = SwitchWallet;
 			sourceTree = "<group>";
 		};
-		FCC65E3E212875F200A18DB3 /* Transfer */ = {
-			isa = PBXGroup;
-			children = (
-				FCC65E3F212875F200A18DB3 /* TransferVC.swift */,
-			);
-			path = Transfer;
-			sourceTree = "<group>";
-		};
 		FCC65E40212875F200A18DB3 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +611,8 @@
 			isa = PBXGroup;
 			children = (
 				FCC65E51212879AD00A18DB3 /* IocContainer */,
+				FC4AB866213448C600F6FB58 /* WalletAddress */,
+				FC4AB869213448DA00F6FB58 /* Transfer */,
 				FCC65E4F212879AD00A18DB3 /* UI */,
 			);
 			path = Trade;
@@ -1029,7 +1029,6 @@
 				FC4AB51F20D024D8003B6033 /* UITableViewCell+ID.swift in Sources */,
 				FC4C76D320BDBB3800E930B5 /* Date+String.swift in Sources */,
 				57D43EDC20CE4179009DC827 /* MeHeaderView.swift in Sources */,
-				FCC65E44212875F200A18DB3 /* WalletAddressVC.swift in Sources */,
 				433280A4212DA7BF00B78578 /* AccountModel.swift in Sources */,
 				FC4C76D120BDBAD600E930B5 /* NetWorks.swift in Sources */,
 				FCC65E46212875F200A18DB3 /* SwitchWalletVC.swift in Sources */,
@@ -1040,6 +1039,7 @@
 				FCC65E6521287D3500A18DB3 /* WalletManageCell.swift in Sources */,
 				FCC65E7F2128817300A18DB3 /* BackupWalletVC.swift in Sources */,
 				57A4D79320D26FCD005CA862 /* RecordCell.swift in Sources */,
+				FC4AB868213448C600F6FB58 /* WalletAddressVC.swift in Sources */,
 				57E9EED6212D3C270089A5B1 /* CoinVC.swift in Sources */,
 				57E9EED3212D35E60089A5B1 /* Config.swift in Sources */,
 				FCC65E49212875F200A18DB3 /* WalletVC.swift in Sources */,
@@ -1052,7 +1052,7 @@
 				FCC65E48212875F200A18DB3 /* WalletInteface.swift in Sources */,
 				FCC65E54212879AD00A18DB3 /* TradeIocContainer.swift in Sources */,
 				FCE47D7120BEE03500D380FB /* WalletIocContainer.swift in Sources */,
-				FCC65E47212875F200A18DB3 /* TransferVC.swift in Sources */,
+				FC4AB86B213448DA00F6FB58 /* TransferVC.swift in Sources */,
 				FCC65E7D2128817300A18DB3 /* ChangePasswordVC.swift in Sources */,
 				FCC65E6921287E7300A18DB3 /* R.generated.swift in Sources */,
 				FC1EE87320BC656900A9CD84 /* BrowserVC.swift in Sources */,

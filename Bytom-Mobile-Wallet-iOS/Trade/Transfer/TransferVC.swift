@@ -9,20 +9,15 @@
 import UIKit
 
 class TransferVC: UITableViewController {
-    
     @IBOutlet weak var walletAddressTF: UITextField!
     @IBOutlet weak var numberTF: UITextField!
     @IBOutlet weak var remarkTF: UITextField!
-    
     @IBOutlet weak var unitListView: UIView!
     @IBOutlet weak var unitListViewHeight: NSLayoutConstraint!
-
     @IBOutlet var gasTypeButtons: [UIButton]!
     @IBOutlet weak var unitButton: UIButton!
-    
     @IBOutlet weak var customGasView: UIView!
     @IBOutlet weak var customGasNumberTF: UITextField!
-    
     @IBOutlet weak var bottomView: UIView!
     
     var bottomViewCenterY:CGFloat {

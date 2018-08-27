@@ -68,7 +68,7 @@ class WalletVC: UIViewController {
     }
     
     @IBAction func addressClick(_ sender: UIButton) {
-        let vc = R.storyboard.wallet.walletAddressVC()!
+        let vc = R.storyboard.trade.walletAddressVC()!
         vc.address = BytomWallet.shared.currentAccount!.defaultAddress
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -79,7 +79,7 @@ class WalletVC: UIViewController {
         vc.resultClosure = { [weak self] address in
             print(address)
             // TODO: -
-            let vc = R.storyboard.wallet.transferVC()!
+            let vc = R.storyboard.trade.transferVC()!
             vc.address = address
             self!.navigationController?.pushViewController(vc, animated: true)
         }
@@ -87,7 +87,7 @@ class WalletVC: UIViewController {
     }
     
     @IBAction func transferClick(_ sender: UIButton) {
-        let vc = R.storyboard.wallet.transferVC()
+        let vc = R.storyboard.trade.transferVC()
         navigationController?.pushViewController(vc!, animated: true)
     }
 }
@@ -109,7 +109,9 @@ extension WalletVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(presenter.asset(row: indexPath.row))
+//        print(presenter.asset(row: indexPath.row))
+        let vc = R.storyboard.me.recordVC()
+        navigationController?.pushViewController(vc!, animated: true)
     }
 }
 
