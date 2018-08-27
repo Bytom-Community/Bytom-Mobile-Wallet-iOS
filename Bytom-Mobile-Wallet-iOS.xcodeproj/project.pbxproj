@@ -16,6 +16,7 @@
 		43291209212B2496009D979C /* Wallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43291208212B2496009D979C /* Wallet.framework */; };
 		433280A2212DA69100B78578 /* BytomWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433280A1212DA69100B78578 /* BytomWallet.swift */; };
 		433280A4212DA7BF00B78578 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433280A3212DA7BF00B78578 /* AccountModel.swift */; };
+		4337E01521343E2700300928 /* BytomUnit+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4337E01421343E2700300928 /* BytomUnit+Ex.swift */; };
 		43C363B32130F11F008EC2F1 /* BuildRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C363B22130F11F008EC2F1 /* BuildRequestModel.swift */; };
 		43C363B52131A180008EC2F1 /* TemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C363B42131A180008EC2F1 /* TemplateModel.swift */; };
 		5720602220EB411200A1400F /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5720602120EB411200A1400F /* RecordModel.swift */; };
@@ -115,6 +116,7 @@
 		43291208212B2496009D979C /* Wallet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Wallet.framework; sourceTree = "<group>"; };
 		433280A1212DA69100B78578 /* BytomWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BytomWallet.swift; sourceTree = "<group>"; };
 		433280A3212DA7BF00B78578 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		4337E01421343E2700300928 /* BytomUnit+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BytomUnit+Ex.swift"; sourceTree = "<group>"; };
 		43C363B22130F11F008EC2F1 /* BuildRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildRequestModel.swift; sourceTree = "<group>"; };
 		43C363B42131A180008EC2F1 /* TemplateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateModel.swift; sourceTree = "<group>"; };
 		5720602120EB411200A1400F /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				57D43EDF20CE60CB009DC827 /* UIDevices+Extension.swift */,
 				432911FF212A5628009D979C /* String+Ex.swift */,
 				43291203212AA0A3009D979C /* Dictionary+Ex.swift */,
+				4337E01421343E2700300928 /* BytomUnit+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -923,6 +926,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Bytom-Mobile-Wallet-iOS/Pods-Bytom-Mobile-Wallet-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
 				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
@@ -940,6 +944,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
@@ -1006,6 +1011,7 @@
 				FC4C76CC20BD953600E930B5 /* Promise+asAny.swift in Sources */,
 				43C363B32130F11F008EC2F1 /* BuildRequestModel.swift in Sources */,
 				FCE47D7F20BEF2A400D380FB /* WalletRepository.swift in Sources */,
+				4337E01521343E2700300928 /* BytomUnit+Ex.swift in Sources */,
 				2315DCB320EE08EE006C4471 /* HTTPClientError.swift in Sources */,
 				433280A2212DA69100B78578 /* BytomWallet.swift in Sources */,
 				FCC65E902128824D00A18DB3 /* MeVC.swift in Sources */,

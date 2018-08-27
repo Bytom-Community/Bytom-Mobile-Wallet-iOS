@@ -144,6 +144,7 @@ class TransferVC: UITableViewController {
         
          // test
         var buildRequest = BuildRequest()
+
         
         var spendAccount = SpendAction()
         spendAccount.accountId = BytomWallet.shared.currentAccount!.accountID

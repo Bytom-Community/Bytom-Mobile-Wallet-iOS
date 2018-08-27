@@ -104,7 +104,7 @@ extension WalletVC: UITableViewDelegate, UITableViewDataSource {
         
         //test
         cell.asset.assetID = "BTM"
-        cell.asset.amount = "\(presenter.testAmount!)"
+        cell.asset.amount = "\(presenter.testAmount!.NEU(to: .BTM))"
         return cell
     }
     
